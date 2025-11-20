@@ -1,0 +1,9 @@
+# älä lataa tietokansioon tallennettuja lomakeviestejä
+data/
+data/*
+
+# älä laita ympäristömuuttujia
+.env
+
+# älä laita lokitiedostoja
+*.log
