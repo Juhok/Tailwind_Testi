@@ -678,7 +678,7 @@ startButton.addEventListener('click', () => { resetGame(); canvas.focus(); canva
 restartButton.addEventListener('click', () => { resetGame(); canvas.focus(); canvas.requestPointerLock?.(); });
 pauseRestartButton.addEventListener('click', () => { resetGame(); canvas.focus(); canvas.requestPointerLock?.(); });
 window.__orbitalOddityDebug = () => ({ playing, paused, score, remaining, playerDir: playerDir.toArray(), playerQuaternion: player.quaternion.toArray(), playerUp: new THREE.Vector3(0,1,0).applyQuaternion(player.quaternion).toArray(), pos: player.position.toArray(), keys: Array.from(keys), moveStrength, cameraOrbitYaw, cameraOrbitPitch, obstacles: obstacles.length, hp, maxHp: 5, invulnerableTimer, explosionBits: explosionBits.length, level, activeSatellites: satellites.filter(s => s.active).length, satellitePositions: satellites.filter(s => s.active).map(s => s.group.position.toArray()) });
-spawnObstacles(); spawnCollectibles(); resetSatellite(); placeOnPlanet(player, playerDir, playerLift, playerForward); updateCamera(1); animate();
+updatePlanetForLevel(); resetSatellites(); placeOnPlanet(player, playerDir, playerLift, playerForward); updateCamera(1); animate();
 </script>
   </body>
 </html>
