@@ -3,8 +3,8 @@ const navHtml = `
 <nav class="bg-white shadow-lg">
   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3 no-underline">
-      <img src="img/logo.svg" alt="PixelVibe Studio logo" class="h-10 w-10" />
-      <span class="text-2xl font-bold text-gray-800">${siteName}</span>
+      <img src="img/logo.svg" alt="PixelVibe Studio logo" class="h-10 w-10 self-center" />
+      <span class="text-2xl font-bold text-gray-800 leading-none">${siteName}</span>
     </a>
 
     <button id="nav-toggle" type="button" class="md:hidden inline-flex items-center justify-center rounded-md border border-gray-200 bg-white p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-label="Open navigation menu">
