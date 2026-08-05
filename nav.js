@@ -14,7 +14,7 @@ const navHtml = `
       <a href="about.html" class="text-gray-600 hover:text-gray-900 transition duration-300">About</a>
       <a href="health.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Health</a>
       <a href="games.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Games</a>
-      <a href="tietovisa.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Tietovisa</a>
+      <a href="tietovisa.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Quiz</a>
     </div>
   </div>
 
@@ -24,7 +24,7 @@ const navHtml = `
       <a href="about.html" class="text-gray-600 hover:text-gray-900 transition duration-300">About</a>
       <a href="health.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Health</a>
       <a href="games.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Games</a>
-      <a href="tietovisa.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Tietovisa</a>
+      <a href="tietovisa.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Quiz</a>
     </div>
   </div>
 </nav>
