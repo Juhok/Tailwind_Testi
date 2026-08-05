@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orbital Oddity 1</title>
+    <title>Orbital Oddity 2</title>
     <style>
 :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #030513; color: #eef5ff; }
 * { box-sizing: border-box; }
@@ -26,20 +26,25 @@ button:hover { transform: translateY(-1px); filter: brightness(1.08); }
   </head>
   <body>
     <div id="hud">
-      <div class="title">Orbital Oddity 1</div>
+      <div class="title">Orbital Oddity 2</div>
       <div class="row"><span>Oddity shards</span><strong id="score">0 / 14</strong></div>
       <div class="row"><span>Time</span><strong id="time">90</strong></div>
-      <div class="hint">WASD / arrows move · orbit the sphere · collect every shard</div>
+      <div class="hint">WASD / arrows move · P pauses · orbit the sphere · collect every shard</div>
     </div>
     <div id="start" class="panel">
-      <h1>Orbital Oddity</h1>
-      <p>Run around a tiny spherical planet while gravity keeps you stuck to the surface. Collect all oddity shards scattered around the globe.</p>
+      <h1>Orbital Oddity 2</h1>
+      <p>Run around a tiny spherical planet while gravity keeps you stuck to the surface. Collect all oddity shards, enjoy starry music, and pause anytime with P.</p>
       <button id="startButton">Start orbit</button>
     </div>
     <div id="message" class="panel hidden">
       <h2 id="messageTitle"></h2>
       <p id="messageText"></p>
       <button id="restartButton">Play again</button>
+    </div>
+    <div id="pause" class="panel hidden">
+      <h2>Paused</h2>
+      <p>The orbit is frozen. Press P to resume, or restart the run.</p>
+      <button id="pauseRestartButton">Restart run</button>
     </div>
     <canvas id="game"></canvas>
     <script>/* Three.js r160 bundled so this file can be opened directly from disk. */
@@ -60,6 +65,8 @@ const messageTitle = document.querySelector('#messageTitle');
 const messageText = document.querySelector('#messageText');
 const startButton = document.querySelector('#startButton');
 const restartButton = document.querySelector('#restartButton');
+const pausePanel = document.querySelector('#pause');
+const pauseRestartButton = document.querySelector('#pauseRestartButton');
 
 const scene = new THREE.Scene();
 scene.fog = new THREE.FogExp2(0x030513, 0.028);
@@ -76,6 +83,7 @@ const playerLift = 0.42;
 const collectibles = [];
 const stars = [];
 let playing = false;
+let paused = false;
 let score = 0;
 let remaining = 90;
 let playerDir = new THREE.Vector3(0.15, 0.98, 0.08).normalize();
@@ -131,13 +139,16 @@ function tangentBasis(dir, preferred = playerForward) {
   return { normal, forward, right };
 }
 function placeOnPlanet(object, dir, lift = 0, forwardHint = playerForward) {
-  const { normal } = tangentBasis(dir, forwardHint);
+  // Keep local +Y as the surface normal, so the player's bottom (-Y) always
+  // points toward the planet center. This fixes the visual flipping without
+  // changing the surface movement math.
+  const normal = dir.clone().normalize();
   object.position.copy(surfacePoint(dir, lift));
   let forward = forwardHint.clone().projectOnPlane(normal);
-  if (forward.lengthSq() < 0.0001) forward = tangentBasis(dir).forward;
+  if (forward.lengthSq() < 0.0001 || !Number.isFinite(forward.x)) forward = tangentBasis(dir).forward;
   forward.normalize();
-  const right = new THREE.Vector3().crossVectors(forward, normal).normalize();
-  const correctedForward = new THREE.Vector3().crossVectors(normal, right).normalize();
+  const right = new THREE.Vector3().crossVectors(normal, forward).normalize();
+  const correctedForward = new THREE.Vector3().crossVectors(right, normal).normalize();
   object.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(right, normal, correctedForward));
 }
 function angularDistance(a, b) { return Math.acos(THREE.MathUtils.clamp(a.dot(b), -1, 1)); }
@@ -159,27 +170,38 @@ function spawnCollectibles() {
 }
 
 function addStarfield() {
-  const geo = new THREE.BufferGeometry();
-  const verts = [];
-  for (let i = 0; i < 1300; i++) {
-    const d = randomDir();
-    const r = 70 + Math.random() * 150;
-    verts.push(d.x * r, d.y * r, d.z * r);
+  for (const layer of [
+    { count: 1500, radius: [70, 150], size: 0.34, color: 0xe6efff, opacity: 0.92 },
+    { count: 220, radius: [45, 85], size: 0.78, color: 0x8ff7ff, opacity: 0.62 }
+  ]) {
+    const geo = new THREE.BufferGeometry();
+    const verts = [];
+    for (let i = 0; i < layer.count; i++) {
+      const d = randomDir();
+      const r = layer.radius[0] + Math.random() * layer.radius[1];
+      verts.push(d.x * r, d.y * r, d.z * r);
+    }
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(verts, 3));
+    scene.add(new THREE.Points(geo, new THREE.PointsMaterial({ color: layer.color, size: layer.size, transparent: true, opacity: layer.opacity })));
   }
-  geo.setAttribute('position', new THREE.Float32BufferAttribute(verts, 3));
-  scene.add(new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xe6efff, size: 0.32, transparent: true, opacity: 0.9 })));
 }
 addStarfield();
 
-let audioCtx, masterGain;
+let audioCtx, masterGain, musicGain;
+let musicTimer = 0;
+let musicStep = 0;
+const melody = [261.63, 329.63, 392.0, 523.25, 493.88, 392.0, 329.63, 440.0];
 function ensureAudio() {
   if (audioCtx) return;
   audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   masterGain = audioCtx.createGain();
-  masterGain.gain.value = 0.5;
+  musicGain = audioCtx.createGain();
+  masterGain.gain.value = 0.58;
+  musicGain.gain.value = 0.32;
+  musicGain.connect(masterGain);
   masterGain.connect(audioCtx.destination);
 }
-function tone(freq, dur = 0.13, type = 'sine', vol = 0.2) {
+function tone(freq, dur = 0.13, type = 'sine', vol = 0.2, dest = masterGain) {
   if (!audioCtx) return;
   const osc = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
@@ -188,21 +210,34 @@ function tone(freq, dur = 0.13, type = 'sine', vol = 0.2) {
   gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
   gain.gain.linearRampToValueAtTime(vol, audioCtx.currentTime + 0.01);
   gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
-  osc.connect(gain).connect(masterGain);
+  osc.connect(gain).connect(dest);
   osc.start(); osc.stop(audioCtx.currentTime + dur + 0.03);
+}
+function updateMusic(dt) {
+  if (!audioCtx || !playing || paused) return;
+  musicTimer -= dt;
+  const urgent = remaining < 15;
+  const gap = urgent ? 0.14 : 0.31;
+  if (musicTimer > 0) return;
+  musicTimer = gap;
+  const note = melody[musicStep % melody.length] * (urgent ? 1.5 : 1);
+  const bass = melody[(musicStep + 3) % melody.length] / 2;
+  tone(note, urgent ? 0.1 : 0.22, 'triangle', urgent ? 0.42 : 0.28, musicGain);
+  if (musicStep % 2 === 0) tone(bass, urgent ? 0.12 : 0.28, 'sine', urgent ? 0.24 : 0.16, musicGain);
+  musicStep++;
 }
 
 function resetGame() {
   ensureAudio(); audioCtx.resume?.();
-  playing = true; score = 0; remaining = 90;
+  playing = true; paused = false; score = 0; remaining = 90; musicTimer = 0; musicStep = 0;
   playerDir.set(0.15, 0.98, 0.08).normalize();
   playerForward.set(0, 0, -1).projectOnPlane(playerDir).normalize();
   scoreEl.textContent = `0 / 14`; timeEl.textContent = '90';
-  startPanel.classList.add('hidden'); messagePanel.classList.add('hidden');
+  startPanel.classList.add('hidden'); messagePanel.classList.add('hidden'); pausePanel.classList.add('hidden');
   spawnCollectibles(); placeOnPlanet(player, playerDir, playerLift, playerForward);
 }
 function endGame(won) {
-  playing = false;
+  playing = false; paused = false; pausePanel.classList.add('hidden');
   messageTitle.textContent = won ? 'Orbit complete ✨' : 'Orbit faded';
   messageText.textContent = won ? 'Every oddity shard is collected from around the sphere.' : `You collected ${score} oddity shards. Try another orbit.`;
   messagePanel.classList.remove('hidden');
@@ -258,15 +293,29 @@ function animate() {
   requestAnimationFrame(animate);
   const dt = Math.min(clock.getDelta(), 0.05); const t = clock.elapsedTime;
   planet.rotation.y = t * 0.025; oceanGlow.rotation.y = -t * 0.018;
-  if (playing) { remaining -= dt; timeEl.textContent = Math.max(0, Math.ceil(remaining)).toString(); movePlayer(dt); updateCollectibles(t); if (remaining <= 0) endGame(false); }
-  else placeOnPlanet(player, playerDir, playerLift, playerForward);
+  if (playing && !paused) {
+    remaining -= dt;
+    timeEl.textContent = Math.max(0, Math.ceil(remaining)).toString();
+    movePlayer(dt);
+    updateCollectibles(t);
+    updateMusic(dt);
+    if (remaining <= 0) endGame(false);
+  } else {
+    placeOnPlanet(player, playerDir, playerLift, playerForward);
+  }
   updateCamera(dt); renderer.render(scene, camera);
 }
+function togglePause() {
+  if (!playing) return;
+  paused = !paused;
+  pausePanel.classList.toggle('hidden', !paused);
+}
 function rememberKey(e, down) {
-  const relevant = ['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code) || ['w','a','s','d'].includes(e.key?.toLowerCase?.());
+  const lower = e.key?.toLowerCase?.();
+  if (down && lower === 'p') { e.preventDefault(); togglePause(); return; }
+  const relevant = ['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code) || ['w','a','s','d'].includes(lower);
   if (relevant) e.preventDefault();
-  const key = e.key?.toLowerCase?.();
-  if (down) { keys.add(e.code); if (key) keys.add(key); } else { keys.delete(e.code); if (key) keys.delete(key); }
+  if (down) { keys.add(e.code); if (lower) keys.add(lower); } else { keys.delete(e.code); if (lower) keys.delete(lower); }
 }
 addEventListener('keydown', e => rememberKey(e, true));
 addEventListener('keyup', e => rememberKey(e, false));
@@ -276,7 +325,8 @@ canvas.tabIndex = 0;
 canvas.addEventListener('click', () => { ensureAudio(); canvas.focus(); canvas.requestPointerLock?.(); });
 startButton.addEventListener('click', () => { resetGame(); canvas.focus(); canvas.requestPointerLock?.(); });
 restartButton.addEventListener('click', () => { resetGame(); canvas.focus(); canvas.requestPointerLock?.(); });
-window.__orbitalOddityDebug = () => ({ playing, score, remaining, playerDir: playerDir.toArray(), pos: player.position.toArray(), keys: Array.from(keys), moveStrength });
+pauseRestartButton.addEventListener('click', () => { resetGame(); canvas.focus(); canvas.requestPointerLock?.(); });
+window.__orbitalOddityDebug = () => ({ playing, paused, score, remaining, playerDir: playerDir.toArray(), playerQuaternion: player.quaternion.toArray(), playerUp: new THREE.Vector3(0,1,0).applyQuaternion(player.quaternion).toArray(), pos: player.position.toArray(), keys: Array.from(keys), moveStrength });
 spawnCollectibles(); placeOnPlanet(player, playerDir, playerLift, playerForward); updateCamera(1); animate();
 </script>
   </body>
