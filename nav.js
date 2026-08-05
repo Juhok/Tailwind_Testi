@@ -1,25 +1,25 @@
 const siteName = (window.siteInfo && window.siteInfo.siteName) || 'PixelVibe Studio';
 const navHtml = `
-<nav class="bg-white dark:bg-slate-900 shadow-lg">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 shadow-lg backdrop-blur dark:bg-[#0f172a]/95" style="background-color: #ffffff;">
   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3 no-underline">
       <img src="img/logo.svg" alt="PixelVibe Studio logo" class="h-10 w-10 self-center" />
       <span class="text-2xl font-bold text-gray-800 leading-none dark:text-white">${siteName}</span>
     </a>
 
-    <button id="nav-toggle" type="button" class="md:hidden inline-flex items-center justify-center rounded-md border border-gray-200 bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-gray-200 dark:hover:bg-slate-800" aria-label="Open navigation menu">
+    <button id="nav-toggle" type="button" class="md:hidden inline-flex items-center justify-center rounded-md border border-gray-200 bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-[#243244] dark:bg-[#0f172a] dark:text-slate-200 dark:hover:bg-[#111827]" aria-label="Open navigation menu">
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
 
     <div id="nav-links" class="hidden md:flex md:items-center md:space-x-6">
-      <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">Home</a>
-      <a href="about.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">About</a>
-      <a href="health.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">Health</a>
-      <a href="games.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">Games</a>
-      <a href="tietovisa.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">Quiz</a>
-      <label class="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-600 transition duration-300 hover:bg-gray-50 dark:border-slate-700 dark:bg-slate-900 dark:text-gray-200 dark:hover:bg-slate-800 cursor-pointer">
+      <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">Home</a>
+      <a href="about.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">About</a>
+      <a href="health.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">Health</a>
+      <a href="games.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">Games</a>
+      <a href="tietovisa.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">Quiz</a>
+      <label class="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-600 transition duration-300 hover:bg-gray-50 dark:border-[#243244] dark:bg-[#0f172a] dark:text-slate-200 dark:hover:bg-[#111827] cursor-pointer">
         <input class="theme-toggle-checkbox sr-only" type="checkbox" />
         <span class="theme-toggle-track relative inline-flex h-6 w-11 flex-shrink-0 items-center rounded-full bg-slate-300 transition-colors duration-300">
           <span class="theme-toggle-thumb absolute left-1 top-1 h-4 w-4 rounded-full bg-white shadow transition-transform duration-300"></span>
@@ -29,14 +29,14 @@ const navHtml = `
     </div>
   </div>
 
-  <div id="mobile-nav" class="hidden border-t border-gray-100 px-4 pb-4 md:hidden dark:border-slate-700">
+  <div id="mobile-nav" class="hidden border-t border-gray-100 px-4 pb-4 md:hidden dark:border-[#243244]">
     <div class="flex flex-col space-y-3 pt-4">
-      <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">Home</a>
-      <a href="about.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">About</a>
-      <a href="health.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">Health</a>
-      <a href="games.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">Games</a>
-      <a href="tietovisa.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-gray-200 dark:hover:text-white">Quiz</a>
-      <label class="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-600 transition duration-300 hover:bg-gray-50 dark:border-slate-700 dark:bg-slate-900 dark:text-gray-200 dark:hover:bg-slate-800 cursor-pointer">
+      <a href="index.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">Home</a>
+      <a href="about.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">About</a>
+      <a href="health.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">Health</a>
+      <a href="games.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">Games</a>
+      <a href="tietovisa.html" class="text-gray-600 hover:text-gray-900 transition duration-300 dark:text-slate-200 dark:hover:text-white">Quiz</a>
+      <label class="inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-3 py-2 text-sm text-gray-600 transition duration-300 hover:bg-gray-50 dark:border-[#243244] dark:bg-[#0f172a] dark:text-slate-200 dark:hover:bg-[#111827] cursor-pointer">
         <input class="theme-toggle-checkbox sr-only" type="checkbox" />
         <span class="theme-toggle-track relative inline-flex h-6 w-11 flex-shrink-0 items-center rounded-full bg-slate-300 transition-colors duration-300">
           <span class="theme-toggle-thumb absolute left-1 top-1 h-4 w-4 rounded-full bg-white shadow transition-transform duration-300"></span>
@@ -63,22 +63,44 @@ if (navContainer) {
     const styleEl = document.createElement('style');
     styleEl.id = 'theme-mode-styles';
     styleEl.textContent = `
-      :root.dark .bg-white { background-color: #0f172a !important; }
-      :root.dark .bg-gray-100 { background-color: #111827 !important; }
+      :root.dark {
+        color-scheme: dark;
+        background-color: #020617;
+      }
+      :root.dark body {
+        background-color: #020617 !important;
+        color: #f8fafc;
+      }
+      :root.dark .bg-white,
+      :root.dark .bg-gray-100,
+      :root.dark .bg-gray-50,
+      :root.dark .bg-slate-900,
+      :root.dark .bg-slate-800,
+      :root.dark .bg-slate-700,
+      :root.dark [class*="dark:bg-slate-900"],
+      :root.dark [class*="dark:bg-slate-800"],
+      :root.dark [class*="dark:bg-slate-700"],
+      :root.dark nav {
+        background-color: #0f172a !important;
+      }
+      :root.dark [class*="dark:bg-slate-800"] {
+        background-color: #111827 !important;
+      }
       :root.dark .text-gray-900 { color: #f8fafc !important; }
       :root.dark .text-gray-800 { color: #f8fafc !important; }
       :root.dark .text-gray-700 { color: #e2e8f0 !important; }
       :root.dark .text-gray-600 { color: #cbd5e1 !important; }
-      :root.dark .border-gray-200 { border-color: #334155 !important; }
-      :root.dark .bg-gray-50 { background-color: oklch(0.23 0.06 294.55) !important; }
-      :root.dark .hover\:bg-gray-50:hover { background-color: #0f172a !important; }
-      :root.dark .bg-slate-900 { background-color: #020617 !important; }
-      :root.dark .border-gray-100 { border-color: #1f2937 !important; }
-      :root.dark .bg-slate-800 { background-color: oklch(0.66 0.07 260.51) !important; }
-      :root.dark .bg-slate-900 { background-color: #020617 !important; }
-      :root.dark .shadow-sm { box-shadow: 0 1px 2px rgba(15, 23, 42, 0.6) !important; }
-      :root.dark .shadow-md { box-shadow: 0 4px 10px rgba(15, 23, 42, 0.6) !important; }
-      :root.dark .shadow-lg { box-shadow: 0 10px 24px rgba(15, 23, 42, 0.55) !important; }
+      :root.dark .text-slate-300 { color: #cbd5e1 !important; }
+      :root.dark .border-gray-200,
+      :root.dark .border-gray-100,
+      :root.dark [class*="dark:border-slate-700"],
+      :root.dark [class*="dark:border-[#243244]"] {
+        border-color: #243244 !important;
+      }
+      :root.dark .hover\:bg-gray-50:hover { background-color: #111827 !important; }
+      :root.dark .shadow-sm { box-shadow: 0 1px 2px rgba(2, 6, 23, 0.75) !important; }
+      :root.dark .shadow-md { box-shadow: 0 8px 20px rgba(2, 6, 23, 0.8) !important; }
+      :root.dark .shadow-lg { box-shadow: 0 12px 28px rgba(2, 6, 23, 0.9) !important; }
     `;
     document.head.appendChild(styleEl);
   }
