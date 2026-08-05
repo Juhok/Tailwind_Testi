@@ -4,7 +4,7 @@ const navHtml = `
   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3 no-underline">
       <img src="img/logo.svg" alt="PixelVibe Studio logo" class="h-10 w-10 self-center" />
-      <span class="text-2xl font-bold text-gray-800 leading-none dark:text-white">${siteName}</span>
+      <span class="site-logo-text text-2xl font-bold text-gray-800 leading-none dark:text-white">${siteName}</span>
     </a>
 
     <button id="nav-toggle" type="button" class="md:hidden inline-flex items-center justify-center rounded-md border border-gray-200 bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-[#243244] dark:bg-[#0f172a] dark:text-slate-200 dark:hover:bg-[#111827]" aria-label="Open navigation menu">
@@ -63,6 +63,11 @@ if (navContainer) {
     const styleEl = document.createElement('style');
     styleEl.id = 'theme-mode-styles';
     styleEl.textContent = `
+      .site-logo-text {
+        font-family: "Pixelify Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
       :root.dark {
         color-scheme: dark;
         background-color: #020617;
