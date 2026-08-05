@@ -263,25 +263,36 @@ function isBlocked(nextDir) {
   return false;
 }
 
+function active(...names) {
+  return names.some((name) => keys.has(name));
+}
+
 function movePlayer(dt) {
-  const f = Number(keys.has('KeyW') || keys.has('ArrowUp')) - Number(keys.has('KeyS') || keys.has('ArrowDown'));
-  const s = Number(keys.has('KeyD') || keys.has('ArrowRight')) - Number(keys.has('KeyA') || keys.has('ArrowLeft'));
-  const { normal, forward, right } = tangentBasis(playerDir);
-  const steeringForward = forward.clone().applyAxisAngle(normal, targetYaw - cameraYaw).projectOnPlane(normal).normalize();
-  const steeringRight = new THREE.Vector3().crossVectors(steeringForward, normal).normalize();
-  const tangent = steeringForward.multiplyScalar(f).add(steeringRight.multiplyScalar(s));
+  const f = Number(active('KeyW', 'ArrowUp', 'w')) - Number(active('KeyS', 'ArrowDown', 's'));
+  const s = Number(active('KeyD', 'ArrowRight', 'd')) - Number(active('KeyA', 'ArrowLeft', 'a'));
+  const normal = surfaceNormal(playerDir);
+
+  let forward = playerForward.clone().projectOnPlane(normal);
+  if (forward.lengthSq() < 0.0001) forward = tangentBasis(playerDir).forward;
+  forward.normalize();
+  const right = new THREE.Vector3().crossVectors(forward, normal).normalize();
+  const tangent = forward.clone().multiplyScalar(f).add(right.multiplyScalar(s));
+
   moveStrength = Math.min(1, tangent.length());
   if (tangent.lengthSq() > 0) {
     tangent.normalize();
-    const next = playerDir.clone().addScaledVector(tangent, dt * 0.53).normalize();
+    const next = playerDir.clone().addScaledVector(tangent, dt * 0.62).normalize();
     if (!isBlocked(next)) {
       playerDir.copy(next);
-      playerForward.copy(tangent.projectOnPlane(playerDir).normalize());
+      const newNormal = surfaceNormal(playerDir);
+      playerForward.copy(tangent.projectOnPlane(newNormal).normalize());
       makeTrail(dt);
     } else {
       moveStrength = 0.15;
       if (audioCtx) playBumpSound();
     }
+  } else {
+    playerForward.projectOnPlane(normal).normalize();
   }
   placeOnSurface(player, playerDir, 0.42, playerForward);
 }
@@ -451,7 +462,7 @@ function resetGame() {
   ensureAudio();
   audioCtx.resume?.();
   playerDir.set(0, 0.82, 0.57).normalize();
-  playerForward.set(0, 0, -1).projectOnPlane(playerDir).normalize();
+  playerForward.set(0, 0, -1).projectOnPlane(surfaceNormal(playerDir)).normalize();
   targetYaw = cameraYaw = 0;
   score = 0;
   remaining = 90;
@@ -517,10 +528,9 @@ function updateRipples(dt) {
 }
 
 function updateCamera(dt) {
-  cameraYaw = THREE.MathUtils.lerp(cameraYaw, targetYaw, 1 - Math.pow(0.002, dt));
   const normal = surfaceNormal(playerDir);
-  const basis = tangentBasis(playerDir);
-  const behind = basis.forward.clone().negate().applyAxisAngle(normal, cameraYaw);
+  const basis = tangentBasis(playerDir, playerForward);
+  const behind = basis.forward.clone().negate();
   const desired = player.position.clone().addScaledVector(normal, 4.8).addScaledVector(behind, 8.5);
   camera.position.lerp(desired, 1 - Math.pow(0.0001, dt));
   camera.up.copy(normal);
@@ -549,10 +559,24 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-addEventListener('keydown', (e) => keys.add(e.code));
-addEventListener('keyup', (e) => keys.delete(e.code));
+function rememberKey(e, down) {
+  const relevant = ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code) || ['w', 'a', 's', 'd'].includes(e.key?.toLowerCase?.());
+  if (relevant) e.preventDefault();
+  const key = e.key?.toLowerCase?.();
+  if (down) {
+    keys.add(e.code);
+    if (key) keys.add(key);
+  } else {
+    keys.delete(e.code);
+    if (key) keys.delete(key);
+  }
+}
+addEventListener('keydown', (e) => rememberKey(e, true));
+addEventListener('keyup', (e) => rememberKey(e, false));
 addEventListener('mousemove', (e) => {
-  if (pointerLocked) targetYaw -= e.movementX * 0.004;
+  if (!pointerLocked) return;
+  const normal = surfaceNormal(playerDir);
+  playerForward.applyAxisAngle(normal, -e.movementX * 0.004).projectOnPlane(normal).normalize();
 });
 addEventListener('resize', () => {
   camera.aspect = innerWidth / innerHeight;
@@ -560,9 +584,20 @@ addEventListener('resize', () => {
   renderer.setSize(innerWidth, innerHeight);
 });
 document.addEventListener('pointerlockchange', () => pointerLocked = document.pointerLockElement === canvas);
-canvas.addEventListener('click', () => { ensureAudio(); canvas.requestPointerLock?.(); });
-startButton.addEventListener('click', () => { resetGame(); canvas.requestPointerLock?.(); });
-restartButton.addEventListener('click', () => { resetGame(); canvas.requestPointerLock?.(); });
+canvas.tabIndex = 0;
+canvas.addEventListener('click', () => { ensureAudio(); canvas.focus(); canvas.requestPointerLock?.(); });
+startButton.addEventListener('click', () => { resetGame(); canvas.focus(); canvas.requestPointerLock?.(); });
+restartButton.addEventListener('click', () => { resetGame(); canvas.focus(); canvas.requestPointerLock?.(); });
+window.__starwhaleDebug = () => ({
+  playing,
+  score,
+  remaining,
+  moveStrength,
+  keys: Array.from(keys),
+  playerDir: playerDir.toArray(),
+  playerForward: playerForward.toArray(),
+  playerPosition: player.position.toArray()
+});
 
 placeOnSurface(player, playerDir, 0.42, playerForward);
 generateWorld();
