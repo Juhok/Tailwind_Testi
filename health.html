@@ -5,34 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-gray-100 min-h-screen">
+  <body class="bg-gray-100 min-h-screen dark:bg-slate-950">
     <div id="site-nav"></div>
     <script src="version.js"></script>
     <script src="nav.js"></script>
 
     <main class="container mx-auto mt-8 px-4">
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <div class="mb-8 overflow-hidden rounded-3xl bg-gray-100 shadow-sm group relative">
+      <div class="bg-white rounded-lg shadow-md p-6 dark:bg-slate-900">
+        <div class="mb-8 overflow-hidden rounded-3xl bg-gray-100 shadow-sm group relative dark:bg-slate-800">
           <img src="img/health.png" alt="Health banner" class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
           <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
         </div>
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Health Information</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4 dark:text-white">Health Information</h2>
+        <p class="text-gray-600 leading-relaxed mb-6 dark:text-slate-300">
           Find important health-related information and tips for a healthy lifestyle.
         </p>
 
         <div class="hidden md:block overflow-x-auto">
-          <table class="min-w-full w-full table-auto border-collapse bg-white shadow-sm rounded-lg">
+          <table class="min-w-full w-full table-auto border-collapse bg-white shadow-sm rounded-lg dark:bg-slate-800">
             <thead>
-              <tr class="bg-gray-100">
+              <tr class="bg-gray-100 dark:bg-slate-700/50">
                 <th class="border px-4 py-3 text-left text-xs sm:text-sm font-semibold text-gray-700 whitespace-normal break-words">Activity</th>
                 <th class="border px-4 py-3 text-left text-xs sm:text-sm font-semibold text-gray-700 whitespace-normal break-words">Benefits</th>
                 <th class="border px-4 py-3 text-left text-xs sm:text-sm font-semibold text-gray-700 whitespace-normal break-words">Recommended Amount</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="hover:bg-gray-50">
-                <td class="border px-4 py-3 text-sm text-gray-600 whitespace-normal break-words">Walking</td>
+              <tr class="hover:bg-gray-50 dark:hover:bg-slate-700">
+                <td class="border px-4 py-3 text-sm text-gray-600 dark:text-slate-300 whitespace-normal break-words">Walking</td>
                 <td class="border px-4 py-3 text-sm text-gray-600 whitespace-normal break-words">Improves cardiovascular health, helps with weight management</td>
                 <td class="border px-4 py-3 text-sm text-gray-600 whitespace-normal break-words">30 minutes daily</td>
               </tr>
