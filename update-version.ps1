@@ -11,7 +11,8 @@ $version = "1.0.$commitCount"
 $year = 2026
 
 $versionFile = Join-Path $repoRoot 'version.js'
-$versionContent = @"window.siteInfo = {
+$versionContent = @"
+window.siteInfo = {
   version: "$version",
   year: $year,
 };
