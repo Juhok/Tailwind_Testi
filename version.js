@@ -1,4 +1,4 @@
 ﻿window.siteInfo = {
-  version: "1.0.48",
+  version: "1.0.54",
   year: 2026,
 };
