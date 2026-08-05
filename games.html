@@ -12,8 +12,9 @@
 
     <main class="container mx-auto mt-8 px-4">
       <div class="bg-white rounded-lg shadow-md p-6">
-        <div class="mb-8 overflow-hidden rounded-3xl bg-gray-100 shadow-sm">
-          <img src="img/playgames.png" alt="Play games banner" class="h-64 w-full object-cover" />
+        <div class="mb-8 overflow-hidden rounded-3xl bg-gray-100 shadow-sm group relative">
+          <img src="img/playgames.png" alt="Play games banner" class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
         </div>
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Games</h2>
         <p class="text-gray-600 leading-relaxed mb-8">
@@ -22,7 +23,7 @@
 
         <section class="mb-10">
           <h3 class="text-2xl font-bold text-gray-800 mb-4">Orbital Oddity</h3>
-          <div class="overflow-x-auto">
+          <div class="hidden md:block overflow-x-auto">
             <table class="min-w-full w-full table-auto border-collapse bg-white shadow-sm rounded-lg">
               <thead>
                 <tr class="bg-gray-100">
@@ -124,6 +125,98 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div class="space-y-4 md:hidden">
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 10</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Adds pause-frozen satellites, level-matched satellite counts, asteroid impacts with explosions and 2 HP damage, volcano rock spills, and fewer heart pickups.</p>
+                  <a href="games/orbital-oddity/10/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 9</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Adds level-varying music, procedural planet palettes, safer rings/auroras, more visible super volcanoes, red heart HP pickups, and a brief level-start pause menu.</p>
+                  <a href="games/orbital-oddity/9/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 8</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Adds level-based planets with a level HUD, changing planet/grass colors, craters, extra satellites and obstacles per level, plus rings, auroras, and super volcano worlds.</p>
+                  <a href="games/orbital-oddity/8/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 7</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Adds an orbiting satellite hazard with visible solar panels and orbit ring; colliding with it damages the player.</p>
+                  <a href="games/orbital-oddity/7/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 6</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Restores grass to flatter curved oval patches, makes the visible sun much brighter and white, and increases player HP to 5.</p>
+                  <a href="games/orbital-oddity/6/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 5</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Adds HP and game-over explosions, sad failure music, quieter collision audio, a brighter white sun, and grass patches curved to the planet surface.</p>
+                  <a href="games/orbital-oddity/5/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 4</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Adds a visible sun matching the light direction, procedural rocks/mountains/volcanoes with collision, and a success fanfare for completed orbits.</p>
+                  <a href="games/orbital-oddity/4/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 3</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Brighter twinkling starfields, menu and pause music, and mouse camera orbit controls around the player.</p>
+                  <a href="games/orbital-oddity/3/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 2</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Stabilized rover orientation so its bottom stays toward the planet, with brighter stars, adaptive music, P-to-pause, and a restart button in the pause menu.</p>
+                  <a href="games/orbital-oddity/2/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div class="grid gap-4 sm:grid-cols-[auto_1fr] items-start">
+                <div class="text-sm font-semibold text-gray-800">Orbital Oddity 1</div>
+                <div class="space-y-3 text-sm text-gray-600">
+                  <p>Initial spherical-planet prototype with center gravity, surface movement, and collectibles scattered around the planet.</p>
+                  <a href="games/orbital-oddity/1/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500">Play</a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

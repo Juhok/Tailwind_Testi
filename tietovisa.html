@@ -12,8 +12,9 @@
 
     <main class="container mx-auto mt-8 px-4">
       <div class="bg-white rounded-xl shadow-md p-8">
-        <div class="mb-8 overflow-hidden rounded-3xl bg-gray-100 shadow-sm">
-          <img src="img/quiz.png" alt="Quiz banner" class="h-64 w-full object-cover" />
+        <div class="mb-8 overflow-hidden rounded-3xl bg-gray-100 shadow-sm group relative">
+          <img src="img/quiz.png" alt="Quiz banner" class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
         </div>
         <h2 class="text-4xl font-bold text-gray-800 mb-4">Quiz</h2>
         <p class="text-gray-600 leading-relaxed mb-6">
