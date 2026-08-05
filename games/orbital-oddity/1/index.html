@@ -217,10 +217,20 @@ function movePlayer(dt) {
   moveStrength = Math.min(1, tangent.length());
   if (tangent.lengthSq() > 0) {
     tangent.normalize();
-    playerDir.addScaledVector(tangent, dt * 0.68).normalize();
-    playerForward.copy(tangent.projectOnPlane(playerDir).normalize());
+    const oldNormal = normal.clone();
+    const oldForward = forward.clone();
+    const angle = dt * 0.68 * moveStrength;
+    playerDir.copy(oldNormal.multiplyScalar(Math.cos(angle)).addScaledVector(tangent, Math.sin(angle))).normalize();
+
+    // Keep the heading parallel-transported over the spherical surface. Previously
+    // strafing copied the strafe vector into playerForward, causing WASD axes and
+    // the chase camera to rotate every frame and feel haywire.
+    playerForward.copy(oldForward.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(normal, playerDir)));
+  }
+  if (playerForward.projectOnPlane(playerDir).lengthSq() < 0.0001) {
+    playerForward.copy(tangentBasis(playerDir, new THREE.Vector3(0, 0, -1)).forward);
   } else {
-    playerForward.projectOnPlane(normal).normalize();
+    playerForward.normalize();
   }
   placeOnPlanet(player, playerDir, playerLift, playerForward);
 }
