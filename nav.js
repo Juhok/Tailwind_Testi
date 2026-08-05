@@ -1,7 +1,8 @@
+const siteName = (window.siteInfo && window.siteInfo.siteName) || 'PixelVibe Studio';
 const navHtml = `
 <nav class="bg-white shadow-lg">
   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-    <h1 class="text-2xl font-bold text-gray-800">My Website</h1>
+    <h1 class="text-2xl font-bold text-gray-800">${siteName}</h1>
 
     <button id="nav-toggle" type="button" class="md:hidden inline-flex items-center justify-center rounded-md border border-gray-200 bg-white p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500" aria-label="Open navigation menu">
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
