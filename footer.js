@@ -7,7 +7,7 @@ const footerCopy = footerVersion
   : `&copy; ${footerYear} <span class="site-logo-text font-bold">${footerSiteName}</span>. All rights reserved.`;
 
 const footerHtml = `
-<footer class="fixed bottom-0 left-0 right-0 z-50 bg-gray-800 text-white py-8 shadow-inner">
+<footer class="fixed bottom-0 left-0 right-0 z-50 bg-white text-gray-700 py-8 shadow-inner dark:bg-slate-900 dark:text-slate-200">
   <div class="container mx-auto px-4 text-center">
     <p id="footer-text" class="flex items-center justify-center gap-3 text-sm font-medium">
       <img src="img/logo.svg" alt="PixelVibe Studio logo" class="h-8 w-8" />
