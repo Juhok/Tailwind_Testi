@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#101721" />
+    <meta
+      name="description"
+      content="Eighteen tiny crimes against comfort. A hands-on pixel-art game with gentle xylophone and triangle music."
+    />
+    <title>Tiny Triggers · Volume 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="back" href="../../../games.html">← THE ARCADE</a
+        ><button id="sound" aria-pressed="true">Sound on</button>
+      </header>
+      <section class="intro">
+        <h1>Tiny Triggers<span class="spark">✳</span></h1>
+        <p class="tagline">Relax. Take your time. Make it worse.</p>
+      </section>
+      <section class="game" aria-label="Interactive scene">
+        <div class="scene-top">
+          <span id="chapter">01 / 18</span
+          ><span id="category">EVERYDAY RITUALS</span
+          ><button id="album" disabled>Collection 🔒</button>
+        </div>
+        <article>
+          <div class="scene-heading">
+            <h2 id="title"></h2>
+            <p id="instruction" class="sr-only"></p>
+          </div>
+          <div class="stage-wrap">
+            <canvas
+              id="stage"
+              width="480"
+              height="270"
+              aria-label="Drag the objects to complete the scene. Instructions above."
+              tabindex="0"
+            ></canvas>
+            <div id="loading" hidden role="status" aria-live="off">
+              <span>PREPARING YOUR NEXT MISTAKE</span
+              ><strong id="load-number">0%</strong
+              ><progress id="load-progress" max="100" value="0"></progress>
+              <p id="loading-tip"></p>
+            </div>
+          </div>
+          <div class="status">
+            <p id="feedback" role="status" aria-live="polite"></p>
+            <button id="next" hidden>Next tiny crime →</button>
+          </div>
+        </article>
+        <div class="bottom">
+          <button id="reset">↺ Retry scene</button
+          ><span id="count">0 / 18 wonderfully wrong</span
+          ><button id="hint">A gentle hint</button>
+        </div>
+      </section>
+      <footer>
+        <span>NO CLOCK. NO SCORE. JUST QUESTIONABLE CHOICES.</span
+        ><span>VOL. 02 · MOUSE / TOUCH</span>
+      </footer>
+      <dialog id="collection">
+        <h2>Your tiny crimes</h2>
+        <p>You finished the collection. Every scene is now yours to replay.</p>
+        <div id="scene-list"></div>
+        <button id="close">Back to making it worse</button>
+      </dialog>
+      <dialog id="ending">
+        <p class="eyebrow">NOTHING IS QUITE RIGHT. PERFECT.</p>
+        <h2>Beautifully unbearable.</h2>
+        <p>
+          You made eighteen little things worse.<br />The world is slightly less
+          comfortable now.
+        </p>
+        <p>Relax. Take your time. Make it worse.</p>
+        <button id="replay">Visit your collection →</button>
+      </dialog>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
