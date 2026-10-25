@@ -1,0 +1,6 @@
+{
+  "name": "orbital-oddity-mobile-v10-checks",
+  "private": true,
+  "scripts": { "test": "node smoke.cjs && node gameplay.cjs" },
+  "devDependencies": { "playwright": "1.64.1" }
+}
