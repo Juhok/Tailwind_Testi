@@ -1,0 +1,51 @@
+'use strict';
+module.exports = async function (page, io, assert) {
+  let state = await io.state();
+  assert.equal(state.phase, 'ready');
+  assert.equal(state.gap, 230);
+  assert.equal(state.hallwayPeople, 0);
+  await io.click(392, 178); // Open is not Close.
+  await io.click(392, 112); // A floor button is not the door gesture.
+  await io.wait(250);
+  assert.equal((await io.state()).phase, 'ready');
+  await io.down(432, 178);
+  await io.move(350, 211);
+  await io.up();
+  assert.equal((await io.state()).phase, 'ready', 'A cancelled button press must not start closing');
+  await io.down(432, 178);
+  await io.wait(200);
+  assert.equal((await io.state()).phase, 'ready', 'Holding the button cannot skip the press/release sequence');
+  await io.up();
+  await io.until((s) => s.phase === 'closing' && s.closure > 0.3 && s.closure < 0.7);
+  state = await io.state();
+  assert(state.gap > 8 && state.gap < 200);
+  assert(state.symmetryError < 0.0001);
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.shot('closing');
+  await io.until((s) => s.phase === 'paused');
+  state = await io.state();
+  assert.equal(state.gap, 8, 'Doors stop visibly short of touching');
+  assert.equal(state.closure, 1);
+  await io.wait(450);
+  await io.click(432, 178);
+  assert.equal((await io.state()).phase, 'paused', 'Another press must not skip the anticipatory pause');
+  assert.equal((await io.state()).gap, 8);
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.shot('nearly-closed-pause');
+  await io.until((s) => s.phase === 'reopening' && s.closure < 0.75 && s.closure > 0.25);
+  state = await io.state();
+  assert(state.pauseElapsed >= 1.35);
+  assert(state.symmetryError < 0.0001);
+  assert.equal(state.hallwayPeople, 0);
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.shot('reversing');
+  await io.until((s) => s.phase === 'done');
+  state = await io.state();
+  assert.equal(state.closure, 0);
+  assert.equal(state.gap, 230);
+  assert(state.reopened);
+  assert.equal(state.hallwayPeople, 0);
+  assert.equal(await page.evaluate(() => finished), true);
+  await io.shot('fully-open-nobody-there');
+  // Shared runner verifies Retry returns to the untouched ready state.
+};

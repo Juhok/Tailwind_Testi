@@ -1,0 +1,1 @@
+module.exports=async(page,io,a)=>{await io.drag([150,144],[300,144]);a.equal((await io.state()).phase,0);await io.down(352,142);await io.move(315,142);await io.wait(160);await io.shot('during');await io.move(280,142);await io.up();a.equal((await io.state()).phase,1);await io.drag([352,142],[160,144]);await io.until(s=>s.done);};

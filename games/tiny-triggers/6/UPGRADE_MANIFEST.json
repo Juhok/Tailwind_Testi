@@ -1,0 +1,666 @@
+[
+  {
+    "index": 0,
+    "id": "banana",
+    "title": "Peel by peel",
+    "description": "Peel the banana upward from its blossom end, leaving the stem alone.",
+    "hint": "Pull the dark bottom tip up toward the stem",
+    "verdict": "One long peel. The other end."
+  },
+  {
+    "index": 1,
+    "id": "roll",
+    "title": "Against the wall",
+    "description": "Turn the roll so its loose end hangs behind it, then hang it.",
+    "hint": "Turn the roll: paper behind, not in front → Hang the roll with the paper at the wall",
+    "verdict": "Under. Not over. You have chosen a side."
+  },
+  {
+    "index": 2,
+    "id": "chocolate",
+    "title": "Off the grid",
+    "description": "Snap across a chocolate square instead of along the grooves.",
+    "hint": "Bend the lower-right square away from the grooves",
+    "verdict": "There were lines. You chose not to use them."
+  },
+  {
+    "index": 3,
+    "id": "legacy-3",
+    "title": "A fair share",
+    "description": "Draw two unfair cuts.",
+    "hint": "Draw two lines across the pizza in any direction. Avoid the center so the portions are unequal.",
+    "verdict": "Somebody gets the tiny slice. Somebody remembers."
+  },
+  {
+    "index": 4,
+    "id": "legacy-4",
+    "title": "Milk comes first",
+    "description": "Pour milk into the empty bowl. Only then add the cereal.",
+    "hint": "Hold the milk carton above the bowl for two seconds. Watch it tilt and fill the bowl; then add cereal.",
+    "verdict": "Breakfast, in the incorrect order."
+  },
+  {
+    "index": 5,
+    "id": "burger",
+    "title": "Bottom goes on top",
+    "description": "Lift the bottom bun directly onto the top of the burger.",
+    "hint": "Lift the bottom bun onto the top in one move",
+    "verdict": "All top. No bottom. Plenty of sauce."
+  },
+  {
+    "index": 6,
+    "id": "legacy-6",
+    "title": "Just a taste",
+    "description": "Take one bite out of every doughnut. Leave the rest.",
+    "hint": "Drag each doughnut to the mouth. It returns, slightly worse.",
+    "verdict": "A selection box nobody else wants."
+  },
+  {
+    "index": 7,
+    "id": "legacy-7",
+    "title": "Enough for someone",
+    "description": "Pour almost all the milk, then put the nearly empty carton back.",
+    "hint": "Hold the carton above the glass until its milk window is nearly empty, then drag it onto the fridge shelf.",
+    "verdict": "One teaspoon. Infinite disappointment."
+  },
+  {
+    "index": 8,
+    "id": "legacy-8",
+    "title": "Gallery standards",
+    "description": "Pull the right corner of the middle picture down.",
+    "hint": "Grab the small brass corner and lower it a little.",
+    "verdict": "The other two frames are judging you."
+  },
+  {
+    "index": 9,
+    "id": "legacy-9",
+    "title": "One small renovation",
+    "description": "Turn just the center floor tile a quarter turn.",
+    "hint": "Pull its top-right corner down to rotate the tile.",
+    "verdict": "Now you will always notice it."
+  },
+  {
+    "index": 10,
+    "id": "legacy-10",
+    "title": "Nearly there",
+    "description": "Drag the loading slider to 99%. Leave it there.",
+    "hint": "Move the handle almost all the way right. It snaps to 99 near the end.",
+    "verdict": "Loading complete. Emotionally incomplete."
+  },
+  {
+    "index": 11,
+    "id": "legacy-11",
+    "title": "Wait for it",
+    "description": "Arrange the countdown: 3, 2, 2, 1.",
+    "hint": "Drag the four number cards into their matching outlined slots.",
+    "verdict": "Three… two… two… one."
+  },
+  {
+    "index": 12,
+    "id": "legacy-12",
+    "title": "Close enough",
+    "description": "Try the last puzzle piece. Then leave it slightly misaligned.",
+    "hint": "Drag the loose piece to the bottom-left gap. It almost fits.",
+    "verdict": "It looked so promising."
+  },
+  {
+    "index": 13,
+    "id": "legacy-13",
+    "title": "A sensible volume",
+    "description": "Set the volume to 49 or 51.",
+    "hint": "Drag near the middle to 49 or 51. The slider still skips zero and every multiple of five.",
+    "verdict": "A perfectly unreasonable volume."
+  },
+  {
+    "index": 14,
+    "id": "legacy-14",
+    "title": "Shut enough",
+    "description": "Slide the drawer almost closed. Leave a little gap.",
+    "hint": "Side view: push the drawer handle left toward the cabinet. It stops just short of flush.",
+    "verdict": "That is going to bother someone all afternoon."
+  },
+  {
+    "index": 15,
+    "id": "legacy-15",
+    "title": "The last corner",
+    "description": "Stretch the fitted sheet onto all four corners.",
+    "hint": "Pull the four pink fabric corners onto the gold mattress corners. The last one makes the opposite corner spring loose.",
+    "verdict": "Four corners tried. Only three willing to cooperate."
+  },
+  {
+    "index": 16,
+    "id": "legacy-16",
+    "title": "One last thing",
+    "description": "Send “one last thing” three times before leaving.",
+    "hint": "Drag each new speech bubble to the patient listener on the right.",
+    "verdict": "The meeting could have been an email. Three emails."
+  },
+  {
+    "index": 17,
+    "id": "legacy-17",
+    "title": "An inviting handle",
+    "description": "Pull the inviting handle. Then push the PUSH door.",
+    "hint": "Pull the handle toward you (drag down), then push into the doorway (drag up).",
+    "verdict": "Excellent handle. Terrible instructions."
+  },
+  {
+    "index": 18,
+    "id": "butter",
+    "title": "Excavation rights",
+    "description": "Butter: dig a hole in the middle instead of shaving off an even slice.",
+    "hint": "Dig into the middle",
+    "verdict": "A butter quarry. How practical."
+  },
+  {
+    "index": 19,
+    "id": "books",
+    "title": "Shelf confidence",
+    "description": "Bookshelf: leave one book upside down and another sticking out.",
+    "hint": "Turn one book over → Leave its neighbour sticking out",
+    "verdict": "A shelf with two opinions."
+  },
+  {
+    "index": 20,
+    "id": "socks",
+    "title": "Pairing is subjective",
+    "description": "Socks: deliberately match the wrong pairs.",
+    "hint": "Choose a sock → Find its wrong partner",
+    "verdict": "Close enough. From different feet."
+  },
+  {
+    "index": 21,
+    "id": "usb",
+    "title": "Third time never",
+    "description": "USB connector: try it upside down, flip it, then try it the wrong way again.",
+    "hint": "Try the connector → Flip it over → Try again",
+    "verdict": "Both sides were wrong. Obviously."
+  },
+  {
+    "index": 22,
+    "id": "sticker",
+    "title": "Proof of purchase",
+    "description": "Price sticker: peel it off while leaving a small paper strip in the middle.",
+    "hint": "Peel from the left → Peel from the right",
+    "verdict": "The price is gone. The evidence remains."
+  },
+  {
+    "index": 23,
+    "id": "crumb",
+    "title": "A clean sweep, almost",
+    "description": "Dust pile: sweep everything away except one tiny crumb.",
+    "hint": "Sweep the large pile → Sweep the rest, mostly",
+    "verdict": "One crumb. A whole unfinished job."
+  },
+  {
+    "index": 24,
+    "id": "cake",
+    "title": "The first piece",
+    "description": "Cake: cut the first piece out of the middle.",
+    "hint": "Cut a square from the center → Take the middle piece",
+    "verdict": "Every edge piece is now a problem."
+  },
+  {
+    "index": 25,
+    "id": "carton",
+    "title": "The other spout",
+    "description": "Milk carton: tear open the pouring spout from the wrong side.",
+    "hint": "Open the sealed side",
+    "verdict": "Now it pours in several directions."
+  },
+  {
+    "index": 26,
+    "id": "sandwich",
+    "title": "Coverage optional",
+    "description": "Sandwich: place the cheese so that the center stays bare and the edges overhang.",
+    "hint": "Cheese on one edge → Cheese on the other edge",
+    "verdict": "The bread in the middle is on its own."
+  },
+  {
+    "index": 27,
+    "id": "spaghetti",
+    "title": "Short pasta, long argument",
+    "description": "Spaghetti: snap the dry strands just before putting them in the pot.",
+    "hint": "Snap the bundle → Into the pot",
+    "verdict": "It fits. That is not the point."
+  },
+  {
+    "index": 28,
+    "id": "cookie",
+    "title": "One second too long",
+    "description": "Cookie: dunk it in tea until the last piece breaks off and sinks.",
+    "hint": "Hold it in the tea",
+    "verdict": "Tea with a surprise at the bottom."
+  },
+  {
+    "index": 29,
+    "id": "icecream",
+    "title": "Living on the edge",
+    "description": "Ice cream: press the scoop crookedly onto the edge of the cone.",
+    "hint": "Press the scoop onto the rim",
+    "verdict": "Structurally questionable. Delicious."
+  },
+  {
+    "index": 30,
+    "id": "yogurt",
+    "title": "Lid confetti",
+    "description": "Yogurt pot: tear the lid into narrow strips, leaving some attached to the rim.",
+    "hint": "Tear one narrow strip → Another narrow strip → Leave the rim attached",
+    "verdict": "A spoon obstacle course."
+  },
+  {
+    "index": 31,
+    "id": "ketchup",
+    "title": "Shake? Never",
+    "description": "Ketchup: squeeze the watery first squirt straight onto the fries.",
+    "hint": "Hold and squeeze, unshaken",
+    "verdict": "Tomato-flavoured water. The premium topping."
+  },
+  {
+    "index": 32,
+    "id": "straw",
+    "title": "The disappearing straw",
+    "description": "Straw: push it so far into the juice carton that it falls completely inside.",
+    "hint": "Push past the little hole",
+    "verdict": "Your drink now contains its own equipment."
+  },
+  {
+    "index": 33,
+    "id": "ice",
+    "title": "The chosen cube",
+    "description": "Ice tray: release every cube except the one you are trying to get.",
+    "hint": "Free a cube → Not the chosen one → Another wrong cube → Leave the gold-marked cube",
+    "verdict": "The one you wanted has chosen to stay."
+  },
+  {
+    "index": 34,
+    "id": "cupboard",
+    "title": "Order matters",
+    "description": "Cupboard doors: close them in the wrong order so one remains ajar.",
+    "hint": "Close the overlapping door first → Now close the other one",
+    "verdict": "They disagree on who goes first."
+  },
+  {
+    "index": 35,
+    "id": "pump",
+    "title": "Wall care routine",
+    "description": "Pump bottle: turn the nozzle to point straight at the wall.",
+    "hint": "Turn the nozzle toward the wall",
+    "verdict": "Moisturised plaster. Excellent."
+  },
+  {
+    "index": 36,
+    "id": "toothpaste",
+    "title": "Middle management",
+    "description": "Toothpaste: squeeze the middle of the tube and leave the cap crooked.",
+    "hint": "Squeeze from the middle → Put the cap back, almost",
+    "verdict": "A tube with a waist and a bad hat."
+  },
+  {
+    "index": 37,
+    "id": "towel",
+    "title": "Beside the dotted line",
+    "description": "Paper towel: tear a sheet just beside the perforation.",
+    "hint": "Tear beside the perforation",
+    "verdict": "The dotted line was only a suggestion."
+  },
+  {
+    "index": 38,
+    "id": "watering",
+    "title": "Missed the saucer",
+    "description": "Watering can: pour the final splash just outside the plant saucer.",
+    "hint": "Aim the last splash beside the pot",
+    "verdict": "The table was thirsty too."
+  },
+  {
+    "index": 39,
+    "id": "laundry",
+    "title": "One sleeve short",
+    "description": "Laundry: turn one shirt sleeve inside out just before folding.",
+    "hint": "Pull the sleeve inside → Fold with the sleeve still inside",
+    "verdict": "A small surprise for tomorrow."
+  },
+  {
+    "index": 40,
+    "id": "laces",
+    "title": "Unequal partnership",
+    "description": "Shoelaces: tie a bow with one enormous loop and one tiny loop.",
+    "hint": "Pull one loop much larger → Tuck the other loop small",
+    "verdict": "One loop for each level of enthusiasm."
+  },
+  {
+    "index": 41,
+    "id": "zip",
+    "title": "Fabric snack",
+    "description": "Zipper: zip it up while catching a small piece of fabric in it.",
+    "hint": "Zip up into the loose fabric",
+    "verdict": "The zipper has eaten."
+  },
+  {
+    "index": 42,
+    "id": "blinds",
+    "title": "One dissenting slat",
+    "description": "Blinds: turn one slat in the opposite direction to all the others.",
+    "hint": "Turn just this slat",
+    "verdict": "Sunlight with a personal grudge."
+  },
+  {
+    "index": 43,
+    "id": "film",
+    "title": "Dead center",
+    "description": "Screen protector: smooth away every air bubble except one exactly in the center.",
+    "hint": "Smooth a bubble to the edge → Another bubble out → Almost flawless → Leave the very center alone",
+    "verdict": "Your thumb will find it forever."
+  },
+  {
+    "index": 44,
+    "id": "battery",
+    "title": "Positive thinking",
+    "description": "Batteries: insert the last battery backwards and close the cover.",
+    "hint": "Turn the last battery around → Insert it backwards → Close the cover",
+    "verdict": "All charged up. Going nowhere."
+  },
+  {
+    "index": 45,
+    "id": "headphones",
+    "title": "Tethered listening",
+    "description": "Headphones: thread the cable around a chair leg before lifting the headphones.",
+    "hint": "Loop the cable around the chair leg → Lift the headphones",
+    "verdict": "The chair is coming with you."
+  },
+  {
+    "index": 46,
+    "id": "mousecord",
+    "title": "Out of reach",
+    "description": "Mouse cable: pull it so tight that the mouse cannot reach the screen edge.",
+    "hint": "Stretch the cable toward the edge",
+    "verdict": "The last few pixels are a luxury."
+  },
+  {
+    "index": 47,
+    "id": "printer",
+    "title": "Landscape surprise",
+    "description": "Printer paper: put one sideways sheet into the stack.",
+    "hint": "Turn one sheet sideways → Into the paper stack",
+    "verdict": "The printer will have opinions."
+  },
+  {
+    "index": 48,
+    "id": "stapler",
+    "title": "Wrong corner, missing page",
+    "description": "Stapler: staple the wrong corner of the stack and leave one sheet out.",
+    "hint": "Leave one sheet aside → Staple the bottom-right corner",
+    "verdict": "Almost a complete document."
+  },
+  {
+    "index": 49,
+    "id": "wrapping",
+    "title": "A centimetre short",
+    "description": "Wrapping paper: cut a piece just a centimetre too short.",
+    "hint": "Cut just before the far edge",
+    "verdict": "There is always the other side. Also short."
+  },
+  {
+    "index": 50,
+    "id": "tape",
+    "title": "Where did it go?",
+    "description": "Tape roll: press the loose end perfectly flat so it cannot be found again.",
+    "hint": "Flatten the loose end",
+    "verdict": "Future you will enjoy this."
+  },
+  {
+    "index": 51,
+    "id": "pencap",
+    "title": "Before the click",
+    "description": "Pen cap: push it almost shut, stopping just before it clicks.",
+    "hint": "Stop just before the click",
+    "verdict": "Secure enough. Probably not."
+  },
+  {
+    "index": 52,
+    "id": "dishes",
+    "title": "Some of the dishes",
+    "description": "Put only some of the dirty dishes into the dishwasher.",
+    "hint": "Load one plate → Load another → Close it. Leave the last plate out",
+    "verdict": "A partial solution to a full sink."
+  },
+  {
+    "index": 53,
+    "id": "fuel",
+    "title": "Half a tank of effort",
+    "description": "Fill the car with only half a tank of fuel.",
+    "hint": "Hold the nozzle until the gauge reaches half",
+    "verdict": "Enough to put the problem off."
+  },
+  {
+    "index": 54,
+    "id": "coffee",
+    "title": "To the very brim",
+    "description": "Coffee cup: fill it so full that moving it always spills a little.",
+    "hint": "Fill right to the brim → Move the overflowing cup",
+    "verdict": "The saucer is now part of the drink."
+  },
+  {
+    "index": 55,
+    "id": "filleddonut",
+    "title": "Filling first",
+    "description": "Filled doughnut: squeeze out the filling before taking the first bite.",
+    "hint": "Squeeze before biting",
+    "verdict": "The filling has left the building."
+  },
+  {
+    "index": 56,
+    "id": "mandarin",
+    "title": "One thread each",
+    "description": "Mandarin: leave one white thread on every segment.",
+    "hint": "Remove most of the pith → Leave one white thread → One on this segment too → A thread on every segment",
+    "verdict": "Individually wrapped in tiny annoyances."
+  },
+  {
+    "index": 57,
+    "id": "cucumber",
+    "title": "No consistent thickness",
+    "description": "Cucumber: alternate paper-thin and enormous slices.",
+    "hint": "A paper-thin slice → An enormous slice → Thin again → And absurdly thick",
+    "verdict": "A salad with pacing problems."
+  },
+  {
+    "index": 58,
+    "id": "toast",
+    "title": "Jam, then cold butter",
+    "description": "Toast: spread jam first, then try spreading cold butter on top.",
+    "hint": "Jam goes first → Spread cold butter on the jam",
+    "verdict": "Marbled with regret."
+  },
+  {
+    "index": 59,
+    "id": "cheesepack",
+    "title": "No longer resealable",
+    "description": "Cheese pack: tear the resealable seam so it no longer works.",
+    "hint": "Tear across the reusable seal",
+    "verdict": "Resealable was a temporary feature."
+  },
+  {
+    "index": 60,
+    "id": "crisps",
+    "title": "Crumbs on top",
+    "description": "Crisp bag: open it from the bottom and pour the crumbs on top.",
+    "hint": "Open the bottom seam → Pour crumbs on top",
+    "verdict": "The smallest crisps get priority."
+  },
+  {
+    "index": 61,
+    "id": "teabag",
+    "title": "Tag included",
+    "description": "Teabag: let go of the string so the paper tag sinks into the cup too.",
+    "hint": "Let the tag fall in",
+    "verdict": "Now with extra paper flavour."
+  },
+  {
+    "index": 62,
+    "id": "shakers",
+    "title": "Labels are suggestions",
+    "description": "Salt and pepper: fill the shakers with the opposite contents from their labels.",
+    "hint": "Pepper into S → Salt into P",
+    "verdict": "Seasoning is now a guessing game."
+  },
+  {
+    "index": 63,
+    "id": "soap",
+    "title": "Wrapper reunited",
+    "description": "Soap: press the wet bar into its paper wrapper.",
+    "hint": "Press wet soap into paper",
+    "verdict": "A packaging reunion nobody needed."
+  },
+  {
+    "index": 64,
+    "id": "curtain",
+    "title": "Outside the tub",
+    "description": "Shower curtain: close it on the outside of the bathtub.",
+    "hint": "Pull the curtain outside the rim",
+    "verdict": "A shower for the whole bathroom."
+  },
+  {
+    "index": 65,
+    "id": "sponge",
+    "title": "Let it soak",
+    "description": "Dish sponge: leave it floating in dirty water after washing.",
+    "hint": "Leave the sponge in dirty water",
+    "verdict": "Freshly cleaned. Immediately reconsidered."
+  },
+  {
+    "index": 66,
+    "id": "floor",
+    "title": "Final footsteps",
+    "description": "Floor cleaning: mop the floor, then walk across the wet area.",
+    "hint": "Mop the whole patch → Walk across the wet floor",
+    "verdict": "Signed by the cleaner."
+  },
+  {
+    "index": 67,
+    "id": "bin",
+    "title": "Beside the bag",
+    "description": "Bin bag: drop rubbish between the bag and the bin.",
+    "hint": "Drop it beside the liner",
+    "verdict": "In the bin. Technically."
+  },
+  {
+    "index": 68,
+    "id": "hanger",
+    "title": "Through the neck",
+    "description": "Hanger: stretch the shirt neckline to push the hanger through it.",
+    "hint": "Push through the neck opening",
+    "verdict": "A little more room to breathe."
+  },
+  {
+    "index": 69,
+    "id": "glove",
+    "title": "Missing little finger",
+    "description": "Glove: push its little finger inside the rest of the glove.",
+    "hint": "Tuck the little finger inside",
+    "verdict": "Four fingers ready. One hiding."
+  },
+  {
+    "index": 70,
+    "id": "cushion",
+    "title": "Zip side forward",
+    "description": "Sofa cushion: put it down with the zipper clearly facing forward.",
+    "hint": "Turn the zip to the front → Place it zip-side forward",
+    "verdict": "The least comfortable side gets the spotlight."
+  },
+  {
+    "index": 71,
+    "id": "candle",
+    "title": "A wax tunnel",
+    "description": "Candle: extinguish it just as a deep hollow forms in the middle.",
+    "hint": "Wait for the central wax tunnel → Snuff the flame",
+    "verdict": "A candle with a very narrow ambition."
+  },
+  {
+    "index": 72,
+    "id": "suitcase",
+    "title": "Sleeve included outside",
+    "description": "Suitcase: close it with a shirt sleeve hanging outside.",
+    "hint": "Leave a sleeve hanging out → Close over the sleeve",
+    "verdict": "Your luggage is waving goodbye."
+  },
+  {
+    "index": 73,
+    "id": "dogear",
+    "title": "Bookmark ignored",
+    "description": "Book: fold a large dog-ear in the page even though a bookmark is beside it.",
+    "hint": "Fold a large page corner",
+    "verdict": "The bookmark watched the whole thing."
+  },
+  {
+    "index": 74,
+    "id": "notebook",
+    "title": "Spiral confetti",
+    "description": "Spiral notebook: tear out a page, leaving paper fringe around the spiral.",
+    "hint": "Pull the page off the spiral",
+    "verdict": "A notebook with a paper moustache."
+  },
+  {
+    "index": 75,
+    "id": "pencil",
+    "title": "A perfect point, briefly",
+    "description": "Pencil: sharpen a perfect tip and immediately snap it against the paper.",
+    "hint": "Sharpen the point → Press it into the paper",
+    "verdict": "Perfection was nice while it lasted."
+  },
+  {
+    "index": 76,
+    "id": "plaster",
+    "title": "Sticky sides together",
+    "description": "Plaster: fold the adhesive sides together and press them firmly.",
+    "hint": "Fold sticky sides together → Press it firmly",
+    "verdict": "A bandage for itself."
+  },
+  {
+    "index": 77,
+    "id": "envelope",
+    "title": "Sealed too soon",
+    "description": "Envelope: close and seal it before putting the letter inside.",
+    "hint": "Close the empty envelope → Seal it before adding the letter",
+    "verdict": "The letter can admire it from outside."
+  },
+  {
+    "index": 78,
+    "id": "cards",
+    "title": "One face up",
+    "description": "Card deck: shuffle one face-up card among the face-down cards.",
+    "hint": "Turn one card face up → Slide it into the deck",
+    "verdict": "A very small spoiler."
+  },
+  {
+    "index": 79,
+    "id": "chess",
+    "title": "Black on the right",
+    "description": "Chessboard: turn it so the bottom-right square is black.",
+    "hint": "Turn the board a quarter turn",
+    "verdict": "White on the right? Not tonight."
+  },
+  {
+    "index": 80,
+    "id": "boardgame",
+    "title": "One piece in the lid",
+    "description": "Board game: pack everything away, but leave one piece caught under the lid.",
+    "hint": "Put the first piece inside → Leave one on the rim → Close the lid over it",
+    "verdict": "It almost stacks neatly."
+  },
+  {
+    "index": 81,
+    "id": "cube",
+    "title": "One last turn",
+    "description": "Rubik’s cube: solve it, then turn one face once.",
+    "hint": "Finish the solve → Now turn one face again",
+    "verdict": "Solved, in the past tense."
+  },
+  {
+    "index": 82,
+    "id": "domino",
+    "title": "A gap in the plan",
+    "description": "Domino row: pull one tile just too far away, then start the chain.",
+    "hint": "Move one tile out of reach → Start the chain",
+    "verdict": "A chain reaction with a disappointing ending."
+  }
+]

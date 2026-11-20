@@ -1,0 +1,16 @@
+{
+  "name": "tiny-triggers-v6-checks",
+  "private": true,
+  "scripts": {
+    "test": "node all.cjs",
+    "test:upgrade": "node upgrade.cjs",
+    "test:shell": "node shell.cjs",
+    "test:list": "node all.cjs --list",
+    "test:new": "node new.cjs",
+    "test:touch": "MOBILE=1 node new.cjs",
+    "test:touch:upgrade": "MOBILE=1 node upgrade.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}

@@ -1,0 +1,46 @@
+'use strict';
+module.exports = async function (page, io, assert) {
+  let state = await io.state();
+  assert.equal(state.phase, 'walking');
+  assert.equal(state.wetProgress, 0);
+  assert.equal(state.puddleCount, 1);
+  await io.click(316, 135); // Clicking the water is not a socked step.
+  assert.equal((await io.state()).wetProgress, 0);
+  await io.down(126, 205);
+  await io.move(171, 197);
+  state = await io.state();
+  assert(state.dragging && state.lifted && state.foot.x > 160 && state.foot.x < 190);
+  assert.equal(state.wetProgress, 0);
+  await io.shot('dry-mid-step');
+  await io.move(202, 198);
+  await io.up();
+  state = await io.state();
+  assert.equal(state.phase, 'walking');
+  assert.equal(state.steps, 1);
+  assert.equal(state.wetProgress, 0, 'A step on dry tiles keeps the sock dry');
+  await io.down(202, 198);
+  await io.move(302, 163);
+  state = await io.state();
+  assert.equal(state.wetProgress, 0, 'The foot must be planted, not merely held over the puddle');
+  assert(state.lifted);
+  await io.up();
+  await io.until((s) => s.phase === 'wicking' && s.wetProgress > 0.1 && s.wetProgress < 0.5);
+  state = await io.state();
+  assert.equal(state.steps, 2);
+  assert(!state.lifted);
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.shot('water-contact');
+  const earlyArea = state.wetArea;
+  await io.until((s) => s.phase === 'wicking' && s.wetProgress > 0.7);
+  assert((await io.state()).wetArea > earlyArea * 2, 'A dark patch must spread through the sock gradually');
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.shot('wicking-patch');
+  await io.until((s) => s.phase === 'done');
+  state = await io.state();
+  assert.equal(state.wetProgress, 1);
+  assert(state.elapsed >= 3);
+  assert.equal(state.puddleCount, 1);
+  assert.equal(await page.evaluate(() => finished), true);
+  await io.shot('wet-sock');
+  // The shared runner verifies Retry restores the fresh dry sock and entrance.
+};
