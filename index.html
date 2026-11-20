@@ -1,8 +1,9 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PixelVibe Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
@@ -38,6 +39,30 @@
           Welcome to our game lab. Here we create playable game builds, publish every increment, and share the story of development.
           Whether you love games, want to explore healthy habits, or want to test your knowledge about game development and AI, there is something here for you.
         </p>
+
+        <section class="mb-10 grid gap-6 md:grid-cols-2" aria-label="Featured games">
+          <article class="flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-slate-50 shadow-sm dark:border-slate-700 dark:bg-slate-800">
+            <div class="flex-1 p-5 sm:p-6">
+              <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                <h3 class="text-2xl font-semibold text-gray-900 sm:text-3xl dark:text-white">Orbital Oddity</h3>
+                <a href="games.html#orbital-oddity" aria-label="View Orbital Oddity releases" data-play-label="Play Orbital Oddity" class="inline-flex items-center justify-center rounded-full bg-indigo-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-500">Releases</a>
+              </div>
+              <p class="mt-2 text-gray-600 dark:text-slate-300">Drive a rover around miniature planets, collect glowing pickups, and dodge falling asteroids.</p>
+            </div>
+            <img src="img/orbital-oddity-preview.webp" alt="A rover on a green planet surrounded by satellites and glowing pickups in Orbital Oddity" width="1120" height="630" class="aspect-video w-full bg-slate-950 object-cover" />
+          </article>
+
+          <article class="flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-slate-50 shadow-sm dark:border-slate-700 dark:bg-slate-800">
+            <div class="flex-1 p-5 sm:p-6">
+              <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                <h3 class="text-2xl font-semibold text-gray-900 sm:text-3xl dark:text-white">Tiny Triggers</h3>
+                <a href="games.html#tiny-triggers" aria-label="View Tiny Triggers releases" data-play-label="Play Tiny Triggers" class="inline-flex items-center justify-center rounded-full bg-indigo-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-500">Releases</a>
+              </div>
+              <p class="mt-2 text-gray-600 dark:text-slate-300">Play through life's tiny annoyances, one hands-on pixel-art puzzle at a time.</p>
+            </div>
+            <img src="img/tiny-triggers-preview.webp" alt="A lighthouse jigsaw with one piece left to fit in Tiny Triggers" width="960" height="540" class="aspect-video w-full bg-slate-950 object-cover" />
+          </article>
+        </section>
 
         <div class="grid gap-6 md:grid-cols-3">
           <div class="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden dark:bg-slate-800 dark:border-slate-700">
@@ -77,20 +102,6 @@
           </div>
         </div>
 
-        <div class="mt-8 rounded-xl border border-gray-200 bg-slate-50 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800/70">
-          <div class="flex flex-col gap-6 md:flex-row md:items-center">
-            <div class="flex-1">
-              <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">This is the game we are developing</h3>
-              <p class="mt-2 text-gray-600 dark:text-slate-300">Orbital Oddity Mobile is our current project — a touch-friendly space adventure that is still being shaped and improved.</p>
-              <p class="mt-3 text-sm font-medium text-gray-500 dark:text-slate-400">Previewing two moods of the game: overkill level 100 and calm level 1.</p>
-              <a href="games.html" class="mt-4 inline-flex items-center justify-center rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-500">Go to the Games Page</a>
-            </div>
-            <div class="w-full max-w-md overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
-              <img id="orbital-preview" src="img/brave_UmXp6UUIdv.gif" alt="Orbital Oddity Mobile placeholder animation" class="h-64 w-full object-cover" />
-            </div>
-          </div>
-        </div>
-
         <div class="mt-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800/70">
           <div class="flex flex-col gap-6 md:flex-row md:items-center">
             <div class="w-full max-w-md overflow-hidden rounded-xl border border-gray-200 bg-slate-50 shadow-sm dark:border-slate-700 dark:bg-slate-900">
@@ -105,17 +116,35 @@
         </div>
 
         <script>
-          const orbitalPreview = document.getElementById('orbital-preview');
-          const orbitalFrames = [
-            'img/brave_UmXp6UUIdv.gif',
-            'img/brave_LdcFNcNX0S.gif'
-          ];
-          let orbitalFrameIndex = 0;
+          async function linkLatestReleases() {
+            const response = await fetch('games.html', { cache: 'no-cache' });
+            if (!response.ok) return;
 
-          setInterval(() => {
-            orbitalFrameIndex = (orbitalFrameIndex + 1) % orbitalFrames.length;
-            orbitalPreview.src = orbitalFrames[orbitalFrameIndex];
-          }, 2500);
+            const gamesPage = new DOMParser().parseFromString(await response.text(), 'text/html');
+            for (const link of document.querySelectorAll('[data-play-label]')) {
+              const section = gamesPage.getElementById(link.hash.slice(1));
+              const releases = section?.querySelectorAll('article a[href]') ?? [];
+              let latestPath;
+              let latestVersion = 0;
+              for (const release of releases) {
+                const path = release.getAttribute('href');
+                const version = Number(path.match(/\/(\d+)\/index\.html$/)?.[1]);
+                if (version > latestVersion) {
+                  latestPath = path;
+                  latestVersion = version;
+                }
+              }
+              if (!latestPath) continue;
+
+              link.href = new URL(latestPath, response.url);
+              link.textContent = 'Play';
+              link.setAttribute('aria-label', link.dataset.playLabel);
+            }
+          }
+
+          linkLatestReleases().catch(() => {
+            // The original links still open each game's release list.
+          });
         </script>
       </div>
     </main>
