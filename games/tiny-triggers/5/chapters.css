@@ -106,3 +106,7 @@
 @media (prefers-reduced-motion: reduce) {
   .chapter-collection { scroll-behavior: auto; }
 }
+
+#collection-grouping { margin-bottom: 12px; }
+#scene-list .collection-basic-list { grid-template-columns: minmax(0, 1fr); list-style: none; margin: 0; padding: 0; }
+.collection-basic-list button { width: 100%; }

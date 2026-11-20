@@ -154,6 +154,8 @@ for (const t of NEW_TASKS) {
 }
 const SCENE_COUNT = scenes.length;
 const chapterBook = TinyChapters.create(scenes, TASKS);
+let collectionGrouped = true;
+try { collectionGrouped = localStorage.getItem("tinyTriggers.v5.collectionGrouped") !== "false"; } catch {}
 let collectionUnlocked = false;
 try { collectionUnlocked = localStorage.getItem("tinyTriggers.v5.collectionUnlocked") === "true"; } catch {}
 let completed = new Set(),
@@ -1180,7 +1182,10 @@ $("#sound").onclick = () => {
 function collection() {
   if (!collectionUnlocked && completed.size < SCENE_COUNT) return;
   active = false;
+  $("#collection-grouping").setAttribute("aria-pressed", String(collectionGrouped));
+  $("#collection-grouping").textContent = `Group by chapter: ${collectionGrouped ? "on" : "off"}`;
   chapterBook.renderCollection($("#scene-list"), {
+    grouped: collectionGrouped,
     completed,
     unlocked: collectionUnlocked,
     current: index,
@@ -1190,8 +1195,14 @@ function collection() {
       beginTransition(i);
     },
   });
-  $("#collection").showModal();
+  $("#scene-list").scrollTop = 0;
+  if (!$("#collection").open) $("#collection").showModal();
 }
+$("#collection-grouping").onclick = () => {
+  collectionGrouped = !collectionGrouped;
+  try { localStorage.setItem("tinyTriggers.v5.collectionGrouped", String(collectionGrouped)); } catch {}
+  collection();
+};
 $("#unlock-collection").onclick = () => {
   if (transition) return;
   if (collectionUnlocked || completed.size === SCENE_COUNT) return collection();

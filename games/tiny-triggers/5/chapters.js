@@ -68,7 +68,7 @@ const TinyChapters = (() => {
       return { completed, index, frontier };
     };
 
-    function renderCollection(container, { completed, current, onChoose, unlocked = false }) {
+    function renderCollection(container, { completed, current, onChoose, unlocked = false, grouped = true }) {
       container.replaceChildren();
       if (!unlocked && !isUnlocked(completed)) {
         const note = document.createElement("p");
@@ -78,6 +78,27 @@ const TinyChapters = (() => {
         return false;
       }
       container.classList.add("chapter-collection");
+      function sceneButton(index) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dataset.scene = String(index);
+        button.textContent = `${String(position.get(index) + 1).padStart(2, "0")} · ${scenes[index][0]}`;
+        if (index === current) button.setAttribute("aria-current", "true");
+        button.addEventListener("click", () => onChoose(index));
+        return button;
+      }
+      if (!grouped) {
+        const list = document.createElement("ol");
+        list.className = "chapter-scenes collection-basic-list";
+        list.setAttribute("aria-label", "All scenes");
+        for (const index of order) {
+          const item = document.createElement("li");
+          item.append(sceneButton(index));
+          list.append(item);
+        }
+        container.append(list);
+        return true;
+      }
       const nav = document.createElement("nav");
       nav.className = "chapter-nav";
       nav.setAttribute("aria-label", "Collection chapters");
@@ -110,13 +131,7 @@ const TinyChapters = (() => {
         const grid = document.createElement("div");
         grid.className = "chapter-scenes";
         for (const index of chapter.indices) {
-          const button = document.createElement("button");
-          button.type = "button";
-          button.dataset.scene = String(index);
-          button.textContent = `${String(position.get(index) + 1).padStart(2, "0")} · ${scenes[index][0]}`;
-          if (index === current) button.setAttribute("aria-current", "true");
-          button.addEventListener("click", () => onChoose(index));
-          grid.append(button);
+          grid.append(sceneButton(index));
         }
         section.append(heading, note, grid);
         container.append(section);
