@@ -1,0 +1,13 @@
+{
+  "name": "tiny-triggers-v4-checks",
+  "private": true,
+  "scripts": {
+    "test": "node all.cjs",
+    "test:batch": "node batch.cjs",
+    "test:shell": "node shell.cjs",
+    "test:list": "node all.cjs --list"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}
