@@ -1,0 +1,209 @@
+[
+  {
+    "number": 137,
+    "id": "one-hp",
+    "title": "One HP Too Many",
+    "spec": "Get an enemy down to exactly one health point. Your next attack is almost ready—but the enemy lands its final hit first.",
+    "chapter": "games",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 140,
+    "id": "stolen-firewood",
+    "title": "Someone Got There First",
+    "spec": "Run toward the last piece of quest firewood. Just before your collection bar finishes, another player picks it up and it disappears.",
+    "chapter": "games",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 143,
+    "id": "merge-conflicts",
+    "title": "The Merge Conflict Surprise",
+    "spec": "Finish a major coding task and try to push it. The push is rejected. Pull the latest changes and discover merge conflicts throughout your carefully finished work.",
+    "chapter": "digital",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 146,
+    "id": "wasp-door",
+    "title": "The Wasp Beside the Open Door",
+    "spec": "Open the door wide to let a wasp out. It repeatedly bumps into the closed glass panel immediately beside the enormous opening.",
+    "chapter": "uninvited",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 149,
+    "id": "roadworks",
+    "title": "Roadworks on Every Route",
+    "spec": "Follow a diversion around roadworks. Turn onto the alternative route and find another road closure. The next detour leads to temporary traffic lights.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 152,
+    "id": "radio-song",
+    "title": "The Song on Every Station",
+    "spec": "Change the radio station to escape an irritating song. The next station is playing it too. Switch again and land on the chorus.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 155,
+    "id": "squeaky-chair",
+    "title": "The Squeaky Chair",
+    "spec": "Sit down in a quiet room. The chair squeaks whenever you shift your weight. Try to find a comfortable position that makes no noise.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 158,
+    "id": "renovation",
+    "title": "The Renovation Holiday",
+    "spec": "Begin your holiday and settle in for a peaceful morning. Drilling starts next door at eight. The clock advances through eight hours of renovation noise.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 161,
+    "id": "festival-queue",
+    "title": "The Festival Toilet Queue",
+    "spec": "Join a long toilet queue. After slowly reaching the corner, discover that the line continues around it and stretches much farther than you thought.",
+    "chapter": "waiting",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 164,
+    "id": "black-sweets",
+    "title": "Only the Black Sweets Left",
+    "spec": "Share a bag of sweets with a friend. Reach for your favorite color, but they take the last one. Only the black sweets remain.",
+    "chapter": "snacks",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 167,
+    "id": "waiting-room",
+    "title": "Rush to Wait",
+    "spec": "Hurry to a medical appointment and arrive just in time. Sit down in the waiting room. The clock advances forty minutes while your name remains uncalled.",
+    "chapter": "waiting",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 170,
+    "id": "keyboard-doctor",
+    "title": "The Keyboard Consultation",
+    "spec": "Start explaining your symptoms. The doctor keeps typing without looking up. You pause, wondering whether they are listening. The typing continues.",
+    "chapter": "clinic",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 173,
+    "id": "early-bus",
+    "title": "One Minute Early",
+    "spec": "Reach the bus stop a minute before the scheduled departure. Watch your bus disappear down the road. The display changes to “Next bus: 20 min.”",
+    "chapter": "commute",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 176,
+    "id": "ads-everywhere",
+    "title": "Advertisements Everywhere",
+    "spec": "Your program cuts to advertisements. Change channels and find more advertisements. Keep switching until you return to the original channel—still on advertisements.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 179,
+    "id": "sports-recording",
+    "title": "The Recorded Sports Overrun",
+    "spec": "Open the film you scheduled your recorder to save. It contains a sports broadcast that ran late. Skip forward until the recording ends before the film begins.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 182,
+    "id": "disconnect",
+    "title": "The Sudden Disconnect",
+    "spec": "Play normally with no warning signs. Everything freezes mid-action. A moment later, “Connection lost” appears and you are returned to the menu.",
+    "chapter": "games",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 185,
+    "id": "tape-edge",
+    "title": "The Tape Edge Hunt",
+    "spec": "Rotate a roll of transparent tape until you find the edge. Lift it carefully, and only a narrow strip peels away. The rest stays stuck to the roll.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 188,
+    "id": "glasses-smear",
+    "title": "The Expanding Fingerprint",
+    "spec": "Notice a fingerprint on your glasses and wipe it with a cloth. The small mark spreads into a greasy haze across the entire lens.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 191,
+    "id": "caps-lock",
+    "title": "Caps Lock at Login",
+    "spec": "Carefully type a long password into a hidden field. “Incorrect password.” Reveal the characters and discover that Caps Lock has reversed every letter’s case.",
+    "chapter": "digital",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 195,
+    "id": "remote-reach",
+    "title": "The Remote Just Out of Reach",
+    "spec": "Find the missing remote behind the sofa. Reach down and touch it with your fingertips. Your attempt to grab it pushes it farther underneath.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 197,
+    "id": "final-screw",
+    "title": "The Final Screw",
+    "spec": "Assemble some furniture and tighten the final screw. The screwdriver slips, damaging the screw head. Every further attempt slips out of the same shallow groove.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 198,
+    "id": "forgotten-sock",
+    "title": "The Sock Outside the Wash",
+    "spec": "Load the washing machine, close the door, and start the cycle. The door locks. Look down and spot one forgotten sock beside your foot.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 200,
+    "id": "scrap-pen",
+    "title": "The Pen That Only Works on Scrap Paper",
+    "spec": "Try to write on a card, but the pen produces nothing. Scribble on scrap paper and it works perfectly. Return to the card, and the ink stops again.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 2
+  }
+]

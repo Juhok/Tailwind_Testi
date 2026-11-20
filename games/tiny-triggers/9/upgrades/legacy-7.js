@@ -1,0 +1,18 @@
+(()=>{TinyV6.register(7,{"id":"legacy-7","title":"Enough for someone","description":"Pour almost all the milk, then put the nearly empty carton back.","hint":"Hold the carton above the glass until its milk window is nearly empty, then drag it onto the fridge shelf.","verdict":"One teaspoon. Infinite disappointment.",create(api){
+const {ctx,rect,round,ellipse,line,poly,text,clamp,near,hit}=api;
+const lerp=(a,b,t)=>a+(b-a)*t;
+function path(points,fill,stroke,width=2){ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke()}}
+function curve(points,color,width=3){ctx.beginPath();ctx.moveTo(points[0],points[1]);ctx.bezierCurveTo(...points.slice(2));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.stroke()}
+function room(kind='desk'){api.bg(kind);let g=ctx.createLinearGradient(0,0,0,270);g.addColorStop(0,'#101a28');g.addColorStop(1,'#344151');ctx.fillStyle=g;ctx.fillRect(0,0,480,270);rect(0,210,480,60,'#222e3a');line(0,210,480,210,'#53606c',2);}
+function metal(x,y,w,h){let g=ctx.createLinearGradient(x,y,x,y+h);g.addColorStop(0,'#d2e0e5');g.addColorStop(.3,'#6a8796');g.addColorStop(.55,'#e6edf0');g.addColorStop(1,'#49616e');round(x,y,w,h,5,g,'#202e3c')}
+let phase=0, time=0, drag=null, completed=false;const done=()=>{if(!completed){completed=true;api.done()}};
+
+let x=115,y=150,amount=1,angle=0,spring=0;
+function carton(){ctx.save();ctx.translate(x,y);ctx.rotate(angle);path([[-29,-49],[22,-49],[34,-35],[34,54],[-29,54]],'#e9e8db','#657e8c');path([[-29,-49],[-14,-68],[17,-68],[22,-49]],'#cbdedc');path([[22,-49],[34,-35],[34,54],[22,54]],'#809da9');rect(-26,-21,44,50,'#5c92a8');text('MILK',-5,-8,12,'#ffffff');round(-17,7,24,43,3,'#243d50');rect(-15,47-amount*37,20,Math.max(2,amount*37),'#fff6df');line(-12,12,-12,44,'#9cb9bd',2);ctx.restore()}
+return {draw(){room('kitchen');round(327,29,118,207,8,'#91a9b2','#c2d3d2');round(338,42,96,178,5,'#314956');rect(342,111,87,5,'#a5c6ca');rect(342,194,87,6,'#a5c6ca');round(354,57,20,47,4,'#b6884c');round(385,64,28,40,4,'#89a6a0');rect(353,58,21,5,'#d5c3a3');rect(385,65,28,6,'#c8d1c2');text('FRIDGE',386,24,9,'#c0d0d0');
+ ellipse(222,235,46,8,'#14222b');path([[190,130],[197,226],[248,226],[255,130]],'#57727c','#bed1d0',2);path([[196,221-(1-amount)*83],[201,221],[244,221],[249,221-(1-amount)*83]],'#f8f1dd');ellipse(222,221-(1-amount)*83,26,6,'#fffae8');curve([195,145,195,172,198,201,201,217],'#d7e4dc',2);ellipse(222,130,32,8,'#78929b');ellipse(222,130,28,5,'#324c59');
+ carton();if(drag&&angle<-.65&&amount>.025){let sx=x-14*Math.cos(angle)+64*Math.sin(angle),sy=y-14*Math.sin(angle)-64*Math.cos(angle);curve([sx,sy,sx+10,sy+20,222,115,222,137],'#fff8e5',6);ellipse(222,137,8,3,'#fff8e5')}
+ if(phase===2){text('A whole teaspoon left.',219,26,11,'#e8c99b');for(let i=0;i<2;i++)line(350+i*9,156,353+i*9,157,'#fff5dc',2)}else text(phase===0?'Pour nearly all of it.':'Back on the fridge shelf.',232,26,11,'#b8c8c5');},
+ down(p){if(!completed&&near(p,x,y,69))drag={ox:x-p.x,oy:y-p.y}},move(p){if(drag){x=clamp(p.x+drag.ox,50,420);y=clamp(p.y+drag.oy,70,200)}},up(){drag=null;angle=0;if(amount<=.03){if(near({x,y},385,149,52)){x=385;y=143;phase=2;spring=0}else phase=1}else{x=115;y=150}},cancel(){if(!drag)return;drag=null;angle=0;x=115;y=150},
+ update(dt){time+=dt;const pouring=drag&&x>155&&x<245&&y<110&&amount>.025;angle=lerp(angle,pouring?-1.1:0,Math.min(1,dt*6));if(pouring&&angle<-.8)amount=Math.max(.025,amount-dt*.46);if(phase===2){spring+=dt;if(spring>.45)done()}},debug(){return{phase,amount,angle}}};
+}});})();

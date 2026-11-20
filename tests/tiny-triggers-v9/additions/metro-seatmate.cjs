@@ -1,0 +1,1 @@
+module.exports=async(page,io,assert)=>{await io.click(295,145);assert.equal((await io.state()).phase,'stand');await io.drag([78,188],[203,185]);await io.until(s=>s.phase==='talk');assert.equal((await io.state()).passengerTalking,true);await io.shot('leaning');await io.drag([238,185],[204,185]);await io.until(s=>s.phase==='done');assert.equal((await io.state()).bumps,3);};

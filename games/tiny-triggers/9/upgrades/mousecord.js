@@ -1,0 +1,17 @@
+(()=>{TinyV6.register(46,{"id":"mousecord","title":"Out of reach","description":"Mouse cable: pull it so tight that the mouse cannot reach the screen edge.","hint":"Stretch the cable toward the edge","verdict":"The last few pixels are a luxury.",create(api){
+const {ctx,rect,round,ellipse,line,poly,text,clamp,near,hit}=api;
+const lerp=(a,b,t)=>a+(b-a)*t;
+function path(points,fill,stroke,width=2){ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke()}}
+function curve(points,color,width=3){ctx.beginPath();ctx.moveTo(points[0],points[1]);ctx.bezierCurveTo(...points.slice(2));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.stroke()}
+function room(kind='desk'){api.bg(kind);let g=ctx.createLinearGradient(0,0,0,270);g.addColorStop(0,'#101a28');g.addColorStop(1,'#344151');ctx.fillStyle=g;ctx.fillRect(0,0,480,270);rect(0,210,480,60,'#222e3a');line(0,210,480,210,'#53606c',2);}
+function metal(x,y,w,h){let g=ctx.createLinearGradient(x,y,x,y+h);g.addColorStop(0,'#d2e0e5');g.addColorStop(.3,'#6a8796');g.addColorStop(.55,'#e6edf0');g.addColorStop(1,'#49616e');round(x,y,w,h,5,g,'#202e3c')}
+let phase=0, time=0, drag=null, completed=false;const done=()=>{if(!completed){completed=true;api.done()}};
+
+let mx=217,my=218,strain=0,taut=0,attempt=0,recoil=0;
+return {draw(){room();round(94,24,298,132,8,'#869ca6','#c4ceca');round(102,32,282,115,5,'#152934');round(115,44,257,87,4,'#355463');rect(115,44,257,15,'#66828b');line(358,48,365,55,'#dbe4d2',2);line(365,48,358,55,'#dbe4d2',2);for(let n=0;n<4;n++)line(128,74+n*11,223+n%2*41,74+n*11,'#87a19f',3);rect(231,156,22,15,'#68828d');ellipse(243,173,49,8,'#859da5');
+ let cursorX=132+(mx-170)*1.25;path([[cursorX,91],[cursorX,108],[cursorX+5,103],[cursorX+9,112],[cursorX+13,110],[cursorX+9,101],[cursorX+16,100]],'#f3edce','#213b48',1);
+ round(148,186,287,67,10,'#3e5059','#637a80');line(159,243,423,243,'#536a73',1);metal(88,163,19,12);curve([98,174,98+(mx-217)*.2,252-taut*83,mx-70,167,mx,my-31],'#101f2a',7);curve([98,174,98+(mx-217)*.2,252-taut*83,mx-70,167,mx,my-31],'#a5b7b2',3);
+ let dx=Math.sin(recoil*22)*Math.exp(-recoil*6)*(phase===1?4:0);ellipse(mx+3,my+27,30,7,'#26333c');round(mx-25+dx,my-32,50,64,22,'#b8c5b8','#6c858a');path([[mx-23+dx,my-4],[mx+23+dx,my-4],[mx+19+dx,my-23],[mx+8+dx,my-31],[mx-7+dx,my-31],[mx-19+dx,my-23]],'#dce0ca');line(mx+dx,my-30,mx+dx,my-3,'#7b9699',2);round(mx-4+dx,my-23,8,18,4,'#4c6875');for(let n=0;n<4;n++)line(mx-2+dx,my-20+n*4,mx+2+dx,my-20+n*4,'#8ba8a5',1);
+ if(taut>.7){line(340,70,366,70,'#d5a37a',1);line(340,66,340,74,'#d5a37a',1);line(366,66,366,74,'#d5a37a',1)}text(phase===1?'The final pixels are out of reach.':'Move the mouse toward the right edge.',240,12,10,'#bdccbf');},
+ down(p){if(!completed&&near(p,mx,my,40))drag={ox:mx-p.x,oy:my-p.y}},move(p){if(drag){mx=clamp(p.x+drag.ox,170,337);my=clamp(p.y+drag.oy,203,223);strain=clamp((p.x-337)/55,0,1);attempt=Math.max(attempt,p.x)}},up(){if(!drag)return;drag=null;if(strain>.8&&attempt>390){phase=1;recoil=0}else{mx=217;my=218;strain=0;attempt=0}},cancel(){if(!drag)return;drag=null;mx=217;my=218;strain=0;attempt=0},update(dt){time+=dt;taut=lerp(taut,clamp((mx-217)/120,0,1),Math.min(1,dt*13));if(phase===1){recoil+=dt;if(recoil>.65)done()}},debug(){return{phase,mx,strain,taut,cursorShort:mx<=337}}};
+}});})();

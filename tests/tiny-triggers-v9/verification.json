@@ -1,0 +1,531 @@
+{
+  "car-door": {
+    "sourceSha256": "299a60d520e87d584189cf1b2718b056e4bd78077716629ff49f6dea84a94bce",
+    "testSha256": "0092373c7b819f132e75eee0e6a8031838c1059be68632fb5707862618d462b5",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "rising-flush": {
+    "sourceSha256": "122f0974056f59c770b5d9c0c8b68e8f533321efb9accf9ee3f1bee870a12a93",
+    "testSha256": "62f28876eec8a271e99efb52f1b6883eded0459c9661d1a255308eaee3e63f23",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "one-hp": {
+    "sourceSha256": "69550c6f583daaf511d9c3f6df2f50e26495a75671fe7403ba8990749b0b7cb9",
+    "testSha256": "0fef5410cd603e2a496d0f6d0b9aaa4fa5ce098ddfc5d59784ecdfbf7d91b3eb",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "quest-reward": {
+    "sourceSha256": "ff92f28b290858cd00ba847960134669e2d9a289ba5d970bf1a60bcdf36ce308",
+    "testSha256": "321846987624fcf3c2b86a7c375b7f696e8f9fc79577d7def878eac3c67381ee",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "crowded-spawns": {
+    "sourceSha256": "63a90de884c4991c98c86262e6dd419af922246d83971f18be8987ef6d451b07",
+    "testSha256": "156ea834da0424fb18b27133fbfd59ef8fc7df7e4ca1bf9306a8c0a19cd549cd",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "stolen-firewood": {
+    "sourceSha256": "09a520b6ea7a200bee167bf01a5475e8170c5a882cb9f5d314d4b8c11566da2e",
+    "testSha256": "5a2732abdab51ec374118f5bdfd5a6810dc53a036c47aef4b0e331cd617cffa6",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "finish-line": {
+    "sourceSha256": "7c3e6ed897b1ef6c59e41b3bc58cd233344b3ddb09ead73bbb43569b2a8d430b",
+    "testSha256": "aa3fc5535aff0ba4c531287ae35390f641dda99fc1109c11a05f59fe5a3ffeae",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "smoke-alarm": {
+    "sourceSha256": "67685eeac9f07584117bbf9d2288a828b9541abce3d2c20b3471b23c646c35ca",
+    "testSha256": "9f58b2dcd46fc34a53da026347996daa5f9e75e077b2a09752e931541f194b7c",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "merge-conflicts": {
+    "sourceSha256": "54e7670f6ba798a1dc67ff6f6f41bcb8077c30b795a26a67921177e6ad3d154e",
+    "testSha256": "6d3923544cffb66dee1b557d906f99cfdae0042007f0646cb2c226e900f29b1f",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "bedtime-mosquito": {
+    "sourceSha256": "6110c3b376f5d70064d2691b8f1e9ff41f89f54ea88226b83388d52650d96467",
+    "testSha256": "6987a051b3aa103b1392bc410734cb87d2b0f57b7a1e018c58714f3eaf0f2ef4",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "untouchable-fly": {
+    "sourceSha256": "882988fcdef663aae080b7dba4902ba930b690e0210cbc39dd0092abd86d6943",
+    "testSha256": "fb730220e276de8fbdb61b5d31d51c63c357eb813451f16364adff7c28dcc23d",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "wasp-door": {
+    "sourceSha256": "56eb0542c74ef9924816df488c34e099343f8325e7e2ca107655e845426f9914",
+    "testSha256": "85ef1a22b1f6db12068ff60e67d0d11747ffa07208feb1d0f8d645a799defd5c",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "mall-fundraisers": {
+    "sourceSha256": "d598a816670e2794cf29d5916ea2fb9ae1f18e77fa87a77101639d13ddc6a713",
+    "testSha256": "3d249f96e838f4e4b924fbbf3bb3f85d18e0cbb076b760be54c7eb41bc07dfaa",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "sales-call": {
+    "sourceSha256": "dbbc2c4a36fb00317e67b882857c1f6826828a0252f0e9bd14eeacf33535f1a8",
+    "testSha256": "c147e0cddc974e96774f89bc517bad95449cd138c0967265249c6b69d675eb30",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "roadworks": {
+    "sourceSha256": "0c22a6ccfac8a0375bde7db9bf85d04da9cb2870eb25f98a1fe7430f6294053b",
+    "testSha256": "56509a4925d929193efd1e8556d48bd9d28319e2815d7b09d561c18a17a3c17c",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "mismatched-light": {
+    "sourceSha256": "01b8960a24a01ce2f05a0b7c96d5d6a1f46bb03224c532738fd67e6334d6cb57",
+    "testSha256": "9f3a8f43e0256acf611beffb67cf8e3dc0f4f1fa266add91fd4072c3ad85a90d",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "shoe-stone": {
+    "sourceSha256": "e2015575b39613daa7e976ad7ef140d9d8e61c4130df0d1614fdffa34c536649",
+    "testSha256": "251c8888506cba5297f3ef0ebe06d64c8ab55680a83ca79308086fe30ff66f63",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "radio-song": {
+    "sourceSha256": "05302a950c24e16cc45fede280b55a7ee4364cdb8142bfcb81f2bb8c8a230627",
+    "testSha256": "54358faafba406f64e548cb6d1c6a4e24168ed335afe5759d779f15169029d6d",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "safety-cap": {
+    "sourceSha256": "a3be868e2b78996a9a86037d9e5c0a4f95b569cd61f7ddfe06e11095819cc220",
+    "testSha256": "8d608c34c2e88ed0c206a52b0300a608a27e2e7a3c82036631e06362155d6e96",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "wobbly-table": {
+    "sourceSha256": "64fc3b963b88cce2361b4c3e5510fa58c074eaeb83c352e682102deff4657541",
+    "testSha256": "cbef39a7c5c25d856503a3fd4ce50eea8c0973c275bc586e691f998b73a8d63c",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "squeaky-chair": {
+    "sourceSha256": "5767c4cfabf8fbfcfd82b0221405df0a1984398fd72906cac6cbd0e0e7fddb0b",
+    "testSha256": "1cc2b0c8cc1842b95cf5f4e73a2c2e9906dfd03ae795c24e4b9857b24d72292f",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "low-sun": {
+    "sourceSha256": "367b1c2db662d38140aedb6fc9c7e508c1a4f4a95e002a52f0c12cde58d117f2",
+    "testSha256": "1c769d782fd96d9a5fd6dded2c9b2d5de116270f574a422c3615b13024e18b4c",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "unreachable-itch": {
+    "sourceSha256": "8ef9bf8ada99332ec85b4d36b4564c832ff03e2875981814c15d4512cba1031a",
+    "testSha256": "13f29e09c5d5fbd5b6fda1aa59e210515940bf2d990b70e86705be1c33e4a74b",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "renovation": {
+    "sourceSha256": "9d4a6e82113a6b1726175b6ba44910161102096c52ad804c0df86e73d2ae15d6",
+    "testSha256": "f13842150d7719a3d3694743f9621f972ea8550534a6ca60a664417bfafce97c",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "cold-water": {
+    "sourceSha256": "741ed0aec359a7b77e9fd07ee2d1c8153ae1b5a801e91e9b6a57acd29176e4a2",
+    "testSha256": "8943acd1b355a4ebf5c585298e967298a9b6af30d28e3d7d3ae39417ee058d73",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "stolen-parking": {
+    "sourceSha256": "29336675607e58900b757d0c7799170b89988087e237bc456258ba11bfc7765a",
+    "testSha256": "342e5a5cf447abd7edfe6a60703a8ef0f71fea5b6e11607f5dda1e0d9e85cf4e",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "festival-queue": {
+    "sourceSha256": "802ce75c2c1a1ba293da8cc7a56de35b7ea9ba32f408448bee68652d5bf7c143",
+    "testSha256": "97f604993b385be05f8bd597e8c9cf48ff51067d911e14d52ee72f1e8952ed79",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "crooked-apartment": {
+    "sourceSha256": "460d372952505b557e58d5cc633fdc164a11fd0f134dc95a8020ef314f062875",
+    "testSha256": "4af792b3cadc63175646edf72710b6f18fb61eea80fe09ce7e3ed0afc4ac4db1",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "same-outfit": {
+    "sourceSha256": "8ee95b32c30b9d4d6f55a32ab2c4e75864fbb27326e3e3fda66bbd060250accd",
+    "testSha256": "d77d5670f3ba5c20a1c34b100c72841db43b151e5437bd03a04e45e523709687",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "black-sweets": {
+    "sourceSha256": "2f94c576403c8e98dd44662f6d9ce1bbc6ad6176c60d852bd28ce209a47243a4",
+    "testSha256": "2c147d0fb2cbe34157bdf03cc511a9629e7638d66729b67ee153947e02a1ea11",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "fish-finger": {
+    "sourceSha256": "aae85d5b02611055e36e3e84d9c9b1b15a57bf67145eb3930c5a69b2f50dce44",
+    "testSha256": "b8a5c50be795c2b191dc32647e85ee81984e5d73b25eca23d0846bc59978e96a",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "stained-outfit": {
+    "sourceSha256": "247c7958e3c4c032b47853c4f4c04ccbf27990817ba7114b06b79b9c243b4805",
+    "testSha256": "d36dc26934c98bb8d2cf4f729761dacc703f8d54e71a8f1743a171f88877489c",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "waiting-room": {
+    "sourceSha256": "3e7ebedeabc67c7ba391a14ea7678b0be2441ea4befaa855230fb0af456f9a8b",
+    "testSha256": "06a6bd9822d4112029b8f565c6c7216a48863ff0b5cb13064e62a76e5d241652",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "early-gate": {
+    "sourceSha256": "8ef453c4c5c9df4e0806af8be9ca16331a1e5c436f7b31e82ea36e6d8930ea1d",
+    "testSha256": "b1f2934795f0b842355e8acf303f027d4b6f290064017cdb6097f320e9996d43",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "military-clinic": {
+    "sourceSha256": "dadc0f45f13593f885fc169f92158da90546b2dc61e79d90fccb3de08f08fe8e",
+    "testSha256": "ced31b4b7cd30c9aeafb03ae216db0af562da8ba41313a0d35a7327f489bb9cb",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "keyboard-doctor": {
+    "sourceSha256": "fa5b325ff3f54fbd0e1272c2b380814c9314529ac67f72a672155c57aaea0a4b",
+    "testSha256": "ca56ea40664547bf3a7a0d8e3cc0e6edddd51115404beb3895e5b9fb4b1da71c",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "metro-seatmate": {
+    "sourceSha256": "a5fdf30d2dd5d37b71e48727ef7451f65b39847f65e8dff1830c6e7e05a21bbf",
+    "testSha256": "770cd8a59946687758886e421ec9f372f3ab6901f19e0c4dfa6027c182a337be",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "ticket-app": {
+    "sourceSha256": "20cd26f14eb533895e889ca5093302ba04f7d2da3f2942017ae0e1202ee67b8f",
+    "testSha256": "6d4918bb43387e921180acf532009af29b90be8eb682cea168d5dd5ca0f69faf",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "early-bus": {
+    "sourceSha256": "778030bd103a343b37794d3e8957c5510c5038b22a2cc6e76cc3da73c06b50d8",
+    "testSha256": "1652b6a40982a9625f149427aa91437b8f52d03d333f6a95437ec5759421fdfb",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "bus-stops": {
+    "sourceSha256": "c27e41d0850fb1aca4647f7404c692f7e550af831d875f93002441dc7cdd08cf",
+    "testSha256": "1c9e8f01ec3fb4e67da6f8b373c04f9ff637ef64df0f87bee9b173868d8319a9",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "same-actor": {
+    "sourceSha256": "88de8d6cd278c1912022d8d98ad00943cca3dd30d9ca1951f8f677b767b751d2",
+    "testSha256": "343abb140d6067acc57de6d97088b516869571aa97542ecba4d79569a35e211a",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "ads-everywhere": {
+    "sourceSha256": "d93702a37a8764f0d4b23d50ffa54534be688d42cc4a8d8612d313e8540f83f1",
+    "testSha256": "b1ba68fdc14286ea359da993c89966d277af117898582a532673f359476a754c",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "repeat-episode": {
+    "sourceSha256": "b8b39497fa26dac77d12f72eb759165567a275b74c6297d5183e0388e0160509",
+    "testSha256": "0acff70cf7e5b89d6c43df00d406550d50f65635ef9dacf6bc8905d043e94019",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "catchphrase": {
+    "sourceSha256": "60dbb22e1985eb3d2b4ff7918d0a317ce068d60f6855689d43471c100a0fb8c9",
+    "testSha256": "59e475e61e537b2c5d7d8446f3156f10bfa97e9684ac2e44ff6928d540023ad9",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "sports-recording": {
+    "sourceSha256": "c2a7d6ac53b41945b566019a804077f63cadb6d01ab85fce5f814168322b3491",
+    "testSha256": "19b3a42bac1b76b0dd27bddd61bfd1bb8ce8d37ade9fd3a1f46ddc6508ab5963",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "overwritten-tape": {
+    "sourceSha256": "387f63a93fc9ce626c7412659fba63d02d039addc33d22c91b8b385ecca91e0c",
+    "testSha256": "0c7ebd210bb5ec2da742488b92773a2088fc0e96659755a0821cac0c9ddc6314",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "sleepy-ending": {
+    "sourceSha256": "da1dcd409d9d1af2cd0a068b91e67a98b6c94a39a96dcc7af2b84bd1b21616fe",
+    "testSha256": "292be71cc0b3612e68e13dafc317246890bdfe423cb77ea700c6b84a6025dcd1",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "disconnect": {
+    "sourceSha256": "d3c7a838f94557f34728e318adca42f03c7936db3721da1d3917e2c9b359afcc",
+    "testSha256": "88545b42e5e71af517ce651f780ecbf6458a1faa1fd6ae694df3841114190ce0",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "frozen-pipes": {
+    "sourceSha256": "66429f5924144e1adb198cf823d99ec662d2944562857f66dc79cc29a7af60fe",
+    "testSha256": "51c9eb6fdc156080cd724bb795cb0cae6527a0d45a0158310cd7693016749aff",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "expired-certificate": {
+    "sourceSha256": "356f2c32b98028090002d4df3da659453794218351c38c96a2ce98647761836b",
+    "testSha256": "2b4b443fcef5752f29f75c34eabb30c30acfe669488b9a8b3c8748dc156905e9",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "tape-edge": {
+    "sourceSha256": "9ae0796979c543ca85720257ed3a25602e074736228a038ea6b9961ef636b2a1",
+    "testSha256": "45f20f9676e14c6f00438dbd1bde6d04a166af88a980667f16879bc75ad8a20d",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "keyring": {
+    "sourceSha256": "a910efbe404ba4c842afbfce4e2930ca5711c1afc0b7bf6f321f78b7a17d7f5c",
+    "testSha256": "ec27f328248597d22a6432964ec38f6bab098823a73e5c761114520e2be25546",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "untied-laces": {
+    "sourceSha256": "45574fe1900256c07cfa909facf4e81bd3641ce19611e0455796a572f0fda5a8",
+    "testSha256": "bf8852fd5301d119df99f5b39f60d115687990e8eab78151e9fb4ce57c04a131",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "glasses-smear": {
+    "sourceSha256": "12d0d81ea5c2475d11ce9cda41cbbeda1d578675edefbb72c5bfc9b05b07b2b4",
+    "testSha256": "64f3ef60ba603c129a38710e0710bc20816bc0736fbe6f815cda5df5ce95800a",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "bag-handle": {
+    "sourceSha256": "8e331912bcb9f0b4a0d83ec41171a8a9d056e935593bd9b9e759bd44129b9cb1",
+    "testSha256": "7d727222f369ae350c955f51d684fb71e523dfaf4dbb970c9349fd18835d1d06",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "bag-seal": {
+    "sourceSha256": "890bb276bc0ff888815dc4bfa7bed40f2ce0bb9f35237db06b56c49d3e4f1322",
+    "testSha256": "7b78cf2d21fdaad8da06e46b18960d235c2443f42adef5f9a8eb5bbbf445b903",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "caps-lock": {
+    "sourceSha256": "f9aa0760bd3982d79160d8ef15d22ede52101eeaa12977faca534b638db0059b",
+    "testSha256": "c76bf1470a8b56af14ec8989d28fb01c509ece84ef7c25c1874939f5f5a7a82a",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "umbrella": {
+    "sourceSha256": "8957b4e572953a8ad3dd404876a18eed2072d6dfa2ad3082cd93253d24efc719",
+    "testSha256": "2c2a87f066bc1ed04c5ea1bf8cbcb35ed557409380751ed2f4d57415bb07399d",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "washed-car": {
+    "sourceSha256": "0b820f1a3fec230303337c6e8dcf99a42bc6e48a830514296f1807611c22762f",
+    "testSha256": "104afb406a7a6256ec976583337c563f273729991908e3d78e8527fa0cf074d8",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "remote-reach": {
+    "sourceSha256": "b4b3e488f3c6152d22365a88a4426697176411928ea3795ba0acb647385681d6",
+    "testSha256": "4fa41e330b15c9deb1af091894dae9c0e662dccf52e30718619f897f6ee4a3f0",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "short-blanket": {
+    "sourceSha256": "588611b2dffd315a30495239aa98486fc849a7da861263abd1e86642bf018c5e",
+    "testSha256": "f92a885029144a0b41721bd0c994b68a32729e2d0c5a8b4625e8ccf620db3be0",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "final-screw": {
+    "sourceSha256": "8cd8f5074fd799758bb67dbfe2103d8c6a4b0d2cc08b596f4e120bf3f0466c65",
+    "testSha256": "d2ebc080288b277737ce5b1867f91e41571a8b3a88b5f7dbfeef201291c8d1bd",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "forgotten-sock": {
+    "sourceSha256": "e348d0036a90d90320b00af52c225e8d2afcaead58be79fb22c7c50f8312875d",
+    "testSha256": "bb0aaaaa304d75faa3b3d23ed0108d998a6d0ab185fb4b21f63da14234e7a815",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "bad-cart-wheel": {
+    "sourceSha256": "a6a9ba4c96bd7cc42f73186a577b7874ea9c8abc1257f3088448f6f1ac8ba879",
+    "testSha256": "d2e5cfc00bedfcca57cae2f22635b9f9c0834aaac0736a697abb0eae09830738",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "scrap-pen": {
+    "sourceSha256": "899bc5af7c0863c5bc7ba8c378b4563b899aff32a2ae4b92d7f5feb49be5f537",
+    "testSha256": "69e621b84094f026cb5678d271663ae50d7e39198fdbf7b09ea9b113e7bda53e",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "cookie": {
+    "sourceSha256": "b082e918a7870b2d20149960ded3f1a818ce9fdc0117b03d382a473edfda0315",
+    "testSha256": "98931a8e5e7d86dcb433c4c4d1e848b645a09a9b85cfb5883e9ca54626c3a59d",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "existing-scene-refinement"
+  }
+}
