@@ -1,0 +1,17 @@
+{
+  "name": "tiny-triggers-v8-checks",
+  "private": true,
+  "scripts": {
+    "test": "node audit.cjs && node retained.cjs && node additions.cjs && node migration.cjs && node collection.cjs && node lifecycle.cjs && node shell.cjs",
+    "test:scenes": "node additions.cjs",
+    "test:touch": "MOBILE=1 node additions.cjs",
+    "test:shell": "node shell.cjs",
+    "test:migration": "node migration.cjs",
+    "test:collection": "node collection.cjs",
+    "test:audit": "node audit.cjs",
+    "test:lifecycle": "node lifecycle.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}

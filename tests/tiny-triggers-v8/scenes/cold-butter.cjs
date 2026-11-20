@@ -1,0 +1,53 @@
+module.exports = async function (page, io, assert) {
+  let state = await io.state();
+  assert.equal(state.phase, 0);
+  assert.equal(state.hole, 0);
+  await io.drag([212, 131], [296, 131]);
+  await io.drag([369, 141], [401, 84]);
+  state = await io.state();
+  assert.equal(state.phase, 0, 'Dragging the butter or putting the knife elsewhere cannot spread it');
+  assert.equal(state.strain, 0);
+  assert.equal(state.finished, false);
+
+  await io.drag([369, 141], [212, 131], { steps: 20 });
+  state = await io.state();
+  assert.equal(state.phase, 1, 'The blade must contact the hard butter before spreading');
+  assert.equal(state.hole, 0);
+  await io.drag([212, 131], [180, 131]);
+  assert.equal((await io.state()).strain, 0, 'A backward gesture does not substitute for the spreading push');
+  await io.drag([212, 131], [245, 131], { steps: 16, hold: .55 });
+  state = await io.state();
+  assert.equal(state.phase, 2);
+  assert.ok(state.strain > .25 && state.strain < .4);
+  assert.equal(state.hole, 0, 'First the soft crumb compresses and stretches without tearing through');
+  assert.equal(state.butterSolid, true);
+  assert.equal(state.butter.width, 36);
+  assert.equal(state.finished, false);
+  await io.shot('cold-butter-compressed-crumb');
+
+  let k = state.knife;
+  await io.drag([k.x, k.y], [k.x + 45, k.y], { steps: 18, hold: .8 });
+  state = await io.state();
+  assert.equal(state.phase, 2);
+  assert.ok(state.hole > .2 && state.hole < .7, 'Continued pushing progressively opens a ragged tear');
+  assert.equal(state.tableVisibleThroughHole, true);
+  assert.equal(state.butterSolid, true);
+  assert.equal(state.finished, false);
+  await io.shot('cold-butter-tear-starting');
+  const paused = state.strain;
+  await io.wait(300);
+  assert.equal((await io.state()).strain, paused, 'The bread does not tear itself while the knife is released');
+
+  k = state.knife;
+  await io.drag([k.x, k.y], [k.x + 70, k.y], { steps: 20, hold: .8 });
+  await io.until(s => s.finished);
+  state = await io.state();
+  assert.equal(state.phase, 4);
+  assert.equal(state.hole, 1);
+  assert.equal(state.tableVisibleThroughHole, true);
+  assert.equal(state.butterSolid, true);
+  assert.equal(state.butter.width, 36);
+  assert.equal(state.butter.height, 29);
+  assert.equal(await page.evaluate(() => finished), true);
+  await io.shot('cold-butter-hole-through-bread');
+};

@@ -1,0 +1,50 @@
+{
+  "busy-crossing": {
+    "sourceSha256": "e9e6c2391f04a89a7fe4c8888a63f0f661415f5062478bd1d6619da236bceadd",
+    "testSha256": "e5c1dcda3d5c758f61dfa1344b16e30a00f889e77d259f3464e8d11b61499872",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "pudding-lid": {
+    "sourceSha256": "82bd8f8148d321f45e7bed079d989fb04adf47e66db4b22a2c2c3320cf05ae12",
+    "testSha256": "a4c635e4e60ee2d83e63a3e034e87f13c6e4f2cc093b08c143d55c66b8016aef",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "nugget-bag": {
+    "sourceSha256": "7624cdc34cd07940d6587eb58df85438da5117efa4d16cc739898a2090cfabb5",
+    "testSha256": "db80394532745bb05c3456c22daba56dfe05dac9e7800d8fc0911a8f48a01a5d",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "tight-parking": {
+    "sourceSha256": "ff37818e1c74054efd5849b543b3d3a222d8755f645a12bb8cc917a28b167f13",
+    "testSha256": "0411da5a3f6332bc6075cdec5cfe73090a28967406284a61fc659bb8b32df0cb",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "fogging-windshield": {
+    "sourceSha256": "d65b16910a2a7fdd96429ff7b24b44390178a3e8bf3aaad5377fba4e452a414f",
+    "testSha256": "b85e8965538b1e3473b1457acbca633d1351dfab51563e24306155722f03b1cf",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  },
+  "give-way-gap": {
+    "sourceSha256": "7c119dc2a3dce4c2b7488dcc4a1679406b17a800bca0f67c21fc06c8d2d6dcfb",
+    "testSha256": "fa85070d7767b03fee34b57073b0175a73d1e6eefe1cdf8a2edd8aa48bb3d9a7",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ]
+  }
+}

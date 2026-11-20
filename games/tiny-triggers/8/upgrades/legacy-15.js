@@ -1,0 +1,17 @@
+(()=>{
+"use strict";
+TinyV6.register(15,{"id": "legacy-15", "title": "The last corner", "description": "Stretch the fitted sheet onto all four corners.", "hint": "Pull the four pink fabric corners onto the gold mattress corners. The last one makes the opposite corner spring loose.", "verdict": "Four corners tried. Only three willing to cooperate.",create(api){
+const {ctx,rect,round,ellipse,line,poly,text,clamp,near,hit}=api;
+const path=(points,fill,stroke,width=2)=>{ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke();}};
+const curve=(points,color,width=2)=>{ctx.beginPath();ctx.moveTo(...points[0]);for(let i=1;i<points.length;i+=3)ctx.bezierCurveTo(...points[i],...points[i+1],...points[i+2]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.stroke();};
+const grad=(x,y,w,h,a,b)=>{const g=ctx.createLinearGradient(x,y,x+w,y+h);g.addColorStop(0,a);g.addColorStop(1,b);return g;};
+const desk=(color='#293b46')=>{rect(0,0,480,270,color);for(let i=0;i<6;i++){line(0,30+i*48,480,30+i*48,'#ffffff08',2);for(let j=0;j<3;j++)curve([[0,i*48+10+j*8],[130,i*48+14+j*8],[360,i*48+5+j*8],[480,i*48+11+j*8]],'#ffffff05',1);}};
+const shadow=(x,y,rx,ry)=>ellipse(x,y,rx,ry,'#09172265');
+let phase=0,time=0,drag=null,done=false;
+const finish=()=>{if(!done){done=true;api.done();}};
+const targets=[[134,82],[345,82],[363,218],[117,218]],rest=[[168,111],[312,111],[319,185],[161,185]];let corners=rest.map(p=>({x:p[0],y:p[1],set:false})),popped=-1,popTime=0;
+function sheet(){const c=corners;path(c.map(p=>[p.x,p.y]),grad(120,80,230,150,'#b8c8d2','#7594a7'),'#d0dae0',2);for(let i=0;i<4;i++){const p=c[i];curve([[p.x,p.y],[p.x*.75+240*.25,p.y*.7+150*.3],[205+i*15,137],[240,151]],'#607c912f',1.5);}for(let y=116;y<190;y+=16)curve([[170,y],[204,y+4],[282,y-4],[315,y]],'#dce4df25',1);for(let i=0;i<4;i++){const p=c[i];ellipse(p.x,p.y,11,7,p.set?'#859ea9':'#d9aab2');curve([[p.x-6,p.y],[p.x,p.y-5],[p.x+8,p.y-5],[p.x+9,p.y+2]],'#f3d5d0',2);}}
+return{draw(){desk('#293845');round(104,36,271,33,8,'#704e43');for(let x=121;x<370;x+=29)line(x,40,x,66,'#966959',3);path([[127,69],[352,69],[379,231],[101,231]],'#573e36');path([[132,76],[347,76],[367,219],[113,219]],'#e9d8ba');path([[113,219],[367,219],[366,232],[113,232]],'#ac9e89');for(let i=0;i<4;i++)ellipse(...targets[i],7,5,'#d9b76e');sheet();for(const x of [160,267]){round(x,62,72,31,8,'#e6e1d0','#a3b0b4');curve([[x+7,68],[x+20,75],[x+50,64],[x+66,69]],'#f8f0dd',2);line(x+6,87,x+65,87,'#bdc9c7',1);}round(92,237,296,8,3,'#725448');},down(p){if(done)return;const i=corners.findIndex(c=>!c.set&&near(p,c.x,c.y,24));if(i>=0)drag=i;},move(p){if(drag!==null){corners[drag].x=clamp(p.x,95,385);corners[drag].y=clamp(p.y,70,232);}},up(p){if(drag===null)return;const c=corners[drag],t=targets[drag];if(near(p,...t,25)){c.x=t[0];c.y=t[1];c.set=true;phase++;api.tone(360+phase*70,.09);if(phase===4){popped=(drag+2)%4;corners[popped].set=false;popTime=0;}}else{c.x=rest[drag][0];c.y=rest[drag][1];}drag=null;},cancel(){if(drag===null)return;if(drag!==null){corners[drag].x=rest[drag][0];corners[drag].y=rest[drag][1];}drag=null;},update(dt){time+=dt;if(popped>=0){popTime+=dt;const p=corners[popped],r=rest[popped],t=targets[popped],u=clamp(popTime*2,0,1),e=1-Math.pow(1-u,3);p.x=t[0]+(r[0]-t[0])*e;p.y=t[1]+(r[1]-t[1])*e-Math.sin(u*Math.PI)*12;if(popTime>.8)finish();}},debug(){return{phase,popped,attached:corners.filter(c=>c.set).length,done};}};
+
+}});
+})();

@@ -1,0 +1,68 @@
+module.exports = async function (page, io, assert) {
+  let state = await io.state();
+  assert.equal(state.phase, 'idle');
+  assert.equal(state.screenPages, 1);
+  assert.equal(state.printedPages, 0);
+
+  await io.drag([354, 208], [171, 211]);
+  await io.click(273, 115);
+  assert.equal((await io.state()).phase, 'idle');
+  await io.down(70, 143);
+  assert.equal((await io.state()).printPressed, true);
+  await io.move(126, 182);
+  await io.up();
+  state = await io.state();
+  assert.equal(state.phase, 'idle', 'Dragging off Print cancels the press');
+  assert.equal(state.firstFeed, 0);
+  assert.equal(await page.evaluate(() => finished), false);
+
+  await io.click(70, 143);
+  await io.until((s) => s.phase === 'first-feeding' && s.firstFeed > 0.2);
+  state = await io.state();
+  assert(state.firstFeed > 0 && state.firstFeed < 1);
+  assert(state.rollerTurns > 0);
+  assert.equal(state.firstRetrieved, false);
+  await io.drag([354, 208], [171, 211]);
+  assert.equal((await io.state()).firstRetrieved, false, 'A partly fed page cannot be taken early');
+  await io.shot('first-sheet-feeding');
+  await io.until((s) => s.phase === 'first-ready');
+  state = await io.state();
+  assert.equal(state.printedPages, 1);
+  assert.equal(state.secondFeed, 0);
+  assert.equal(state.firstLastSentence.endsWith('.'), false);
+  await io.wait(300);
+  assert.equal((await io.state()).phase, 'first-ready', 'The player must retrieve the first page');
+
+  await io.down(354, 208);
+  await io.move(320, 210);
+  state = await io.state();
+  assert(state.sheetX < 354 && state.sheetX > 300);
+  assert.equal(state.phase, 'first-ready');
+  assert.equal(state.firstRetrieved, false);
+  await io.up();
+  assert.equal((await io.state()).sheetX, 354, 'An incomplete pull returns to the tray');
+  await io.drag([354, 208], [171, 211]);
+  state = await io.state();
+  assert.equal(state.firstRetrieved, true);
+  assert.equal(state.phase, 'second-start');
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.until((s) => s.phase === 'second-feeding' && s.secondFeed > 0.25);
+  state = await io.state();
+  assert(state.secondFeed > 0 && state.secondFeed < 1);
+  assert.equal(state.printedPages, 1);
+  assert.equal(state.secondPageCharacters, '.');
+  await io.shot('unexpected-second-sheet');
+  await io.until((s) => s.phase === 'dot-reveal');
+  state = await io.state();
+  assert.equal(state.dotVisible, true);
+  assert.equal(state.printedPages, 2);
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.until((s) => s.phase === 'complete');
+  state = await io.state();
+  assert.equal(state.twoPagesVisible, true);
+  assert.equal(state.secondPageCharacters, '.');
+  assert.equal(state.screenPages, 1);
+  assert.equal(await page.evaluate(() => finished), true);
+  await io.shot('one-note-one-period-two-pages');
+  // Shared runner clicks Retry and verifies idle/unfinished reset.
+};

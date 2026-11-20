@@ -1,0 +1,18 @@
+(()=>{
+"use strict";
+TinyV6.register(36,{"id": "toothpaste", "title": "Middle management", "description": "Toothpaste: squeeze the middle of the tube and leave the cap crooked.", "hint": "Squeeze from the middle \u2192 Put the cap back, almost", "verdict": "A tube with a waist and a bad hat.",create(api){
+const {ctx,rect,round,ellipse,line,poly,text,clamp,near,hit}=api;
+const path=(points,fill,stroke,width=2)=>{ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke();}};
+const curve=(points,color,width=2)=>{ctx.beginPath();ctx.moveTo(...points[0]);for(let i=1;i<points.length;i+=3)ctx.bezierCurveTo(...points[i],...points[i+1],...points[i+2]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.stroke();};
+const grad=(x,y,w,h,a,b)=>{const g=ctx.createLinearGradient(x,y,x+w,y+h);g.addColorStop(0,a);g.addColorStop(1,b);return g;};
+const desk=(color='#293b46')=>{rect(0,0,480,270,color);for(let i=0;i<6;i++){line(0,30+i*48,480,30+i*48,'#ffffff08',2);for(let j=0;j<3;j++)curve([[0,i*48+10+j*8],[130,i*48+14+j*8],[360,i*48+5+j*8],[480,i*48+11+j*8]],'#ffffff05',1);}};
+const shadow=(x,y,rx,ry)=>ellipse(x,y,rx,ry,'#09172265');
+let phase=0,time=0,drag=null,done=false;
+const finish=()=>{if(!done){done=true;api.done();}};
+let squeeze=0,st=0,cx=392,cy=184,capAngle=0,settle=0;
+function tube(){shadow(219,183,126,16);ctx.beginPath();ctx.moveTo(93,102);ctx.lineTo(137,107);ctx.bezierCurveTo(179,105,194,111+squeeze*22,222,111+squeeze*22);ctx.bezierCurveTo(263,110,282,117,310,131);ctx.lineTo(310,156);ctx.bezierCurveTo(275,174,252,176,224,176-squeeze*22);ctx.bezierCurveTo(190,176-squeeze*22,165,178,135,181);ctx.lineTo(93,183);ctx.closePath();ctx.fillStyle=grad(100,100,210,90,'#e5ece0','#98bbb9');ctx.fill();ctx.strokeStyle='#729a9c';ctx.lineWidth=2;ctx.stroke();rect(94,104,10,77,'#648b98');for(let i=0;i<8;i++)line(95,107+i*9,102,107+i*9,'#b1d2cd',1);path([[125,113],[165,115],[166,172],[125,176]],'#437e97');text('MINT',144,148,11,'#eff3db');curve([[178,124+squeeze*13],[205,133+squeeze*14],[244,118+squeeze*16],[271,134]],'#668c98',2);curve([[176,164-squeeze*12],[206,156-squeeze*14],[241,171-squeeze*17],[270,158]],'#bed6ce',3);round(307,131,29,26,3,'#afc7bf');for(let i=0;i<4;i++)line(313+i*5,134,313+i*5,155,'#648b92',1);ellipse(338,144,4,11,'#e3ebda');}
+function cap(){ctx.save();ctx.translate(cx,cy);ctx.rotate(capAngle);round(-17,-23,34,46,5,grad(-15,-23,32,46,'#82a9b2','#365e75'),'#a0bec0');for(let i=0;i<5;i++)line(-12+i*6,-19,-12+i*6,18,'#b0cccc55',1);ellipse(0,-22,13,3,'#a8c5c2');ctx.restore();}
+return{draw(){desk('#304550');for(let x=0;x<480;x+=80)line(x,0,x,270,'#6c8a8d18',2);ellipse(381,115,53,18,'#9dbbb8');ellipse(381,112,45,13,'#d6e2d5');tube();if(squeeze>.05){const n=Math.floor(squeeze*24);for(let i=0;i<n;i++){const x=339+i*1.9,y=141-Math.sin(i*.18)*31;ellipse(x,y,5,4,'#e3efe2');ellipse(x,y-1,2,2,'#7fb9b3');}}cap();},down(p){if(done)return;if(phase===0&&hit(p,216,145,111,74))drag='tube';else if(phase===1&&near(p,cx,cy,36))drag='cap';},move(p){if(drag==='tube')st=clamp((p.y-145)/50,0,1);else if(drag==='cap'){cx=p.x;cy=p.y;capAngle=clamp((392-p.x)/80,0,.3);}},up(p){if(drag==='tube'&&st>.8){st=1;phase=1;api.tone(330,.09);}else if(drag==='tube')st=0;else if(drag==='cap'){if(near(p,340,144,35)){cx=343;cy=145;capAngle=.28;phase=2;}else{cx=392;cy=184;capAngle=0;}}drag=null;},cancel(){if(drag===null)return;drag=null;if(!phase)st=0;cx=392;cy=184;capAngle=0;},update(dt){time+=dt;squeeze+=(st-squeeze)*Math.min(1,dt*12);if(phase===2){settle+=dt;if(settle>.45)finish();}},debug(){return{phase,squeeze,capAngle,done};}};
+
+}});
+})();
