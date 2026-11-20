@@ -1,0 +1,18 @@
+(()=>{TinyV6.register(76,{"id":"plaster","title":"Sticky sides together","description":"Plaster: fold the adhesive sides together and press them firmly.","hint":"Fold sticky sides together \u2192 Press it firmly","verdict":"A bandage for itself.",create(api){
+const {ctx,rect,round,ellipse,line,poly,text,clamp,near,hit}=api;
+const lerp=(a,b,t)=>a+(b-a)*t;
+function path(points,fill,stroke,width=2){ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke()}}
+function curve(points,color,width=3){ctx.beginPath();ctx.moveTo(points[0],points[1]);ctx.bezierCurveTo(...points.slice(2));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.stroke()}
+function room(kind='desk'){api.bg(kind);let g=ctx.createLinearGradient(0,0,0,270);g.addColorStop(0,'#101a28');g.addColorStop(1,'#344151');ctx.fillStyle=g;ctx.fillRect(0,0,480,270);rect(0,210,480,60,'#222e3a');line(0,210,480,210,'#53606c',2);}
+function metal(x,y,w,h){let g=ctx.createLinearGradient(x,y,x,y+h);g.addColorStop(0,'#d2e0e5');g.addColorStop(.3,'#6a8796');g.addColorStop(.55,'#e6edf0');g.addColorStop(1,'#49616e');round(x,y,w,h,5,g,'#202e3c')}
+let phase=0, time=0, drag=null, completed=false;const done=()=>{if(!completed){completed=true;api.done()}};
+
+let fold=0,ft=0,pressure=0,pt=0,hold=0,settle=0;
+function half(x,w,left=false,flipped=false){round(x,109,w,62,22,flipped?'#bc916d':'#d5b48c','#e7cf9f');for(let r=0;r<4;r++)for(let c=0;c<6;c++){let xx=x+17+c*15;if(xx<x+w-10)ellipse(xx,119+r*13,1.5,1.5,'#a78665')}if(!flipped){let cx=left?x+w-14:x+14;round(cx-13,117,26,46,4,'#f1ead1');for(let n=0;n<8;n++){line(cx-10,122+n*5,cx+10,122+n*5,'#d7d4bd',.7);line(cx-9+n*3,121,cx-9+n*3,156,'#dfdbc6',.6)}}}
+return {draw(){room();ellipse(244,205,142,13,'#15242b');path([[65,190],[141,174],[168,203],[78,220]],'#c7d6cf','#edf0dc');path([[66,191],[108,191],[140,176]],'#f3f1dc');path([[367,190],[408,177],[443,210],[395,229]],'#d9e1d0','#afc3be');for(let n=0;n<5;n++)line(388+n*6,194,411+n*3,209,'#a9bdb5',1);
+ ctx.save();let py=140;ctx.translate(0,py);ctx.scale(1,1-pressure*.22);ctx.translate(0,-py);half(240,116,false,false);
+ let theta=fold*Math.PI,c=Math.cos(theta),w=116*Math.abs(c),xx=c>=0?240-w:240;ctx.save();ctx.translate(0,-Math.sin(theta)*41);half(xx,Math.max(2,w),true,fold>.5);if(fold>.5){curve([243,121,257,115,284,116,303,119],'#e4caa0',1);line(246,112,246,165,'#977657',1)}ctx.restore();ctx.restore();
+ if(phase>0){for(let n=0;n<3;n++){let xx=265+n*29;curve([xx,171,xx+3,176,xx+9,176,xx+12,172],'#9b7a5b',1)}if(drag){curve([265,90+pressure*22,280,103+pressure*16,318,103+pressure*16,334,90+pressure*22],'#b9c8bd',2)}}
+ text(phase===0?'Fold the sticky sides together.':phase===1?'Now press them firmly.':'A bandage for itself.',240,27,11,'#c8cfbd');},
+ down(p){if(completed)return;if(phase===0&&hit(p,166,140,117,87))drag={kind:'fold',x:p.x};else if(phase===1&&hit(p,298,139,122,88))drag={kind:'press',y:p.y}},move(p){if(!drag)return;if(drag.kind==='fold')ft=clamp((p.x-drag.x)/150,0,1);else pt=clamp((p.y-drag.y)/34,0,1)},up(){if(!drag)return;if(drag.kind==='fold'){if(ft>.86){ft=1;phase=1}else ft=0}else if(pt>.85&&hold>.5){pt=.35;phase=2}else{pt=0;hold=0}drag=null},cancel(){if(!drag)return;if(drag.kind==='fold')ft=0;else{pt=0;hold=0}drag=null},update(dt){time+=dt;fold=lerp(fold,ft,Math.min(1,dt*11));pressure=lerp(pressure,pt,Math.min(1,dt*13));if(drag?.kind==='press'&&pressure>.8)hold+=dt;if(phase===2){settle+=dt;if(settle>.6)done()}},debug(){return{phase,fold,pressure,hold}}};
+}});})();

@@ -1,0 +1,55 @@
+'use strict';
+module.exports = async function (page, io, assert) {
+  let state = await io.state();
+  assert.equal(state.phase, 'snack');
+  assert.equal(state.mouseStains.length, 0);
+  assert.equal(state.keyStains.length, 0);
+  await io.click(211, 216);
+  await io.drag([378, 166], [401, 181]);
+  state = await io.state();
+  assert.equal(state.phase, 'snack');
+  assert.equal(state.mouseStains.length + state.keyStains.length, 0, 'Clean hands cannot leave premature orange stamps');
+  await io.drag([72, 74], [157, 67]); // A puff dropped short is not eaten.
+  assert.equal((await io.state()).fingerOrange, false);
+  await io.drag([72, 74], [231, 68]);
+  await io.until((s) => s.phase === 'mouse');
+  assert((await io.state()).fingerOrange);
+  await io.click(211, 216); // The mouse still comes first.
+  assert.equal((await io.state()).keyStains.length, 0);
+  await io.down(366, 165);
+  await io.move(394, 181);
+  await io.up();
+  state = await io.state();
+  assert.equal(state.phase, 'keyboard');
+  assert.equal(state.mouseStains.length, 1);
+  assert(Math.abs(state.mouseStains[0].x + 12) < 1 && Math.abs(state.mouseStains[0].y + 12) < 1, 'Mouse print attaches at the real contact point');
+  assert(state.mouse.x > 395 && state.mouseTravel >= 18);
+  await io.shot('orange-mouse');
+  await io.down(232, 215);
+  await io.wait(300);
+  state = await io.state();
+  assert.equal(state.phase, 'pressed');
+  assert.equal(state.keyDepression, 1);
+  assert.equal(state.keyStains.length, 1);
+  assert(Math.abs(state.keyStains[0].x - 21) < 1, 'Key stain uses the actual contact point, not a fixed decorative location');
+  assert.equal(state.rise, 0, 'The key cannot rise before it is released');
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.shot('key-held-down');
+  await io.up();
+  await io.until((s) => s.phase === 'rising' && s.rise > 0.3 && s.rise < 0.7);
+  state = await io.state();
+  assert(state.keyDepression > 0 && state.keyDepression < 1);
+  assert.equal(state.mouseStains.length, 1);
+  assert.equal(state.keyStains.length, 1);
+  assert.equal(await page.evaluate(() => finished), false, 'A slow visible key rise must precede completion');
+  await io.shot('sticky-rise');
+  await io.until((s) => s.phase === 'done');
+  state = await io.state();
+  assert.equal(state.keyDepression, 0);
+  assert(state.elapsed >= 3.4);
+  assert.equal(state.mouseStains.length, 1);
+  assert.equal(state.keyStains.length, 1);
+  assert.equal(await page.evaluate(() => finished), true);
+  await io.shot('both-stained');
+  // Shared runner verifies Retry restores the initial snack phase.
+};

@@ -1,0 +1,17 @@
+(()=>{
+"use strict";
+TinyV6.register(30,{"id": "yogurt", "title": "Lid confetti", "description": "Yogurt pot: tear the lid into narrow strips, leaving some attached to the rim.", "hint": "Tear one narrow strip \u2192 Another narrow strip \u2192 Leave the rim attached", "verdict": "A spoon obstacle course.",create(api){
+const {ctx,rect,round,ellipse,line,poly,text,clamp,near,hit}=api;
+const path=(points,fill,stroke,width=2)=>{ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke();}};
+const curve=(points,color,width=2)=>{ctx.beginPath();ctx.moveTo(...points[0]);for(let i=1;i<points.length;i+=3)ctx.bezierCurveTo(...points[i],...points[i+1],...points[i+2]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.stroke();};
+const grad=(x,y,w,h,a,b)=>{const g=ctx.createLinearGradient(x,y,x+w,y+h);g.addColorStop(0,a);g.addColorStop(1,b);return g;};
+const desk=(color='#293b46')=>{rect(0,0,480,270,color);for(let i=0;i<6;i++){line(0,30+i*48,480,30+i*48,'#ffffff08',2);for(let j=0;j<3;j++)curve([[0,i*48+10+j*8],[130,i*48+14+j*8],[360,i*48+5+j*8],[480,i*48+11+j*8]],'#ffffff05',1);}};
+const shadow=(x,y,rx,ry)=>ellipse(x,y,rx,ry,'#09172265');
+let phase=0,time=0,drag=null,done=false;
+const finish=()=>{if(!done){done=true;api.done();}};
+let peel=0,pt=0,trail=[],rest=0;const xs=[207,233,259];
+function foil(){ctx.save();ctx.beginPath();ctx.ellipse(236,100,78,31,0,0,Math.PI*2);ctx.clip();rect(155,69,162,62,grad(160,60,160,70,'#d7ded5','#74939c'));for(let i=0;i<8;i++)line(150+i*24,71,178+i*24,132,'#f4f2d755',1);for(let i=0;i<phase&&i<3;i++){path([[xs[i]-9,73],[xs[i]+8,79],[xs[i]+10,96],[xs[i]+6,110],[xs[i]+9,129],[xs[i]-10,126],[xs[i]-7,108],[xs[i]-10,92]],'#f1d4c6');}if(phase<3&&peel>0){rect(xs[phase]-10,73,20,peel*55,'#f1d4c6');}ctx.restore();for(let i=0;i<3;i++)if(i>=phase)line(xs[i]-9,120,xs[i]+10,120,'#425e69',1);if(phase<3&&peel>0){const x=xs[phase],yy=125-peel*104;curve([[x,126-peel*50],[x-30,104-peel*44],[x+26,87-peel*60],[x-10,yy]],'#8ba3a9',21);curve([[x-4,126-peel*50],[x-30,104-peel*44],[x+22,87-peel*60],[x-14,yy]],'#e2e7da',13);}}
+return{draw(){desk('#2b4249');shadow(236,229,84,13);path([[159,101],[313,101],[291,214],[182,214]],grad(160,100,150,110,'#e4e2d2','#9fb9b8'),'#789896');ellipse(236,213,55,15,'#a8beb8');path([[168,133],[304,133],[294,191],[179,191]],'#b97785');text('YOGURT',236,154,15,'#f6e4cd');ellipse(236,176,10,9,'#d5a2a6');path([[227,168],[236,161],[244,168],[236,166]],'#729785');for(let i=0;i<4;i++)ellipse(230+i*4,177+(i%2)*3,1,1,'#f4d1a7');ellipse(236,100,81,34,'#eff0de');ellipse(236,100,75,29,'#f0d5ca');foil();trail.forEach((v,i)=>{ctx.save();ctx.translate(84+i*31,178-i*25);ctx.rotate(-.4+i*.6);path([[-8,-28],[11,-32],[6,-12],[13,5],[4,27],[-11,21],[-4,3],[-12,-11]],'#c2d0cd','#7796a0');line(-4,-22,3,20,'#f2eddd',3);ctx.restore();});ellipse(381,112,13,22,'#b8cbcb');ellipse(380,109,8,16,'#718f99');round(377,126,8,82,4,'#c3d4ce');if(phase<3)ellipse(xs[phase],125,9,4,'#d8bd8e');},down(p){if(phase<3&&near(p,xs[phase],123,25))drag=p;},move(p){if(drag)pt=clamp((123-p.y)/87,0,1);},up(){if(drag&&pt>.8){trail.push(1);phase++;peel=pt=0;api.tone(500,.09);}else pt=0;drag=null;},cancel(){if(drag===null)return;drag=null;pt=0;},update(dt){time+=dt;peel+=(pt-peel)*Math.min(1,dt*16);if(phase===3){rest+=dt;if(rest>.4)finish();}},debug(){return{phase,peel,done};}};
+
+}});
+})();

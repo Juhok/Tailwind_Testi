@@ -1,0 +1,17 @@
+(()=>{
+"use strict";
+TinyV6.register(75,{"id": "pencil", "title": "A perfect point, briefly", "description": "Pencil: sharpen a perfect tip and immediately snap it against the paper.", "hint": "Sharpen the point \u2192 Press it into the paper", "verdict": "Perfection was nice while it lasted.",create(api){
+const {ctx,rect,round,ellipse,line,poly,text,clamp,near,hit}=api;
+const path=(points,fill,stroke,width=2)=>{ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke();}};
+const curve=(points,color,width=2)=>{ctx.beginPath();ctx.moveTo(...points[0]);for(let i=1;i<points.length;i+=3)ctx.bezierCurveTo(...points[i],...points[i+1],...points[i+2]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.stroke();};
+const grad=(x,y,w,h,a,b)=>{const g=ctx.createLinearGradient(x,y,x+w,y+h);g.addColorStop(0,a);g.addColorStop(1,b);return g;};
+const desk=(color='#293b46')=>{rect(0,0,480,270,color);for(let i=0;i<6;i++){line(0,30+i*48,480,30+i*48,'#ffffff08',2);for(let j=0;j<3;j++)curve([[0,i*48+10+j*8],[130,i*48+14+j*8],[360,i*48+5+j*8],[480,i*48+11+j*8]],'#ffffff05',1);}};
+const shadow=(x,y,rx,ry)=>ellipse(x,y,rx,ry,'#09172265');
+let phase=0,time=0,drag=null,done=false;
+const finish=()=>{if(!done){done=true;api.done();}};
+let px=250,py=104,angle=-.25,sharp=0,working=false,breakTime=0,chip=0;
+function pencil(){ctx.save();ctx.translate(px,py);ctx.rotate(angle+(working?Math.sin(time*25)*.02:0));const tip=phase===2?9:14*(1-sharp);path([[tip,0],[29,-8],[29,8]],'#d2ab71','#e7c38b');if(sharp>.8&&phase!==2)path([[0,0],[9,-3],[9,3]],'#273541');round(28,-8,107,16,2,'#cda65c');rect(29,-8,105,5,'#ebce82');rect(29,3,105,5,'#9c7c48');rect(135,-8,16,16,'#a3b6b4');for(let i=0;i<3;i++)line(138+i*4,-7,138+i*4,7,'#718f96',1);round(150,-8,19,16,4,'#bf8f8a');line(53,-2,104,-2,'#8d764c',1);ctx.restore();}
+return{draw(){desk('#34434a');round(66,91,116,122,14,'#426777','#95afb1');round(77,102,94,59,9,'#8eaaa9');ellipse(147,135,20,20,'#263f4f');ellipse(147,135,14,14,'#112f40');round(78,172,91,29,4,'#648a9560','#adc2b3');for(let n=0;n<Math.floor(sharp*15);n++){const x=85+(n*17)%74,y=182+(n%3)*6;curve([[x,y],[x+5,y-6],[x+10,y-4],[x+9,y+1]],'#d5b175',2);}ellipse(91,115,3,3,working?'#bcce94':'#516f76');round(234,151,200,94,4,'#a2b3b3');round(229,145,200,94,4,'#e2dfc9');for(let y=163;y<229;y+=17)line(241,y,416,y,'#b7c6bd',1);line(253,150,253,233,'#cba9a0',1);if(phase===2){line(292,207,312,209,'#5c6260',2);path([[312+chip*20,213+chip*6],[319+chip*20,211+chip*6],[315+chip*20,219+chip*6]],'#283943');for(let i=0;i<4;i++)ellipse(297+i*7,215+Math.sin(i)*3,1,1,'#596566');}pencil();},down(p){if(done)return;if(near(p,px+65,py-18,72)){drag=p;}},move(p){if(!drag)return;px=p.x-60;py=p.y+20;if(phase===0){working=near({x:px,y:py},147,135,27);angle=working?0:-.25;}else{angle=clamp((py-90)/-120-.25,-1.15,-.25);}},up(p){if(!drag)return;if(phase===1&&near({x:px,y:py},302,204,36)){phase=2;px=302;py=205;angle=-1.1;api.tone(200,.1);}else{px=phase===0?250:285;py=phase===0?104:90;angle=-.25;}working=false;drag=null;},cancel(){if(drag===null)return;working=false;drag=null;px=phase===0?250:285;py=phase===0?104:90;angle=-.25;},update(dt){time+=dt;if(working&&phase===0){sharp=Math.min(1,sharp+dt*.8);if(sharp===1){phase=1;working=false;api.tone(570,.08);}}if(phase===2){breakTime+=dt;chip=Math.min(1,breakTime*3);if(breakTime>.7)finish();}},debug(){return{phase,sharp,working,done};}};
+
+}});
+})();

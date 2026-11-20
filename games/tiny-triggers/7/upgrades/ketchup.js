@@ -1,0 +1,17 @@
+(()=>{TinyV6.register(31,{"id":"ketchup","title":"Shake? Never","description":"Ketchup: squeeze the watery first squirt straight onto the fries.","hint":"Hold and squeeze, unshaken","verdict":"Tomato-flavoured water. The premium topping.",create(api){
+const {ctx,rect,round,ellipse,line,poly,text,clamp,near,hit}=api;
+const lerp=(a,b,t)=>a+(b-a)*t;
+function path(points,fill,stroke,width=2){ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke()}}
+function curve(points,color,width=3){ctx.beginPath();ctx.moveTo(points[0],points[1]);ctx.bezierCurveTo(...points.slice(2));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.stroke()}
+function room(kind='desk'){api.bg(kind);let g=ctx.createLinearGradient(0,0,0,270);g.addColorStop(0,'#101a28');g.addColorStop(1,'#344151');ctx.fillStyle=g;ctx.fillRect(0,0,480,270);rect(0,210,480,60,'#222e3a');line(0,210,480,210,'#53606c',2);}
+function metal(x,y,w,h){let g=ctx.createLinearGradient(x,y,x,y+h);g.addColorStop(0,'#d2e0e5');g.addColorStop(.3,'#6a8796');g.addColorStop(.55,'#e6edf0');g.addColorStop(1,'#49616e');round(x,y,w,h,5,g,'#202e3c')}
+let phase=0, time=0, drag=null, completed=false;const done=()=>{if(!completed){completed=true;api.done()}};
+
+let x=382,y=116,angle=0,squeeze=0,water=0,drips=[];
+function bottle(){ctx.save();ctx.translate(x,y);ctx.rotate(angle);let dent=squeeze*8;path([[-12,-48],[12,-48],[15,-31],[28-dent,-17],[30-dent,44],[20,53],[-20,53],[-30+dent,44],[-28+dent,-17],[-15,-31]],'#a74437','#d07052',2);round(-14,-58,28,16,3,'#d6caa8');rect(-9,-61,18,5,'#eee0bc');path([[-18,-4],[18,-4],[20,31],[-20,31]],'#efe1bd');text('TOMATO',0,7,7,'#8d4537');ellipse(0,20,8,7,'#c76243');path([[-4,15],[0,10],[2,15],[8,12],[4,18]],'#668954');curve([-21+dent,-12,-22+dent,10,-23+dent,34,-18,42],'#cd7557',3);ctx.restore()}
+return {draw(){room('kitchen');ellipse(206,231,125,18,'#10202a');ellipse(206,213,121,30,'#b7c8c0');ellipse(206,209,102,22,'#d8dfcb');for(let n=0;n<21;n++){let xx=124+n*17%155,yy=156+(n*13%44);ctx.save();ctx.translate(xx,yy);ctx.rotate((n%5-2)*.13);path([[0,0],[8,-3],[15,40],[7,43]],'#ba7930');path([[0,0],[6,-3],[13,37],[7,40]],'#e6b65d');line(3,3,10,34,'#f1cf83',1);ctx.restore()}
+ if(water>0){ctx.save();ctx.globalAlpha=.42;ellipse(212,208,water*60,water*13,'#bb6e43');curve([187,181,209,188,230,181,245,196],'#d08550',water*9);ctx.restore();for(let n=0;n<6;n++)ellipse(187+n*10,210+Math.sin(n)*7,2,1,'#d79d6c')}
+ bottle();for(const d of drips){ellipse(d.x,d.y,1.8,4,'#c78759');line(d.x,d.y-2,d.x,d.y,'#e8bc86',1)}
+ text(phase===1?'The watery first squirt.':'Hold the bottle over the fries. No shaking.',240,26,10,'#c9d0bf');},
+ down(p){if(!completed&&near(p,x,y,64))drag={ox:x-p.x,oy:y-p.y}},move(p){if(drag){x=clamp(p.x+drag.ox,55,425);y=clamp(p.y+drag.oy,60,175)}},up(){drag=null;if(phase===0){x=382;y=116;angle=0;squeeze=0}},cancel(){if(!drag)return;drag=null;if(phase===0){x=382;y=116;angle=0;squeeze=0}},update(dt){time+=dt;let over=drag&&x>167&&x<260&&y<116;angle=lerp(angle,over||phase===1?Math.PI:0,Math.min(1,dt*7));squeeze=lerp(squeeze,over?1:0,Math.min(1,dt*8));if(over&&angle>2.8&&phase===0){water=Math.min(1,water+dt*.48);if(Math.random()<dt*27)drips.push({x:x+(Math.random()-.5)*7,y:y+59,v:110});if(water===1){phase=1;drag=null;done()}}drips.forEach(d=>{d.y+=d.v*dt;d.v+=100*dt});drips=drips.filter(d=>d.y<209)},debug(){return{phase,water,angle}}};
+}});})();

@@ -1,0 +1,202 @@
+{
+  "ordering-kiosk": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "d6ca4e982ce38ccece88b746a4963e8732127e4925261eb516ba31c039698c83",
+    "testSha256": "8f5797f6a256cd198034ea73a2bf5a02942f080cd715a4b41fe4a30b9515c318",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "stick-drift": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "b21e697a09770c56ac2a30f1af5c250d1acef393a1cb02e154729360027b8c01",
+    "testSha256": "7210b12bbe94ab889cc0a46ab9de82966247d54db369d744d2eaf89dfc8e957e",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "offline-online": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "1cde4fa4fe1414545dd3571f98805eca34303f35ff2866a1489ebff71685bc2e",
+    "testSha256": "5b0164cfe7f24815863b3c5cc89ba782de5cf53e06710f85e286d3f664ef6d26",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "dungeon-pull": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "d37549a541606d7450104c27c304ed08b3edfa5a82de2650525614813d4420d7",
+    "testSha256": "f9480e0b8150bd94561365f67419331701ce44ddf5ab20a1ab84595102a0d1b6",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "mage-sword": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "e0ffdc7c706eb420cce1f5a7026c6eb2153654cf6d5e9a4471b47a1a26844572",
+    "testSha256": "4311f11d02930909e1a93bbaf0d3a8090f50e5122a44dcf0798e247d6ace3d12",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "wrong-audio": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "393e36c32811af4ad48bbfe2483ac414aa3421af10cb04f599501de443353341",
+    "testSha256": "538674e179885195c72c4b46f366ffa73258176ba159e68cc6dbc2c28e7e9e47",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "update-shutdown": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "e8c6630386eaa54ea0d2868112e7a96326dc54e45ae563ae07d13c886c422c55",
+    "testSha256": "4de85a549b368eeec6e43bdc4836de289661b36c8961cbe2a01fe66ac2856a45",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "autocorrect": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "d200e022bf9c0e3e7743cf61141385af98f97eef80b60bbf81e7c67eeb3957a6",
+    "testSha256": "1c9d4c240103b806f0b4c4706ae606b403b6b4da73c672566bd9b215a2322ac8",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "trouser-leg": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "7a242a40f48f668abc7207b2a362de9fcd8fcfbd3cfe11386f11b0a943adc3f5",
+    "testSha256": "20ada4d89962d25cb4bb19645c467834375d030078ea3009df086b317d947885",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "light-switch": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "f2fb0f042d305466f76bf6af0f8b84b2f9d6d211a7a008792317eca1282f1c13",
+    "testSha256": "cbe6d3bc51e7c8fecd473304e61e8051087fd81b9f2aa40b7ed660b7d8e610ec",
+    "evidence": "Scene worker reported current-file real-input pass; screenshots reviewed."
+  },
+  "red-lights": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "59624551c702a2de9d35485a1c416b5882c2b5056fd642621c3a82aa6de26901",
+    "testSha256": "72c13415a18e890dae841405f3bf083f78444c7dc7615b0bf94a363b491ba399",
+    "evidence": "Scene worker reported current-file real-input pass and visual review."
+  },
+  "travel-plug": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "0dfda40adac563c9f0fc23041aeff043dc7eaabe71e45c8cc7e53cf473f006b4",
+    "testSha256": "bb96c8741b2db7c805dba32d23304c888a56d21cda00fd281794d64693770277",
+    "evidence": "Scene worker reported real-input pass and final screenshot review."
+  },
+  "fizzy-bottle": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "671916176d8ab5de4ff28a43dfc336a30d5d7abf3934c6960251a925d36b5990",
+    "testSha256": "78d404ced68a4db39ccd6912be3c2eba2d5fbd41bb24afae3932570f5136eeec",
+    "evidence": "Worker reported current-file mouse/touch passes; root reviewed fountain and finish."
+  },
+  "flour-bag": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "9d705a4c0f875a4d48e80d47f446321ae740566fcc490428ee3f973905391a56",
+    "testSha256": "03cc56ce9ddf45d172244035e7e05055e9c904dda31d9dab9b8f113cb3ecdc2a",
+    "evidence": "Current-file mouse/touch and Retry reported by worker; root reviewed final artwork."
+  },
+  "checkout-ambush": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "e414b04f9f4551f6e4bb32e28d61590b4b0714b3d3e65a744cbb3a17162f3060",
+    "testSha256": "b9b38ec85bdba6a8427e372e6f9fbc2b1e7cb458a2632df7a59f14c43ca593b4",
+    "evidence": "Mouse/touch rerun after framing fix; root reviewed updated screenshot."
+  },
+  "wiper-setting": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "a1329bfa26c37a583939009243975c6af04b7ac12f685a6e1c86a281cebc3c7b",
+    "testSha256": "b84575692fc3ea1d638d510d91d419c83c0ea43d3d142d4fd86cbbbf14cf81f5",
+    "evidence": "Worker reported current-file mouse/touch, incorrect gesture and Retry pass; root reviewed final screenshot."
+  },
+  "third-gear": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "43a77113132053608a9cc2335da39ba9ab1d47f3978b6e6b550c1b9342d083e4",
+    "testSha256": "42be31c083644c000c734c5d24e82babd56d4aabc79abf983d8c0302923ff196",
+    "evidence": "Worker reported current-file mouse/touch, short-crank and cancel checks, Retry; root reviewed final screenshot."
+  },
+  "missing-product": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "88a4fdddb1132d25778e07473f5a60af2b2105b1cd4660a34e741e1679527ed6",
+    "testSha256": "bd162cf2c7b72226b944f3456bc0ab71f8113f61057c3fbab8b8b40975ebbc60",
+    "evidence": "Worker reported current-file mouse/touch, incorrect-aisle and scan checks, Retry; root reviewed final screenshot."
+  },
+  "afk-teammate": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "c7685bcda53df5047a83b831b7cb74462e0c1cfdc05b4662432fac67549c1ba3",
+    "testSha256": "cb61070f2ca7cc0ff39ac4ce09485fdba25732a11f17fee7156c4e9084383b36",
+    "evidence": "Worker reported current-file mouse/touch and Retry passes; root and independent reviewer inspected screenshots."
+  },
+  "exact-change": {
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "retry": true,
+    "sourceSha256": "7aa1c78516ed9e7c1ca06b011eb688e9297d4949219072b3d571544e85ebf8d5",
+    "testSha256": "b35f8bc566ab3ccafdadc342c342f08496019c350735e3e7203a80cae59b86f7",
+    "evidence": "Worker reported current-file mouse/touch and Retry passes; root and independent reviewer inspected screenshots."
+  }
+}

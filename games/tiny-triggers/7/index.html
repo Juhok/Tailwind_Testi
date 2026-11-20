@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#101721" />
+    <meta
+      name="description"
+      content="Tiny Triggers: 128 hands-on tiny crimes in 21 chapters. Relax. Take your time. Make it worse."
+    />
+    <title>Tiny Triggers · Volume 7</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chapters.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="back" href="../../../games.html">← THE ARCADE</a
+        ><button id="sound" aria-pressed="true">Sound on</button>
+      </header>
+      <section class="intro">
+        <h1>Tiny Triggers<span class="spark">✳</span></h1>
+        <p class="tagline">Relax. Take your time. Make it worse.</p>
+      </section>
+      <section class="game" aria-label="Interactive scene">
+        <div class="scene-top">
+          <span id="chapter">01 / 128</span
+          ><span id="category">EVERYDAY RITUALS</span
+          ><button id="album" disabled>Collection 🔒</button>
+        </div>
+        <article>
+          <div class="scene-heading">
+            <h2 id="title"></h2>
+            <p id="instruction" class="sr-only"></p>
+          </div>
+          <div class="stage-wrap">
+            <canvas
+              id="stage"
+              width="960"
+              height="540"
+              aria-label="Drag the objects to complete the scene. Instructions above."
+              tabindex="0"
+            ></canvas>
+            <div id="loading" hidden role="status" aria-live="off">
+              <span>PREPARING YOUR NEXT MISTAKE</span
+              ><strong id="load-number">0%</strong
+              ><progress id="load-progress" max="100" value="0"></progress>
+              <p id="loading-tip"></p>
+            </div>
+          </div>
+          <div class="status">
+            <p id="feedback" role="status" aria-live="polite"></p>
+            <button id="next" hidden>Next tiny crime →</button>
+          </div>
+        </article>
+        <div class="bottom">
+          <button id="reset">↺ Retry scene</button
+          ><span id="count">0 / 128 wonderfully wrong</span
+          ><button id="hint">A gentle hint</button>
+        </div>
+      </section>
+      <footer>
+        <span>NO CLOCK. NO SCORE. JUST QUESTIONABLE CHOICES.</span
+        ><span
+          ><button id="unlock-collection">Unlock collection</button> · VOL.
+          07</span
+        >
+      </footer>
+      <dialog id="unlock-dialog">
+        <h2>Unlock collection</h2>
+        <p>Already played through? Enter your code to revisit any scene.</p>
+        <form id="unlock-form">
+          <label for="collection-code">Collection code</label>
+          <input id="collection-code" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" required />
+          <p id="unlock-error" role="status"></p>
+          <button type="submit">Unlock</button>
+          <button id="unlock-cancel" type="button">Cancel</button>
+        </form>
+      </dialog>
+      <dialog id="collection">
+        <h2>Your tiny crimes</h2>
+        <p>Every scene is now yours to replay.</p>
+        <button id="collection-grouping" type="button" aria-pressed="true" aria-controls="scene-list">Group by chapter: on</button>
+        <div id="scene-list"></div>
+        <button id="close">Back to making it worse</button>
+      </dialog>
+      <dialog id="ending">
+        <p class="eyebrow">NOTHING IS QUITE RIGHT. PERFECT.</p>
+        <h2>Beautifully unbearable.</h2>
+        <p>
+          You made one hundred and eight little things worse.<br />The world is
+          considerably less comfortable now.
+        </p>
+        <p>Relax. Take your time. Make it worse.</p>
+        <button id="replay">Visit your collection →</button>
+      </dialog>
+    </main>
+    <script defer src="catalog.js"></script>
+    <script defer src="atelier.js"></script>
+    <script defer src="workshop.js"></script>
+    <script defer src="vignettes.js"></script>
+    <script defer src="scenes/curtain-clip.js"></script>
+    <script defer src="scenes/vacuum-rug.js"></script>
+    <script defer src="scenes/code-unformatter.js"></script>
+    <script defer src="scenes/chase-card.js"></script>
+    <script defer src="scenes/toilet-hunt.js"></script>
+    <script defer src="scenes/armor-paywall.js"></script>
+    <script defer src="scenes/duvet-corner.js"></script>
+    <script defer src="scenes/pull-tab.js"></script>
+    <script defer src="scenes/oversized-puzzle.js"></script>
+    <script defer src="scenes/cheese-fingers.js"></script>
+    <script defer src="scenes/forgotten-milk.js"></script>
+    <script defer src="scenes/never-loot.js"></script>
+    <script defer src="scenes/peel-here.js"></script>
+    <script defer src="scenes/collapsing-bag.js"></script>
+    <script defer src="scenes/wet-sock.js"></script>
+    <script defer src="scenes/fabric-zipper.js"></script>
+    <script defer src="scenes/microwave-ice.js"></script>
+    <script defer src="scenes/water-sleeve.js"></script>
+    <script defer src="scenes/cold-butter.js"></script>
+    <script defer src="scenes/earbud.js"></script>
+    <script defer src="scenes/printed-period.js"></script>
+    <script defer src="scenes/cookie-switch.js"></script>
+    <script defer src="scenes/short-cable.js"></script>
+    <script defer src="scenes/elevator.js"></script>
+    <script defer src="scenes/controller.js"></script>
+    <script defer src="upgrades.js"></script>
+    <script defer src="upgrades/banana.js"></script>
+    <script defer src="upgrades/roll.js"></script>
+    <script defer src="upgrades/chocolate.js"></script>
+    <script defer src="upgrades/legacy-3.js"></script>
+    <script defer src="upgrades/legacy-4.js"></script>
+    <script defer src="upgrades/burger.js"></script>
+    <script defer src="upgrades/legacy-6.js"></script>
+    <script defer src="upgrades/legacy-7.js"></script>
+    <script defer src="upgrades/legacy-8.js"></script>
+    <script defer src="upgrades/legacy-9.js"></script>
+    <script defer src="upgrades/legacy-10.js"></script>
+    <script defer src="upgrades/legacy-11.js"></script>
+    <script defer src="upgrades/legacy-12.js"></script>
+    <script defer src="upgrades/legacy-13.js"></script>
+    <script defer src="upgrades/legacy-14.js"></script>
+    <script defer src="upgrades/legacy-15.js"></script>
+    <script defer src="upgrades/legacy-16.js"></script>
+    <script defer src="upgrades/legacy-17.js"></script>
+    <script defer src="upgrades/butter.js"></script>
+    <script defer src="upgrades/books.js"></script>
+    <script defer src="upgrades/socks.js"></script>
+    <script defer src="upgrades/usb.js"></script>
+    <script defer src="upgrades/sticker.js"></script>
+    <script defer src="upgrades/crumb.js"></script>
+    <script defer src="upgrades/cake.js"></script>
+    <script defer src="upgrades/carton.js"></script>
+    <script defer src="upgrades/sandwich.js"></script>
+    <script defer src="upgrades/spaghetti.js"></script>
+    <script defer src="upgrades/cookie.js"></script>
+    <script defer src="upgrades/icecream.js"></script>
+    <script defer src="upgrades/yogurt.js"></script>
+    <script defer src="upgrades/ketchup.js"></script>
+    <script defer src="upgrades/straw.js"></script>
+    <script defer src="upgrades/ice.js"></script>
+    <script defer src="upgrades/cupboard.js"></script>
+    <script defer src="upgrades/pump.js"></script>
+    <script defer src="upgrades/toothpaste.js"></script>
+    <script defer src="upgrades/towel.js"></script>
+    <script defer src="upgrades/watering.js"></script>
+    <script defer src="upgrades/laundry.js"></script>
+    <script defer src="upgrades/laces.js"></script>
+    <script defer src="upgrades/zip.js"></script>
+    <script defer src="upgrades/blinds.js"></script>
+    <script defer src="upgrades/film.js"></script>
+    <script defer src="upgrades/battery.js"></script>
+    <script defer src="upgrades/headphones.js"></script>
+    <script defer src="upgrades/mousecord.js"></script>
+    <script defer src="upgrades/printer.js"></script>
+    <script defer src="upgrades/stapler.js"></script>
+    <script defer src="upgrades/wrapping.js"></script>
+    <script defer src="upgrades/tape.js"></script>
+    <script defer src="upgrades/pencap.js"></script>
+    <script defer src="upgrades/dishes.js"></script>
+    <script defer src="upgrades/fuel.js"></script>
+    <script defer src="upgrades/coffee.js"></script>
+    <script defer src="upgrades/filleddonut.js"></script>
+    <script defer src="upgrades/mandarin.js"></script>
+    <script defer src="upgrades/cucumber.js"></script>
+    <script defer src="upgrades/toast.js"></script>
+    <script defer src="upgrades/cheesepack.js"></script>
+    <script defer src="upgrades/crisps.js"></script>
+    <script defer src="upgrades/teabag.js"></script>
+    <script defer src="upgrades/shakers.js"></script>
+    <script defer src="upgrades/soap.js"></script>
+    <script defer src="upgrades/curtain.js"></script>
+    <script defer src="upgrades/sponge.js"></script>
+    <script defer src="upgrades/floor.js"></script>
+    <script defer src="upgrades/bin.js"></script>
+    <script defer src="upgrades/hanger.js"></script>
+    <script defer src="upgrades/glove.js"></script>
+    <script defer src="upgrades/cushion.js"></script>
+    <script defer src="upgrades/candle.js"></script>
+    <script defer src="upgrades/suitcase.js"></script>
+    <script defer src="upgrades/dogear.js"></script>
+    <script defer src="upgrades/notebook.js"></script>
+    <script defer src="upgrades/pencil.js"></script>
+    <script defer src="upgrades/plaster.js"></script>
+    <script defer src="upgrades/envelope.js"></script>
+    <script defer src="upgrades/cards.js"></script>
+    <script defer src="upgrades/chess.js"></script>
+    <script defer src="upgrades/boardgame.js"></script>
+    <script defer src="upgrades/cube.js"></script>
+    <script defer src="upgrades/domino.js"></script>
+    <script defer src="additions.js"></script>
+    <script defer src="additions/ordering-kiosk.js"></script>
+    <script defer src="additions/afk-teammate.js"></script>
+    <script defer src="additions/stick-drift.js"></script>
+    <script defer src="additions/offline-online.js"></script>
+    <script defer src="additions/dungeon-pull.js"></script>
+    <script defer src="additions/mage-sword.js"></script>
+    <script defer src="additions/wrong-audio.js"></script>
+    <script defer src="additions/update-shutdown.js"></script>
+    <script defer src="additions/autocorrect.js"></script>
+    <script defer src="additions/trouser-leg.js"></script>
+    <script defer src="additions/light-switch.js"></script>
+    <script defer src="additions/travel-plug.js"></script>
+    <script defer src="additions/red-lights.js"></script>
+    <script defer src="additions/checkout-ambush.js"></script>
+    <script defer src="additions/exact-change.js"></script>
+    <script defer src="additions/missing-product.js"></script>
+    <script defer src="additions/flour-bag.js"></script>
+    <script defer src="additions/fizzy-bottle.js"></script>
+    <script defer src="additions/wiper-setting.js"></script>
+    <script defer src="additions/third-gear.js"></script>
+    <script defer src="chapters.js"></script>
+    <script defer src="game.js"></script>
+  </body>
+</html>
