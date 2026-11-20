@@ -461,3 +461,7 @@ footer a {
 footer a:hover {
   color: var(--ink);
 }
+
+#collection-code { display: block; width: 100%; box-sizing: border-box; margin: 12px 0; padding: 12px; background: #101721; color: #f1e5cf; border: 1px solid #718093; border-radius: 6px; font: inherit; }
+#unlock-error { min-height: 1.5em; }
+#unlock-collection { font-size: inherit; padding: 4px 8px; }

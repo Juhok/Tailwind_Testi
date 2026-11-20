@@ -62,13 +62,24 @@
       <footer>
         <span>NO CLOCK. NO SCORE. JUST QUESTIONABLE CHOICES.</span
         ><span
-          ><a href="SPECIFICATIONS.md">English idea checklist</a> · VOL.
+          ><button id="unlock-collection">Unlock collection</button> · VOL.
           05</span
         >
       </footer>
+      <dialog id="unlock-dialog">
+        <h2>Unlock collection</h2>
+        <p>Already played through? Enter your code to revisit any scene.</p>
+        <form id="unlock-form">
+          <label for="collection-code">Collection code</label>
+          <input id="collection-code" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" required />
+          <p id="unlock-error" role="status"></p>
+          <button type="submit">Unlock</button>
+          <button id="unlock-cancel" type="button">Cancel</button>
+        </form>
+      </dialog>
       <dialog id="collection">
         <h2>Your tiny crimes</h2>
-        <p>You finished the collection. Every scene is now yours to replay.</p>
+        <p>Every scene is now yours to replay.</p>
         <div id="scene-list"></div>
         <button id="close">Back to making it worse</button>
       </dialog>

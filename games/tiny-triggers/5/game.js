@@ -154,6 +154,8 @@ for (const t of NEW_TASKS) {
 }
 const SCENE_COUNT = scenes.length;
 const chapterBook = TinyChapters.create(scenes, TASKS);
+let collectionUnlocked = false;
+try { collectionUnlocked = localStorage.getItem("tinyTriggers.v5.collectionUnlocked") === "true"; } catch {}
 let completed = new Set(),
   index = 0;
 try {
@@ -262,13 +264,13 @@ function win() {
       : "Next tiny crime →";
   $("#count").textContent =
     `${completed.size} / ${SCENE_COUNT} wonderfully wrong`;
-  $("#album").disabled = completed.size < SCENE_COUNT;
+  $("#album").disabled = !collectionUnlocked && completed.size < SCENE_COUNT;
   $("#album").textContent =
-    completed.size < SCENE_COUNT ? "Collection 🔒" : "Collection ↗";
+    !collectionUnlocked && completed.size < SCENE_COUNT ? "Collection 🔒" : "Collection ↗";
   if (!workshop?.def.custom?.exclusiveAudio) chime(784, 0.35, 0.04);
 }
 function load(n) {
-  if (n < 0 || n >= SCENE_COUNT || !chapterBook.isAvailable(n, completed))
+  if (n < 0 || n >= SCENE_COUNT || (!collectionUnlocked && !chapterBook.isAvailable(n, completed)))
     return;
   index = n;
   hintClicks = 0;
@@ -295,9 +297,9 @@ function load(n) {
   $("#count").textContent =
     `${completed.size} / ${SCENE_COUNT} wonderfully wrong`;
   say("");
-  $("#album").disabled = completed.size < SCENE_COUNT;
+  $("#album").disabled = !collectionUnlocked && completed.size < SCENE_COUNT;
   $("#album").textContent =
-    completed.size < SCENE_COUNT ? "Collection 🔒" : "Collection ↗";
+    !collectionUnlocked && completed.size < SCENE_COUNT ? "Collection 🔒" : "Collection ↗";
   openWorkshop(TASKS.get(n));
   if (isWorkshop()) {
     save();
@@ -1176,10 +1178,11 @@ $("#sound").onclick = () => {
   $("#sound").setAttribute("aria-pressed", String(!muted));
 };
 function collection() {
-  if (completed.size < SCENE_COUNT) return;
+  if (!collectionUnlocked && completed.size < SCENE_COUNT) return;
   active = false;
   chapterBook.renderCollection($("#scene-list"), {
     completed,
+    unlocked: collectionUnlocked,
     current: index,
     onChoose: (i) => {
       $("#collection").close();
@@ -1189,6 +1192,32 @@ function collection() {
   });
   $("#collection").showModal();
 }
+$("#unlock-collection").onclick = () => {
+  if (transition) return;
+  if (collectionUnlocked || completed.size === SCENE_COUNT) return collection();
+  active = false;
+  $("#unlock-error").textContent = "";
+  $("#collection-code").value = "";
+  $("#unlock-dialog").showModal();
+  $("#collection-code").focus();
+};
+$("#unlock-cancel").onclick = () => $("#unlock-dialog").close();
+$("#unlock-dialog").addEventListener("close", () => {
+  active = !$("#collection").open;
+});
+$("#unlock-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  if ($("#collection-code").value.trim() !== "pixelvibe") {
+    $("#unlock-error").textContent = "That code isn't right. Try again.";
+    return;
+  }
+  collectionUnlocked = true;
+  try { localStorage.setItem("tinyTriggers.v5.collectionUnlocked", "true"); } catch {}
+  $("#album").disabled = false;
+  $("#album").textContent = "Collection ↗";
+  $("#unlock-dialog").close();
+  collection();
+});
 $("#album").onclick = collection;
 $("#close").onclick = () => $("#collection").close();
 $("#collection").addEventListener("close", () => (active = true));

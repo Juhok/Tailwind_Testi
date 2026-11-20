@@ -68,9 +68,9 @@ const TinyChapters = (() => {
       return { completed, index, frontier };
     };
 
-    function renderCollection(container, { completed, current, onChoose }) {
+    function renderCollection(container, { completed, current, onChoose, unlocked = false }) {
       container.replaceChildren();
-      if (!isUnlocked(completed)) {
+      if (!unlocked && !isUnlocked(completed)) {
         const note = document.createElement("p");
         note.className = "collection-locked";
         note.textContent = "Complete the journey to unlock the scene collection.";
