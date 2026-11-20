@@ -1,0 +1,65 @@
+module.exports = async function (page, io, assert) {
+  let state = await io.state();
+  assert.equal(state.phase, 'wash');
+  assert.equal(state.handsClean, false);
+  assert.equal(state.sleeveWet, false);
+
+  await io.click(230, 85);
+  await io.click(316, 170);
+  await io.drag([316, 170], [353, 91]);
+  state = await io.state();
+  assert.equal(state.phase, 'wash', 'Lifting before washing cannot complete the scene');
+  assert.equal(state.handsX, 316);
+  assert.equal(state.handsY, 170);
+  assert.equal(state.washDistance, 0);
+  assert.equal(state.wetness, 0);
+  assert.equal(await page.evaluate(() => finished), false);
+
+  await io.down(316, 170);
+  await io.move(230, 149);
+  await io.wait(300);
+  state = await io.state();
+  assert.equal(state.phase, 'wash');
+  assert.equal(state.underWater, true);
+  assert(state.washProgress < 1, 'Just holding under the tap is not a full wash');
+  await io.shot('partial-wash');
+  await io.move(251, 149);
+  await io.move(209, 149);
+  await io.move(251, 149);
+  await io.move(230, 149);
+  await io.until((s) => s.phase === 'washed');
+  await io.up();
+  state = await io.state();
+  assert.equal(state.handsClean, true);
+  assert(state.washDistance >= 96);
+  assert(state.washTime >= 0.75);
+  assert.equal(state.wetness, 0);
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.shot('clean-wet-hands');
+
+  await io.drag([state.handsX, state.handsY], [285, 126]);
+  state = await io.state();
+  assert.equal(state.phase, 'washed');
+  assert.equal(state.flowProgress, 0, 'A partial lift does not skip to the consequence');
+  await io.drag([state.handsX, state.handsY], [353, 91]);
+  await io.until((s) => s.phase === 'runoff' && s.flowProgress > 0.3);
+  state = await io.state();
+  assert(state.flowProgress > 0.3 && state.flowProgress < 1);
+  assert(state.wetness < 0.15);
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.shot('trickle-down-wrist');
+  await io.until((s) => s.phase === 'soaking' && s.wetness > 0.35);
+  state = await io.state();
+  assert.equal(state.waterReachedCuff, true);
+  assert.equal(state.sleeveWet, true);
+  assert(state.wetness < 1);
+  assert.equal(await page.evaluate(() => finished), false);
+  await io.shot('patch-spreading');
+  await io.until((s) => s.phase === 'complete');
+  state = await io.state();
+  assert.equal(state.wetness, 1);
+  assert.equal(state.flowProgress, 1);
+  assert.equal(await page.evaluate(() => finished), true);
+  await io.shot('dark-wet-cuff');
+  // The shared runner tests a real Retry click and initial phase/reset.
+};

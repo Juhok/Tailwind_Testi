@@ -1,0 +1,15 @@
+{
+  "name": "tiny-triggers-v5-checks",
+  "private": true,
+  "scripts": {
+    "test": "node all.cjs",
+    "test:batch": "node batch.cjs",
+    "test:shell": "node shell.cjs",
+    "test:list": "node all.cjs --list",
+    "test:new": "node new.cjs",
+    "test:touch": "MOBILE=1 node new.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}
