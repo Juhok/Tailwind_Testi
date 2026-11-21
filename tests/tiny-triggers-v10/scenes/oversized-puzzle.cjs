@@ -1,0 +1,54 @@
+module.exports = async function (page, io, assert) {
+  let state = await io.state();
+  assert.equal(state.phase, 0);
+  assert.equal(state.pictureAligned, false);
+  await io.down(210, 136);
+  await io.wait(350);
+  await io.up();
+  await io.drag([396, 143], [405, 65]);
+  state = await io.state();
+  assert.equal(state.phase, 0, 'Pressing the empty gap or dropping elsewhere cannot place the piece');
+  assert.equal(state.neighborLift, 0);
+  assert.equal(state.piece.x, 396);
+  assert.equal(state.finished, false);
+
+  await io.drag([396, 143], [210, 136], { steps: 24 });
+  state = await io.state();
+  assert.equal(state.phase, 1, 'Placing the piece leaves it perched above the gap');
+  assert.equal(state.pictureAligned, true);
+  assert.equal(state.artworkScale, 1, 'The lighthouse artwork matches the assembled painting exactly');
+  assert.ok(state.physicalScale > state.gapScale, 'Only the physical boundary is oversized');
+  assert.equal(state.pressure, 0);
+  assert.equal(state.neighborLift, 0);
+  assert.equal(state.finished, false);
+  await io.wait(700);
+  assert.equal((await io.state()).phase, 1, 'Placement does not silently press the piece down');
+  await io.shot('oversized-puzzle-aligned-but-oversized');
+
+  await io.down(210, 136);
+  await io.until(s => s.pressure > .16);
+  await io.up();
+  state = await io.state();
+  assert.equal(state.phase, 2);
+  assert.equal(state.finished, false, 'A brief tap cannot force the resistant cardboard');
+  await io.until(s => s.phase === 1);
+  assert.equal((await io.state()).pressure, 0, 'The piece springs back without sustained pressure');
+
+  await io.down(210, 136);
+  await io.until(s => s.neighborLift > .2 && s.neighborLift < .9);
+  state = await io.state();
+  assert.equal(state.phase, 2);
+  assert.equal(state.liftedNeighbors, 4, 'All four neighboring pieces begin to rise under pressure');
+  assert.equal(state.finished, false);
+  await io.shot('oversized-puzzle-neighbors-rising');
+  await io.until(s => s.phase >= 3);
+  await io.up();
+  await io.until(s => s.finished);
+  state = await io.state();
+  assert.equal(state.phase, 4);
+  assert.equal(state.neighborLift, 1);
+  assert.equal(state.liftedNeighbors, 4);
+  assert.equal(state.pictureAligned, true);
+  assert.equal(await page.evaluate(() => finished), true);
+  await io.shot('oversized-puzzle-forced-in');
+};

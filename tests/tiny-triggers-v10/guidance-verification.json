@@ -1,0 +1,1412 @@
+{
+  "kind": "accelerated scene-interface guidance simulation; not real-pointer testing",
+  "scenes": [
+    {
+      "id": "banana",
+      "passed": true,
+      "actions": 2,
+      "seconds": 0.9166666666666679
+    },
+    {
+      "id": "roll",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "chocolate",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "legacy-3",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "legacy-4",
+      "passed": true,
+      "actions": 2,
+      "seconds": 7.033333333333314
+    },
+    {
+      "id": "burger",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.6166666666666658
+    },
+    {
+      "id": "legacy-6",
+      "passed": true,
+      "actions": 6,
+      "seconds": 2.8666666666666614
+    },
+    {
+      "id": "legacy-7",
+      "passed": true,
+      "actions": 3,
+      "seconds": 4.433333333333323
+    },
+    {
+      "id": "legacy-8",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "legacy-9",
+      "passed": true,
+      "actions": 2,
+      "seconds": 0.9166666666666679
+    },
+    {
+      "id": "legacy-10",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.7166666666666655
+    },
+    {
+      "id": "legacy-11",
+      "passed": true,
+      "actions": 12,
+      "seconds": 5.266666666666653
+    },
+    {
+      "id": "legacy-12",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "legacy-13",
+      "passed": true,
+      "actions": 2,
+      "seconds": 0.9166666666666679
+    },
+    {
+      "id": "legacy-14",
+      "passed": true,
+      "actions": 2,
+      "seconds": 0.9166666666666679
+    },
+    {
+      "id": "legacy-15",
+      "passed": true,
+      "actions": 6,
+      "seconds": 2.8666666666666614
+    },
+    {
+      "id": "legacy-16",
+      "passed": true,
+      "actions": 8,
+      "seconds": 3.5499999999999923
+    },
+    {
+      "id": "legacy-17",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "butter",
+      "passed": true,
+      "actions": 2,
+      "seconds": 1.5166666666666662
+    },
+    {
+      "id": "books",
+      "passed": true,
+      "actions": 2,
+      "seconds": 1.0333333333333345
+    },
+    {
+      "id": "socks",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.4333333333333331
+    },
+    {
+      "id": "usb",
+      "passed": true,
+      "actions": 7,
+      "seconds": 3.1499999999999937
+    },
+    {
+      "id": "sticker",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "crumb",
+      "passed": true,
+      "actions": 2,
+      "seconds": 1.5166666666666662
+    },
+    {
+      "id": "cake",
+      "passed": true,
+      "actions": 6,
+      "seconds": 2.9833333333333276
+    },
+    {
+      "id": "carton",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "sandwich",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "spaghetti",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "cookie",
+      "passed": true,
+      "actions": 6,
+      "seconds": 5.016666666666654
+    },
+    {
+      "id": "icecream",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "yogurt",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.949999999999998
+    },
+    {
+      "id": "ketchup",
+      "passed": true,
+      "actions": 1,
+      "seconds": 3.516666666666659
+    },
+    {
+      "id": "straw",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.7166666666666655
+    },
+    {
+      "id": "ice",
+      "passed": true,
+      "actions": 7,
+      "seconds": 3.4999999999999925
+    },
+    {
+      "id": "cupboard",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "pump",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.416666666666663
+    },
+    {
+      "id": "toothpaste",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.4333333333333331
+    },
+    {
+      "id": "towel",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "watering",
+      "passed": true,
+      "actions": 6,
+      "seconds": 3.733333333333325
+    },
+    {
+      "id": "laundry",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.4333333333333331
+    },
+    {
+      "id": "laces",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "zip",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "blinds",
+      "passed": true,
+      "actions": 2,
+      "seconds": 0.9166666666666679
+    },
+    {
+      "id": "film",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.466666666666663
+    },
+    {
+      "id": "battery",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.949999999999998
+    },
+    {
+      "id": "headphones",
+      "passed": true,
+      "actions": 3,
+      "seconds": 2.033333333333331
+    },
+    {
+      "id": "mousecord",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "printer",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.2333333333333303
+    },
+    {
+      "id": "stapler",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.2333333333333303
+    },
+    {
+      "id": "wrapping",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.7166666666666655
+    },
+    {
+      "id": "tape",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "pencap",
+      "passed": true,
+      "actions": 2,
+      "seconds": 0.9166666666666679
+    },
+    {
+      "id": "dishes",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.3499999999999965
+    },
+    {
+      "id": "fuel",
+      "passed": true,
+      "actions": 4,
+      "seconds": 3.5333333333333257
+    },
+    {
+      "id": "coffee",
+      "passed": true,
+      "actions": 3,
+      "seconds": 3.433333333333326
+    },
+    {
+      "id": "filleddonut",
+      "passed": true,
+      "actions": 3,
+      "seconds": 2.716666666666662
+    },
+    {
+      "id": "mandarin",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.466666666666663
+    },
+    {
+      "id": "cucumber",
+      "passed": true,
+      "actions": 5,
+      "seconds": 3.6666666666666585
+    },
+    {
+      "id": "toast",
+      "passed": true,
+      "actions": 3,
+      "seconds": 2.033333333333331
+    },
+    {
+      "id": "cheesepack",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "crisps",
+      "passed": true,
+      "actions": 2,
+      "seconds": 2.833333333333328
+    },
+    {
+      "id": "teabag",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.116666666666664
+    },
+    {
+      "id": "shakers",
+      "passed": true,
+      "actions": 3,
+      "seconds": 5.033333333333321
+    },
+    {
+      "id": "soap",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.7166666666666655
+    },
+    {
+      "id": "curtain",
+      "passed": true,
+      "actions": 4,
+      "seconds": 2.0166666666666644
+    },
+    {
+      "id": "sponge",
+      "passed": true,
+      "actions": 5,
+      "seconds": 3.733333333333325
+    },
+    {
+      "id": "floor",
+      "passed": true,
+      "actions": 3,
+      "seconds": 4.733333333333322
+    },
+    {
+      "id": "bin",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "hanger",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.9166666666666647
+    },
+    {
+      "id": "glove",
+      "passed": true,
+      "actions": 2,
+      "seconds": 0.9166666666666679
+    },
+    {
+      "id": "cushion",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "candle",
+      "passed": true,
+      "actions": 14,
+      "seconds": 5.716666666666652
+    },
+    {
+      "id": "suitcase",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "dogear",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "notebook",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.3166666666666669
+    },
+    {
+      "id": "pencil",
+      "passed": true,
+      "actions": 4,
+      "seconds": 3.3333333333333264
+    },
+    {
+      "id": "plaster",
+      "passed": true,
+      "actions": 3,
+      "seconds": 2.4333333333333296
+    },
+    {
+      "id": "envelope",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "cards",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "chess",
+      "passed": true,
+      "actions": 2,
+      "seconds": 1.816666666666665
+    },
+    {
+      "id": "boardgame",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.3499999999999965
+    },
+    {
+      "id": "cube",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.4333333333333331
+    },
+    {
+      "id": "domino",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.2333333333333303
+    },
+    {
+      "id": "curtain-clip",
+      "passed": true,
+      "actions": 7,
+      "seconds": 3.0333333333333274
+    },
+    {
+      "id": "vacuum-rug",
+      "passed": true,
+      "actions": 16,
+      "seconds": 6.633333333333315
+    },
+    {
+      "id": "code-unformatter",
+      "passed": true,
+      "actions": 6,
+      "seconds": 2.2166666666666637
+    },
+    {
+      "id": "chase-card",
+      "passed": true,
+      "actions": 7,
+      "seconds": 3.1499999999999937
+    },
+    {
+      "id": "toilet-hunt",
+      "passed": true,
+      "actions": 5,
+      "seconds": 6.733333333333315
+    },
+    {
+      "id": "armor-paywall",
+      "passed": true,
+      "actions": 10,
+      "seconds": 12.56666666666687
+    },
+    {
+      "id": "duvet-corner",
+      "passed": true,
+      "actions": 8,
+      "seconds": 4.4499999999999895
+    },
+    {
+      "id": "pull-tab",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "oversized-puzzle",
+      "passed": true,
+      "actions": 2,
+      "seconds": 3.733333333333325
+    },
+    {
+      "id": "cheese-fingers",
+      "passed": true,
+      "actions": 14,
+      "seconds": 5.649999999999985
+    },
+    {
+      "id": "forgotten-milk",
+      "passed": true,
+      "actions": 10,
+      "seconds": 4.816666666666655
+    },
+    {
+      "id": "never-loot",
+      "passed": true,
+      "actions": 10,
+      "seconds": 18.200000000000248
+    },
+    {
+      "id": "peel-here",
+      "passed": true,
+      "actions": 6,
+      "seconds": 2.5166666666666626
+    },
+    {
+      "id": "collapsing-bag",
+      "passed": true,
+      "actions": 6,
+      "seconds": 2.5166666666666626
+    },
+    {
+      "id": "wet-sock",
+      "passed": true,
+      "actions": 9,
+      "seconds": 3.7166666666666583
+    },
+    {
+      "id": "fabric-zipper",
+      "passed": true,
+      "actions": 4,
+      "seconds": 4.8333333333333215
+    },
+    {
+      "id": "microwave-ice",
+      "passed": true,
+      "actions": 14,
+      "seconds": 5.7666666666666515
+    },
+    {
+      "id": "water-sleeve",
+      "passed": true,
+      "actions": 7,
+      "seconds": 7.533333333333312
+    },
+    {
+      "id": "cold-butter",
+      "passed": true,
+      "actions": 2,
+      "seconds": 4.033333333333324
+    },
+    {
+      "id": "earbud",
+      "passed": true,
+      "actions": 17,
+      "seconds": 6.849999999999981
+    },
+    {
+      "id": "printed-period",
+      "passed": true,
+      "actions": 13,
+      "seconds": 5.13333333333332
+    },
+    {
+      "id": "cookie-switch",
+      "passed": true,
+      "actions": 5,
+      "seconds": 1.816666666666665
+    },
+    {
+      "id": "short-cable",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.3499999999999965
+    },
+    {
+      "id": "elevator",
+      "passed": true,
+      "actions": 16,
+      "seconds": 6.21666666666665
+    },
+    {
+      "id": "controller",
+      "passed": true,
+      "actions": 5,
+      "seconds": 4.633333333333322
+    },
+    {
+      "id": "ordering-kiosk",
+      "passed": true,
+      "actions": 23,
+      "seconds": 7.483333333333312
+    },
+    {
+      "id": "afk-teammate",
+      "passed": true,
+      "actions": 23,
+      "seconds": 9.133333333333367
+    },
+    {
+      "id": "stick-drift",
+      "passed": true,
+      "actions": 7,
+      "seconds": 5.033333333333321
+    },
+    {
+      "id": "offline-online",
+      "passed": true,
+      "actions": 8,
+      "seconds": 3.016666666666661
+    },
+    {
+      "id": "dungeon-pull",
+      "passed": true,
+      "actions": 18,
+      "seconds": 7.316666666666646
+    },
+    {
+      "id": "mage-sword",
+      "passed": true,
+      "actions": 16,
+      "seconds": 6.866666666666648
+    },
+    {
+      "id": "wrong-audio",
+      "passed": true,
+      "actions": 5,
+      "seconds": 1.7499999999999987
+    },
+    {
+      "id": "update-shutdown",
+      "passed": true,
+      "actions": 18,
+      "seconds": 6.649999999999982
+    },
+    {
+      "id": "autocorrect",
+      "passed": true,
+      "actions": 9,
+      "seconds": 2.6833333333333287
+    },
+    {
+      "id": "trouser-leg",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.466666666666663
+    },
+    {
+      "id": "light-switch",
+      "passed": true,
+      "actions": 6,
+      "seconds": 5.13333333333332
+    },
+    {
+      "id": "travel-plug",
+      "passed": true,
+      "actions": 10,
+      "seconds": 3.983333333333324
+    },
+    {
+      "id": "red-lights",
+      "passed": true,
+      "actions": 17,
+      "seconds": 6.916666666666647
+    },
+    {
+      "id": "checkout-ambush",
+      "passed": true,
+      "actions": 9,
+      "seconds": 3.7166666666666583
+    },
+    {
+      "id": "exact-change",
+      "passed": true,
+      "actions": 36,
+      "seconds": 14.516666666666968
+    },
+    {
+      "id": "missing-product",
+      "passed": true,
+      "actions": 7,
+      "seconds": 4.433333333333323
+    },
+    {
+      "id": "flour-bag",
+      "passed": true,
+      "actions": 9,
+      "seconds": 3.949999999999991
+    },
+    {
+      "id": "fizzy-bottle",
+      "passed": true,
+      "actions": 7,
+      "seconds": 3.1499999999999937
+    },
+    {
+      "id": "wiper-setting",
+      "passed": true,
+      "actions": 10,
+      "seconds": 4.116666666666657
+    },
+    {
+      "id": "third-gear",
+      "passed": true,
+      "actions": 14,
+      "seconds": 7.533333333333312
+    },
+    {
+      "id": "busy-crossing",
+      "passed": true,
+      "actions": 19,
+      "seconds": 7.716666666666645
+    },
+    {
+      "id": "pudding-lid",
+      "passed": true,
+      "actions": 6,
+      "seconds": 3.8333333333333246
+    },
+    {
+      "id": "nugget-bag",
+      "passed": true,
+      "actions": 12,
+      "seconds": 6.349999999999983
+    },
+    {
+      "id": "tight-parking",
+      "passed": true,
+      "actions": 9,
+      "seconds": 4.24999999999999
+    },
+    {
+      "id": "fogging-windshield",
+      "passed": true,
+      "actions": 30,
+      "seconds": 11.933333333333506
+    },
+    {
+      "id": "give-way-gap",
+      "passed": true,
+      "actions": 48,
+      "seconds": 19.66666666666683
+    },
+    {
+      "id": "car-door",
+      "passed": true,
+      "actions": 8,
+      "seconds": 3.6666666666666585
+    },
+    {
+      "id": "rising-flush",
+      "passed": true,
+      "actions": 17,
+      "seconds": 6.916666666666647
+    },
+    {
+      "id": "one-hp",
+      "passed": true,
+      "actions": 13,
+      "seconds": 4.8333333333333215
+    },
+    {
+      "id": "quest-reward",
+      "passed": true,
+      "actions": 7,
+      "seconds": 2.8499999999999948
+    },
+    {
+      "id": "crowded-spawns",
+      "passed": true,
+      "actions": 12,
+      "seconds": 5.149999999999987
+    },
+    {
+      "id": "stolen-firewood",
+      "passed": true,
+      "actions": 2,
+      "seconds": 5.733333333333318
+    },
+    {
+      "id": "finish-line",
+      "passed": true,
+      "actions": 1,
+      "seconds": 8.51666666666667
+    },
+    {
+      "id": "smoke-alarm",
+      "passed": true,
+      "actions": 10,
+      "seconds": 4.466666666666656
+    },
+    {
+      "id": "merge-conflicts",
+      "passed": true,
+      "actions": 12,
+      "seconds": 8.24999999999999
+    },
+    {
+      "id": "bedtime-mosquito",
+      "passed": true,
+      "actions": 8,
+      "seconds": 3.0666666666666607
+    },
+    {
+      "id": "untouchable-fly",
+      "passed": true,
+      "actions": 7,
+      "seconds": 7.649999999999978
+    },
+    {
+      "id": "wasp-door",
+      "passed": true,
+      "actions": 12,
+      "seconds": 4.9166666666666545
+    },
+    {
+      "id": "mall-fundraisers",
+      "passed": true,
+      "actions": 7,
+      "seconds": 3.0333333333333274
+    },
+    {
+      "id": "sales-call",
+      "passed": true,
+      "actions": 11,
+      "seconds": 4.566666666666656
+    },
+    {
+      "id": "roadworks",
+      "passed": true,
+      "actions": 7,
+      "seconds": 4.34999999999999
+    },
+    {
+      "id": "mismatched-light",
+      "passed": true,
+      "actions": 11,
+      "seconds": 4.266666666666657
+    },
+    {
+      "id": "shoe-stone",
+      "passed": true,
+      "actions": 9,
+      "seconds": 6.1499999999999835
+    },
+    {
+      "id": "radio-song",
+      "passed": true,
+      "actions": 11,
+      "seconds": 4.633333333333322
+    },
+    {
+      "id": "safety-cap",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.3499999999999965
+    },
+    {
+      "id": "wobbly-table",
+      "passed": true,
+      "actions": 11,
+      "seconds": 4.7499999999999885
+    },
+    {
+      "id": "squeaky-chair",
+      "passed": true,
+      "actions": 8,
+      "seconds": 3.6666666666666585
+    },
+    {
+      "id": "low-sun",
+      "passed": true,
+      "actions": 7,
+      "seconds": 3.1499999999999937
+    },
+    {
+      "id": "unreachable-itch",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "renovation",
+      "passed": true,
+      "actions": 23,
+      "seconds": 9.316666666666709
+    },
+    {
+      "id": "cold-water",
+      "passed": true,
+      "actions": 19,
+      "seconds": 8.066666666666647
+    },
+    {
+      "id": "stolen-parking",
+      "passed": true,
+      "actions": 16,
+      "seconds": 7.216666666666646
+    },
+    {
+      "id": "festival-queue",
+      "passed": true,
+      "actions": 5,
+      "seconds": 8.933333333333357
+    },
+    {
+      "id": "crooked-apartment",
+      "passed": true,
+      "actions": 14,
+      "seconds": 6.06666666666665
+    },
+    {
+      "id": "same-outfit",
+      "passed": true,
+      "actions": 9,
+      "seconds": 4.0666666666666575
+    },
+    {
+      "id": "black-sweets",
+      "passed": true,
+      "actions": 6,
+      "seconds": 2.633333333333329
+    },
+    {
+      "id": "fish-finger",
+      "passed": true,
+      "actions": 9,
+      "seconds": 3.8333333333333246
+    },
+    {
+      "id": "stained-outfit",
+      "passed": true,
+      "actions": 7,
+      "seconds": 3.1499999999999937
+    },
+    {
+      "id": "waiting-room",
+      "passed": true,
+      "actions": 19,
+      "seconds": 7.833333333333311
+    },
+    {
+      "id": "early-gate",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "military-clinic",
+      "passed": true,
+      "actions": 8,
+      "seconds": 3.2499999999999933
+    },
+    {
+      "id": "keyboard-doctor",
+      "passed": true,
+      "actions": 7,
+      "seconds": 4.9166666666666545
+    },
+    {
+      "id": "metro-seatmate",
+      "passed": true,
+      "actions": 11,
+      "seconds": 4.633333333333322
+    },
+    {
+      "id": "ticket-app",
+      "passed": true,
+      "actions": 12,
+      "seconds": 4.733333333333322
+    },
+    {
+      "id": "early-bus",
+      "passed": true,
+      "actions": 7,
+      "seconds": 2.916666666666661
+    },
+    {
+      "id": "bus-stops",
+      "passed": true,
+      "actions": 21,
+      "seconds": 8.633333333333342
+    },
+    {
+      "id": "same-actor",
+      "passed": true,
+      "actions": 7,
+      "seconds": 2.4333333333333296
+    },
+    {
+      "id": "ads-everywhere",
+      "passed": true,
+      "actions": 57,
+      "seconds": 17.850000000000268
+    },
+    {
+      "id": "repeat-episode",
+      "passed": true,
+      "actions": 9,
+      "seconds": 3.2333333333333267
+    },
+    {
+      "id": "catchphrase",
+      "passed": true,
+      "actions": 14,
+      "seconds": 5.533333333333319
+    },
+    {
+      "id": "sports-recording",
+      "passed": true,
+      "actions": 5,
+      "seconds": 1.9333333333333313
+    },
+    {
+      "id": "overwritten-tape",
+      "passed": true,
+      "actions": 9,
+      "seconds": 3.5333333333333257
+    },
+    {
+      "id": "sleepy-ending",
+      "passed": true,
+      "actions": 21,
+      "seconds": 8.750000000000014
+    },
+    {
+      "id": "disconnect",
+      "passed": true,
+      "actions": 6,
+      "seconds": 5.516666666666652
+    },
+    {
+      "id": "frozen-pipes",
+      "passed": true,
+      "actions": 10,
+      "seconds": 4.233333333333324
+    },
+    {
+      "id": "expired-certificate",
+      "passed": true,
+      "actions": 7,
+      "seconds": 2.549999999999996
+    },
+    {
+      "id": "tape-edge",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.8333333333333317
+    },
+    {
+      "id": "keyring",
+      "passed": true,
+      "actions": 25,
+      "seconds": 11.166666666666801
+    },
+    {
+      "id": "untied-laces",
+      "passed": true,
+      "actions": 11,
+      "seconds": 4.7499999999999885
+    },
+    {
+      "id": "glasses-smear",
+      "passed": true,
+      "actions": 3,
+      "seconds": 2.5166666666666626
+    },
+    {
+      "id": "bag-handle",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.7166666666666655
+    },
+    {
+      "id": "bag-seal",
+      "passed": true,
+      "actions": 4,
+      "seconds": 1.7166666666666655
+    },
+    {
+      "id": "caps-lock",
+      "passed": true,
+      "actions": 7,
+      "seconds": 6.249999999999983
+    },
+    {
+      "id": "umbrella",
+      "passed": true,
+      "actions": 12,
+      "seconds": 5.033333333333321
+    },
+    {
+      "id": "washed-car",
+      "passed": true,
+      "actions": 10,
+      "seconds": 5.733333333333318
+    },
+    {
+      "id": "remote-reach",
+      "passed": true,
+      "actions": 5,
+      "seconds": 2.2333333333333303
+    },
+    {
+      "id": "short-blanket",
+      "passed": true,
+      "actions": 3,
+      "seconds": 1.5499999999999994
+    },
+    {
+      "id": "final-screw",
+      "passed": true,
+      "actions": 8,
+      "seconds": 3.7833333333333248
+    },
+    {
+      "id": "forgotten-sock",
+      "passed": true,
+      "actions": 10,
+      "seconds": 4.39999999999999
+    },
+    {
+      "id": "bad-cart-wheel",
+      "passed": true,
+      "actions": 10,
+      "seconds": 4.233333333333324
+    },
+    {
+      "id": "scrap-pen",
+      "passed": true,
+      "actions": 5,
+      "seconds": 6.849999999999981
+    }
+  ],
+  "runtimeJsSha256": {
+    "catalog.js": "ff2e6cbeefe4f283ece8c60e974ca54ddef7f6f66635732901b26a0632dca151",
+    "chapters.js": "100d62b27c32856b3bbc3142d07bb067bd842f41633b0f15df7038125126bc92",
+    "workshop.js": "51c6c7c6a30625cccbfe77334e739d142d5e77231af89282789b3e22f6a9c3e9",
+    "guides-scenes.js": "2eecb4226c80b4fd8dca53a11d84df1f985775598109aac4f77350e442895ad3",
+    "game.js": "7e1806b27fe11980195121eef1a123e5279b71b0ca5545cc9d43a9d38e594b30",
+    "hints.js": "35f1818bacf00eb8a672ef3ee0a5297520f5e24d7c23c8947a78466402cfd742",
+    "atelier.js": "2de0282f0d7ba27788bebca9fc79a08ff4a863fdb5e7c2e0a82854df431cf941",
+    "upgrades.js": "d525d85523cb5234acbebf363d3dab052d9ca35135f3037d5f46fed1556f1e96",
+    "guides-upgrades.js": "3f76f63b3bd23324227bd5baf35e91eb5fa1001973485eede5f4d562b57e5c7a",
+    "vignettes.js": "8571d1e68a269ddcc04f01e0a04f8f37fab0386edc25f9fe839db15629e1292f",
+    "guides-additions.js": "15bf983af09f114fa558767e61e897ade205ebf50f948e66a43a2fd8b747c1cb",
+    "additions.js": "c4c180fc56cd235c7f8efe6fc142e58d46fd85f8ccfb1dc5394c12538e63f87a",
+    "scenes/controller.js": "c49b803a00d8b18e30029ea58aef57f3de175504539180688af7756db621bbf3",
+    "scenes/pull-tab.js": "e318f8797f741386c753e09ab3e7464db0d96f2b0482018d2b34c5310f4c6788",
+    "scenes/earbud.js": "86dcfffdd683e13a9837172224c13cd112801e4492a7718dd0d3c9a7c3832523",
+    "scenes/elevator.js": "bece0a006d90be87e23c5cf222a7d3bfdac210ee4e00688b19301c8eaf11c914",
+    "scenes/printed-period.js": "d3810b492ebb69f9d9845e72793222262e51654d0cfff34aec0bd525294f8ef5",
+    "scenes/code-unformatter.js": "0317571171e7bfc958d2459a6368d8af12f10c474d006d41c4439bd2585d24f9",
+    "scenes/oversized-puzzle.js": "490523f9fc83599ff1ad8587d0dbe1fd1e618f63de1c49a93f4a988654866470",
+    "scenes/cookie-switch.js": "e386867ce9e9ce717b85275b862508f456352a7c059a1753c6e479f6c4f98d64",
+    "scenes/water-sleeve.js": "0c04e552bdd29c32d3d229e2858a4066c5b732c7e9f60d5d6e1a0c8ba98a0bc4",
+    "scenes/fabric-zipper.js": "b36e446a6911b9958a77c1def8caa9bf40bbacbd3e0a6d8ad24429d07b9d3273",
+    "scenes/microwave-ice.js": "b02752c526c408c64f01c5fbbed5a207b1d2596fb1307f09c0b60f4d44678576",
+    "scenes/toilet-hunt.js": "ef2d0a24be3a062a41083f8e23448ac6a93139630316235226c0605f1069353f",
+    "scenes/armor-paywall.js": "2dfa71d007e6d6e64e79ebffbe99c0601c9b3b19f1c87bf486d3e38438ddc757",
+    "scenes/duvet-corner.js": "533b3f6a1cfc88e0a4f0c2b08c709a08421609dc70a18d329efbba3c81f2c95d",
+    "scenes/short-cable.js": "1fcd62df08cb03c05449ed82142473e30a6419380026f55ea89ef6cd7db306f6",
+    "scenes/vacuum-rug.js": "7782fe1d3270571144b136e4ea6920503997045d146753cea03d692e4dfbf45e",
+    "scenes/cold-butter.js": "e201540402685988bdc42d93db3c9dccaf9ec23ac3f7cf6b3a24e4582c8a5e09",
+    "scenes/forgotten-milk.js": "8f276a932a7271556adabfc17a9a3e0b36e55a83c9b76ae342346118bdc9d304",
+    "scenes/cheese-fingers.js": "5d3a1063c3878f6a2481008290841c90d37c3d018c8053be1b3c918cd1a918b4",
+    "scenes/wet-sock.js": "1c191adf88f2a1329b7732579c1d7f85ff3cb66b7d60d8ccf250c4b8f26f6515",
+    "scenes/collapsing-bag.js": "2c0baa1cc36bebf7d1e0be89a644358b81e5c15d82936d40db0d5f7fb3a670c4",
+    "scenes/never-loot.js": "2b6eedec9d9ae1b94a356a77ca50eb81ea3f49df37add190e4d2db01c66b4b5a",
+    "scenes/peel-here.js": "548d37e00b12424d6858fc85654a54999d6c6c563360d1234c674a1da875770a",
+    "scenes/chase-card.js": "999b831804f9eb23d832a4adc1bed26c31a8753822461a501354c8897e4f5593",
+    "scenes/curtain-clip.js": "69c9b9a7bea353f4d41d15e1ca7196d88605848a227f08eebf36feb439a722d5",
+    "additions/smoke-alarm.js": "67685eeac9f07584117bbf9d2288a828b9541abce3d2c20b3471b23c646c35ca",
+    "additions/ticket-app.js": "20cd26f14eb533895e889ca5093302ba04f7d2da3f2942017ae0e1202ee67b8f",
+    "additions/fogging-windshield.js": "d65b16910a2a7fdd96429ff7b24b44390178a3e8bf3aaad5377fba4e452a414f",
+    "additions/rising-flush.js": "122f0974056f59c770b5d9c0c8b68e8f533321efb9accf9ee3f1bee870a12a93",
+    "additions/light-switch.js": "f2fb0f042d305466f76bf6af0f8b84b2f9d6d211a7a008792317eca1282f1c13",
+    "additions/checkout-ambush.js": "e414b04f9f4551f6e4bb32e28d61590b4b0714b3d3e65a744cbb3a17162f3060",
+    "additions/dungeon-pull.js": "d37549a541606d7450104c27c304ed08b3edfa5a82de2650525614813d4420d7",
+    "additions/mismatched-light.js": "01b8960a24a01ce2f05a0b7c96d5d6a1f46bb03224c532738fd67e6334d6cb57",
+    "additions/busy-crossing.js": "e9e6c2391f04a89a7fe4c8888a63f0f661415f5062478bd1d6619da236bceadd",
+    "additions/keyboard-doctor.js": "fa5b325ff3f54fbd0e1272c2b380814c9314529ac67f72a672155c57aaea0a4b",
+    "additions/low-sun.js": "367b1c2db662d38140aedb6fc9c7e508c1a4f4a95e002a52f0c12cde58d117f2",
+    "additions/car-door.js": "299a60d520e87d584189cf1b2718b056e4bd78077716629ff49f6dea84a94bce",
+    "additions/crowded-spawns.js": "63a90de884c4991c98c86262e6dd419af922246d83971f18be8987ef6d451b07",
+    "additions/afk-teammate.js": "c7685bcda53df5047a83b831b7cb74462e0c1cfdc05b4662432fac67549c1ba3",
+    "additions/keyring.js": "a910efbe404ba4c842afbfce4e2930ca5711c1afc0b7bf6f321f78b7a17d7f5c",
+    "additions/ads-everywhere.js": "d93702a37a8764f0d4b23d50ffa54534be688d42cc4a8d8612d313e8540f83f1",
+    "additions/scrap-pen.js": "7e6f30d1af39af3555aadc23abfe95a5c27dbba756c1c08935d5e99778ea6b2d",
+    "additions/mage-sword.js": "e0ffdc7c706eb420cce1f5a7026c6eb2153654cf6d5e9a4471b47a1a26844572",
+    "additions/wobbly-table.js": "64fc3b963b88cce2361b4c3e5510fa58c074eaeb83c352e682102deff4657541",
+    "additions/metro-seatmate.js": "a5fdf30d2dd5d37b71e48727ef7451f65b39847f65e8dff1830c6e7e05a21bbf",
+    "additions/pudding-lid.js": "82bd8f8148d321f45e7bed079d989fb04adf47e66db4b22a2c2c3320cf05ae12",
+    "additions/waiting-room.js": "3e7ebedeabc67c7ba391a14ea7678b0be2441ea4befaa855230fb0af456f9a8b",
+    "additions/squeaky-chair.js": "5767c4cfabf8fbfcfd82b0221405df0a1984398fd72906cac6cbd0e0e7fddb0b",
+    "additions/nugget-bag.js": "7624cdc34cd07940d6587eb58df85438da5117efa4d16cc739898a2090cfabb5",
+    "additions/ordering-kiosk.js": "d6ca4e982ce38ccece88b746a4963e8732127e4925261eb516ba31c039698c83",
+    "additions/tight-parking.js": "75d9db68c1314ef1aee0c3fa2a9f47d2c3f3a350e428e1802e677a2fa854ea7f",
+    "additions/sales-call.js": "dbbc2c4a36fb00317e67b882857c1f6826828a0252f0e9bd14eeacf33535f1a8",
+    "additions/flour-bag.js": "9d705a4c0f875a4d48e80d47f446321ae740566fcc490428ee3f973905391a56",
+    "additions/mall-fundraisers.js": "d598a816670e2794cf29d5916ea2fb9ae1f18e77fa87a77101639d13ddc6a713",
+    "additions/tape-edge.js": "9ae0796979c543ca85720257ed3a25602e074736228a038ea6b9961ef636b2a1",
+    "additions/bus-stops.js": "c27e41d0850fb1aca4647f7404c692f7e550af831d875f93002441dc7cdd08cf",
+    "additions/trouser-leg.js": "7a242a40f48f668abc7207b2a362de9fcd8fcfbd3cfe11386f11b0a943adc3f5",
+    "additions/remote-reach.js": "b4b3e488f3c6152d22365a88a4426697176411928ea3795ba0acb647385681d6",
+    "additions/untied-laces.js": "45574fe1900256c07cfa909facf4e81bd3641ce19611e0455796a572f0fda5a8",
+    "additions/final-screw.js": "8cd8f5074fd799758bb67dbfe2103d8c6a4b0d2cc08b596f4e120bf3f0466c65",
+    "additions/fish-finger.js": "aae85d5b02611055e36e3e84d9c9b1b15a57bf67145eb3930c5a69b2f50dce44",
+    "additions/exact-change.js": "7aa1c78516ed9e7c1ca06b011eb688e9297d4949219072b3d571544e85ebf8d5",
+    "additions/bag-handle.js": "8e331912bcb9f0b4a0d83ec41171a8a9d056e935593bd9b9e759bd44129b9cb1",
+    "additions/same-actor.js": "88de8d6cd278c1912022d8d98ad00943cca3dd30d9ca1951f8f677b767b751d2",
+    "additions/merge-conflicts.js": "54e7670f6ba798a1dc67ff6f6f41bcb8077c30b795a26a67921177e6ad3d154e",
+    "additions/glasses-smear.js": "12d0d81ea5c2475d11ce9cda41cbbeda1d578675edefbb72c5bfc9b05b07b2b4",
+    "additions/third-gear.js": "43a77113132053608a9cc2335da39ba9ab1d47f3978b6e6b550c1b9342d083e4",
+    "additions/overwritten-tape.js": "387f63a93fc9ce626c7412659fba63d02d039addc33d22c91b8b385ecca91e0c",
+    "additions/one-hp.js": "69550c6f583daaf511d9c3f6df2f50e26495a75671fe7403ba8990749b0b7cb9",
+    "additions/sports-recording.js": "c2a7d6ac53b41945b566019a804077f63cadb6d01ab85fce5f814168322b3491",
+    "additions/wasp-door.js": "56eb0542c74ef9924816df488c34e099343f8325e7e2ca107655e845426f9914",
+    "additions/autocorrect.js": "d200e022bf9c0e3e7743cf61141385af98f97eef80b60bbf81e7c67eeb3957a6",
+    "additions/roadworks.js": "620f738c805ad9f0add372420f1a1778c78d2f1a202622957a0b9ec6d4829a6f",
+    "additions/early-bus.js": "778030bd103a343b37794d3e8957c5510c5038b22a2cc6e76cc3da73c06b50d8",
+    "additions/travel-plug.js": "0dfda40adac563c9f0fc23041aeff043dc7eaabe71e45c8cc7e53cf473f006b4",
+    "additions/bag-seal.js": "890bb276bc0ff888815dc4bfa7bed40f2ce0bb9f35237db06b56c49d3e4f1322",
+    "additions/finish-line.js": "7c3e6ed897b1ef6c59e41b3bc58cd233344b3ddb09ead73bbb43569b2a8d430b",
+    "additions/cold-water.js": "741ed0aec359a7b77e9fd07ee2d1c8153ae1b5a801e91e9b6a57acd29176e4a2",
+    "additions/same-outfit.js": "8ee95b32c30b9d4d6f55a32ab2c4e75864fbb27326e3e3fda66bbd060250accd",
+    "additions/give-way-gap.js": "7c119dc2a3dce4c2b7488dcc4a1679406b17a800bca0f67c21fc06c8d2d6dcfb",
+    "additions/quest-reward.js": "ff92f28b290858cd00ba847960134669e2d9a289ba5d970bf1a60bcdf36ce308",
+    "additions/stolen-parking.js": "29336675607e58900b757d0c7799170b89988087e237bc456258ba11bfc7765a",
+    "additions/expired-certificate.js": "356f2c32b98028090002d4df3da659453794218351c38c96a2ce98647761836b",
+    "additions/sleepy-ending.js": "da1dcd409d9d1af2cd0a068b91e67a98b6c94a39a96dcc7af2b84bd1b21616fe",
+    "additions/red-lights.js": "59624551c702a2de9d35485a1c416b5882c2b5056fd642621c3a82aa6de26901",
+    "additions/fizzy-bottle.js": "671916176d8ab5de4ff28a43dfc336a30d5d7abf3934c6960251a925d36b5990",
+    "additions/missing-product.js": "88a4fdddb1132d25778e07473f5a60af2b2105b1cd4660a34e741e1679527ed6",
+    "additions/stick-drift.js": "b21e697a09770c56ac2a30f1af5c250d1acef393a1cb02e154729360027b8c01",
+    "additions/unreachable-itch.js": "8ef9bf8ada99332ec85b4d36b4564c832ff03e2875981814c15d4512cba1031a",
+    "additions/shoe-stone.js": "474560ac89d9389e77fd83d9d135d0c51f9b3365ce4c7432fd0a62608b74ba77",
+    "additions/disconnect.js": "d3c7a838f94557f34728e318adca42f03c7936db3721da1d3917e2c9b359afcc",
+    "additions/washed-car.js": "0b820f1a3fec230303337c6e8dcf99a42bc6e48a830514296f1807611c22762f",
+    "additions/black-sweets.js": "2f94c576403c8e98dd44662f6d9ce1bbc6ad6176c60d852bd28ce209a47243a4",
+    "additions/military-clinic.js": "dadc0f45f13593f885fc169f92158da90546b2dc61e79d90fccb3de08f08fe8e",
+    "additions/safety-cap.js": "a3be868e2b78996a9a86037d9e5c0a4f95b569cd61f7ddfe06e11095819cc220",
+    "additions/untouchable-fly.js": "882988fcdef663aae080b7dba4902ba930b690e0210cbc39dd0092abd86d6943",
+    "additions/bedtime-mosquito.js": "6110c3b376f5d70064d2691b8f1e9ff41f89f54ea88226b83388d52650d96467",
+    "additions/radio-song.js": "05302a950c24e16cc45fede280b55a7ee4364cdb8142bfcb81f2bb8c8a230627",
+    "additions/catchphrase.js": "60dbb22e1985eb3d2b4ff7918d0a317ce068d60f6855689d43471c100a0fb8c9",
+    "additions/short-blanket.js": "588611b2dffd315a30495239aa98486fc849a7da861263abd1e86642bf018c5e",
+    "additions/forgotten-sock.js": "e348d0036a90d90320b00af52c225e8d2afcaead58be79fb22c7c50f8312875d",
+    "additions/wrong-audio.js": "393e36c32811af4ad48bbfe2483ac414aa3421af10cb04f599501de443353341",
+    "additions/stolen-firewood.js": "09a520b6ea7a200bee167bf01a5475e8170c5a882cb9f5d314d4b8c11566da2e",
+    "additions/wiper-setting.js": "a1329bfa26c37a583939009243975c6af04b7ac12f685a6e1c86a281cebc3c7b",
+    "additions/umbrella.js": "8957b4e572953a8ad3dd404876a18eed2072d6dfa2ad3082cd93253d24efc719",
+    "additions/repeat-episode.js": "b8b39497fa26dac77d12f72eb759165567a275b74c6297d5183e0388e0160509",
+    "additions/stained-outfit.js": "247c7958e3c4c032b47853c4f4c04ccbf27990817ba7114b06b79b9c243b4805",
+    "additions/early-gate.js": "8ef453c4c5c9df4e0806af8be9ca16331a1e5c436f7b31e82ea36e6d8930ea1d",
+    "additions/update-shutdown.js": "e8c6630386eaa54ea0d2868112e7a96326dc54e45ae563ae07d13c886c422c55",
+    "additions/caps-lock.js": "f9aa0760bd3982d79160d8ef15d22ede52101eeaa12977faca534b638db0059b",
+    "additions/festival-queue.js": "802ce75c2c1a1ba293da8cc7a56de35b7ea9ba32f408448bee68652d5bf7c143",
+    "additions/frozen-pipes.js": "66429f5924144e1adb198cf823d99ec662d2944562857f66dc79cc29a7af60fe",
+    "additions/offline-online.js": "1cde4fa4fe1414545dd3571f98805eca34303f35ff2866a1489ebff71685bc2e",
+    "additions/renovation.js": "9d4a6e82113a6b1726175b6ba44910161102096c52ad804c0df86e73d2ae15d6",
+    "additions/crooked-apartment.js": "460d372952505b557e58d5cc633fdc164a11fd0f134dc95a8020ef314f062875",
+    "additions/bad-cart-wheel.js": "a6a9ba4c96bd7cc42f73186a577b7874ea9c8abc1257f3088448f6f1ac8ba879",
+    "upgrades/sandwich.js": "6db617cb3afcf53dcc2ad10725b7c6b7e9b5068cbe17b8ce11aade5ec8812221",
+    "upgrades/pump.js": "3964a569b8dbf5fd2293259c9c6afcf8746712d47a22709552e73b50298665e2",
+    "upgrades/zip.js": "57f390854626bd6f30ace8f6431310b947f2141528d7595923778502abf199e9",
+    "upgrades/dogear.js": "65b178940ca39cb62ffc622223d64d4423962c1a58fe66e405f316e29264ecc7",
+    "upgrades/cheesepack.js": "935c94b087c506948c6de38ff15c591fd605f7575004d076d9e9188d2f74d267",
+    "upgrades/legacy-6.js": "cb01962f69fe793bb6ce9c0f794a8d93e25f1744c535d78d274f8adae15d86d4",
+    "upgrades/icecream.js": "7ea2fcc808fa2c3428dd1f69cc8757d8896d7cb241a44115efd9e677dc76bcbd",
+    "upgrades/legacy-14.js": "7197e00fe27cdb95d7b7e03fc081324bb06a756f6664fa7a63064c0827716c3e",
+    "upgrades/legacy-9.js": "52eb4b3729ea943e822022f89b67c9ed321cd97b23c9921594ae4d5e480e01c2",
+    "upgrades/straw.js": "3aed38fb8e5cc64d79ec35f62e6f8014397cd23daaf27c8e518f308ece814674",
+    "upgrades/chocolate.js": "83ad62cadc6b87af8b0332f5f85789ab706d4c7918311e0829ea46a8c7c7c5a5",
+    "upgrades/chess.js": "844df2ed5043da50a2adf0bb12325492360255bb1b8befe438c7d48cffcdd350",
+    "upgrades/towel.js": "d876769c9101c906bec36eb713f004418cff51cf827011788cda999b379c3f16",
+    "upgrades/roll.js": "2d2808a8f4e43241ebaef3b9c247a6a3005fc991926d84ccb0a3e6f44d036bbf",
+    "upgrades/mandarin.js": "e877b97aa5f393be057c222e5e7c5e030f2bf102594c2a6723b5c95835dcbcf0",
+    "upgrades/film.js": "d8bb96f1d95c61245824c9ad739c8573cdf6f931ee06ea72e8cc9afcd4fa1249",
+    "upgrades/suitcase.js": "39db2aea29d31498511918cae65ff403add0f76f64fac9511c4d6fdfb5d5a7ae",
+    "upgrades/ketchup.js": "daf746fab857d0bc7c6599db238a8897163dfb7ba70d946bb50c86405560e810",
+    "upgrades/crumb.js": "b483b3d1508995227dd63b4d5ecfb7a2656f5820ceab3dc50cb6f00a75469e36",
+    "upgrades/usb.js": "d274e7b91be27985433f0cc45155dedc861303262f82996cbe9afeaca37f5719",
+    "upgrades/blinds.js": "124cf7986379f64b507b83a7bdc9bf3ffc5e5e8b4e16200694d746482f63f5e7",
+    "upgrades/legacy-3.js": "ac77f9485cd6ab17da7ad2997ea78fc40bfc53939c8b946704c1c8afd9641060",
+    "upgrades/legacy-4.js": "14cd264c2c564c2797478a6c90b29ebdf18678a944960236fc00a32cac4678e2",
+    "upgrades/cookie.js": "d81a6af1cb6b9ca468acf7fa1e449457daf70877e8efc28931239ffe4f317c03",
+    "upgrades/legacy-13.js": "9999aaa6fc283c6cb81ebac398657aabdbd7d3110622821c2dd6cbb4c5a71022",
+    "upgrades/tape.js": "c1571fc8dec79ffc4e40358d23fb1e1c972e174cb2c784133260973f205fa7b5",
+    "upgrades/ice.js": "fff6c1d544c0e3a736accb0938ca5b5dc790d0794c9d9d58ee29480d85b1f567",
+    "upgrades/yogurt.js": "ae1f1a6a8938ca255ade67acda46450145ac9868365ffb7c1055173d2c998ed2",
+    "upgrades/burger.js": "465cf951a5913b263aa61ac023bb168af276cfe6ee5beec9b38a4aa63c270f91",
+    "upgrades/legacy-15.js": "2461baf5e7c6637f68e3be614ae977da240fb32030b1e6fc34a1bb8ed9b1c7ec",
+    "upgrades/envelope.js": "64f5684c678d716c605fde014c330efde4ab47c7c10bec43cbec9aa9dd227354",
+    "upgrades/boardgame.js": "1c7ef80c87db9d6c1bce3204ec4d14b1329ce311f86d4b2ce77ad684673b2dae",
+    "upgrades/domino.js": "58221a92c6f3da37811c6bd68d225f62676f4e01d8b305586c6ff4326732ebea",
+    "upgrades/banana.js": "59b73e24d658f39d24dafc097fec0b5b18f5adbcaa9d4ac611219eae9820fa69",
+    "upgrades/sticker.js": "760cc93bb783b7ba0000c8cb1809c638a2b02d864dbc83e397bba24bab7e167c",
+    "upgrades/curtain.js": "e4e91022e96e88c17982d1fce66c7095bb246459f4f4f1926f87aad7df34706a",
+    "upgrades/butter.js": "b960dbe2a25e87f1fd8bafcb8d19e61b3e6f436cac1ecf46904c6ac69f4beeed",
+    "upgrades/fuel.js": "94313b0396eb5d1b0bc27c4e383754b52d1ad9cf9c0881342a198ee8cbaca0e2",
+    "upgrades/dishes.js": "02a8d322f588f49b357ddfbefc725aac8ef0dc25a5d162c9f2ffe319928f1fd0",
+    "upgrades/laundry.js": "5f86e33990db2b4a60676485a6d69851796f3697cb20baf595b7fbc216049c0e",
+    "upgrades/pencil.js": "0438ea77197508f6d6be532a40fe42905a9e12fe1c72375cc11b4d66e9044df4",
+    "upgrades/glove.js": "21b8a4c2e1236db71820f1f05b74b75d2dacf798739abada3a6b9c2d900daa92",
+    "upgrades/plaster.js": "93d4f09bcb03cb6e9bcfd3fc056b84a36292081b0f123a76cec2d974cf45fae6",
+    "upgrades/legacy-7.js": "9642e7bedd0fd996f51bc030a0921806c03462d96ffeb7d0996b2d936b9d5221",
+    "upgrades/bin.js": "ac32fe2c6ba55de2fc014bb3ef185fe700d8d065f6f92bc2b1db776cff4cde4a",
+    "upgrades/sponge.js": "3ad87b956aad4c771ed33fa2f6f1222939994ca93ebcd12955e5c9caeb6dda08",
+    "upgrades/laces.js": "8fc24dbd7b77c98426b67acdf9830930b42bbc19dc7f080a3214ad163f3af87b",
+    "upgrades/toast.js": "270b06804cb4135ed31088bf45119a1d3d0eff4d3e6d8d4d714f54f00679a9ba",
+    "upgrades/legacy-10.js": "4dcbce246003d942054a77758c1b78b1d599f2215439e8cec2dd40f5126dc6ba",
+    "upgrades/cushion.js": "683fb1f2b53aba144568efc901f663633ccce632c30a63b0c9adca90e521a65d",
+    "upgrades/legacy-12.js": "d289c3dd2024ecbae9bc85fdb36525cbd5eb0df47e54a5f8085d14d994af385a",
+    "upgrades/carton.js": "824f9fecf447550cc7dac1323b1960c1bcf36e39ab776aa8177ed7651b167668",
+    "upgrades/cucumber.js": "365da9dcb973bc51120c774787e7affd6804b1dbff374927b8b667d78a4abf62",
+    "upgrades/cupboard.js": "78e7f72fc498ec10e775361b046238fb96a6204ce54bfe1fe9def45e1513ee3b",
+    "upgrades/books.js": "08e2f859329f8084142402e664988df066723ab72fc1f14a4cb5a9dfa2c2a9f7",
+    "upgrades/hanger.js": "ea198c0d948092412661b4553e91b6a247b8f68bde104afb6f01e7970111de47",
+    "upgrades/stapler.js": "3d4203862b3f97d24c4f9fff79b9cf6247dcb14e580275061def5b310fee8fd3",
+    "upgrades/battery.js": "2752b7756f056b9997dd3f259bdda760dd64a21a51a40a27926e7fb7a7129fa7",
+    "upgrades/candle.js": "1d33a1d60a6914e0d984b55949f501923904488ab240eb4ad654577d1f5417f1",
+    "upgrades/filleddonut.js": "efedb139056f4df4e8ffce40532e4807d4ff8a52876f867422804faee868c1ab",
+    "upgrades/notebook.js": "b159b164cc0317c9b219dd506feef305b3a98babd8df96c33bd980051f1b1227",
+    "upgrades/spaghetti.js": "94988a3ddf9ca616892820d8a1406327c37338a92685c85b7a0c3c1416696157",
+    "upgrades/cake.js": "0cc6109bf17ea7c416fc19ff3463de28af4aa7b3640851c7aa5a8fb90e858437",
+    "upgrades/legacy-11.js": "5e49c7c68f3f094fdbb1b79a660c51f2d16cedf2c84f32cca9fab715bf53e66b",
+    "upgrades/coffee.js": "0ae1f03be89164b831d0b3b46145c72ac4934a1bf3ce0ebdee3b035d72bcb669",
+    "upgrades/printer.js": "7e68cd1f62bf6c9e9d73cf1af83d9188aa6bcf12f842a695d8b794db8d777d78",
+    "upgrades/mousecord.js": "6aef8e57cd12e95076e77097bdeecea0a3358af97e7d8708e44798e1565f5e5a",
+    "upgrades/watering.js": "2816f1730f151e91af7a7ba30ddb7059ad33120f7b73f6365d9f7b4be1ce46cb",
+    "upgrades/cards.js": "3d60099d6b5c4a238be4436001527f86b68dd065d2de2d41af905586ff3d3d7e",
+    "upgrades/crisps.js": "9904242ef20018c555c179081f9e552356d2787f0e2fca276041c143b3f450a4",
+    "upgrades/toothpaste.js": "7493cb4d1b53380fdfd9f24d8bbef49c1698b932f11d898c03ec9c325853660e",
+    "upgrades/legacy-8.js": "239c7d7762ffac614201b79b1a68e3b980d06bc67658c96a65be0ecec1cc9cb5",
+    "upgrades/socks.js": "80ef8dd4a54f33f758c238830ca81e27f43f1fdbe49cebba6501961bfaa00b54",
+    "upgrades/teabag.js": "e9ae5946a5165204741574e7bd8292750d95816b0ca5dd24984037711d9aba29",
+    "upgrades/shakers.js": "b2e8244ae01481556a752e381fdc9865286bd1b2bc547bf2cd05d7071153f0a6",
+    "upgrades/wrapping.js": "9322fbea53740203ab8cab147efc14cee60dc7de1a09d656e7d12866b224a439",
+    "upgrades/legacy-16.js": "edbe4318244b45f5216cac8106a5ccb6ac67707ce4a5ee9aa1cbbe619447316b",
+    "upgrades/pencap.js": "f9986211d8cfd78203e06e1e500beb37895d697a0e414f92adb8311075882cc1",
+    "upgrades/floor.js": "082b9da0a5b6d0a5d781e006033edad4d168c827ad13bb16bba1a5817bc1824f",
+    "upgrades/headphones.js": "187e225c271a9f0829268a3a04fa17dac32747bf151750e2cef033020d842027",
+    "upgrades/cube.js": "3d7588240f6c0c2dacf534d35d53dc22791cefbd72d51723d5c78284a50a0015",
+    "upgrades/soap.js": "96f0f05c02cd3c4a6748d7f05aff32570f23f8b05f8bac44af6e8719687cf398",
+    "upgrades/legacy-17.js": "a3b91be4dcf872eb9a9aff24c06c39761042045caa33c25aeb768d3be0149efb"
+  }
+}

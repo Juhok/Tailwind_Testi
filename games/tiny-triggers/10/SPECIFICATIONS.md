@@ -1,0 +1,70 @@
+# Volume 9 specification coverage
+
+This release covers all 66 numbered ideas from the request. 65 receive new scenes; item 194 refines `cookie`, the existing biscuit-in-tea scene. The original 134 scene IDs and chapter positions are preserved. Totals: 199 scenes, 35 chapters.
+
+- 135. **The Almost-Closed Car Door** → `car-door`
+- 136. **The Flush That Goes Up** → `rising-flush`
+- 137. **One HP Too Many** → `one-hp`
+- 138. **The Wrong Quest Reward** → `quest-reward`
+- 139. **Ten Monsters, One Hundred Players** → `crowded-spawns`
+- 140. **Someone Got There First** → `stolen-firewood`
+- 141. **Second Place at the Finish Line** → `finish-line`
+- 142. **The Mystery Smoke Alarm** → `smoke-alarm`
+- 143. **The Merge Conflict Surprise** → `merge-conflicts`
+- 144. **The Bedtime Mosquito** → `bedtime-mosquito`
+- 145. **The Untouchable Fly** → `untouchable-fly`
+- 146. **The Wasp Beside the Open Door** → `wasp-door`
+- 147. **The Shopping Mall Interception** → `mall-fundraisers`
+- 148. **The Sales Call Timing** → `sales-call`
+- 149. **Roadworks on Every Route** → `roadworks`
+- 150. **One Light That Doesn’t Match** → `mismatched-light`
+- 151. **The Stone in Your Shoe** → `shoe-stone`
+- 152. **The Song on Every Station** → `radio-song`
+- 153. **The Safety Cap That Just Spins** → `safety-cap`
+- 154. **The Wobbly Table** → `wobbly-table`
+- 155. **The Squeaky Chair** → `squeaky-chair`
+- 156. **Straight Into the Sun** → `low-sun`
+- 157. **The Unreachable Itch** → `unreachable-itch`
+- 158. **The Renovation Holiday** → `renovation`
+- 159. **Waiting for Cold Water** → `cold-water`
+- 160. **The Stolen Parking Space** → `stolen-parking`
+- 161. **The Festival Toilet Queue** → `festival-queue`
+- 162. **The Slightly Crooked Apartment** → `crooked-apartment`
+- 163. **Almost the Same Outfit** → `same-outfit`
+- 164. **Only the Black Sweets Left** → `black-sweets`
+- 165. **The Last Fish Finger** → `fish-finger`
+- 166. **The Best Clothes, Immediately Stained** → `stained-outfit`
+- 167. **Rush to Wait** → `waiting-room`
+- 168. **Three Hours at the Gate** → `early-gate`
+- 169. **The One-Treatment Military Clinic** → `military-clinic`
+- 170. **The Keyboard Consultation** → `keyboard-doctor`
+- 171. **The Disruptive Seatmate** → `metro-seatmate`
+- 172. **The Ticket App at the Bus Door** → `ticket-app`
+- 173. **One Minute Early** → `early-bus`
+- 174. **The Bus That Stops Everywhere** → `bus-stops`
+- 175. **The Actor on Every Channel** → `same-actor`
+- 176. **Advertisements Everywhere** → `ads-everywhere`
+- 177. **You’ve Already Seen This Episode** → `repeat-episode`
+- 178. **That Catchphrase Again** → `catchphrase`
+- 179. **The Recorded Sports Overrun** → `sports-recording`
+- 180. **The Overwritten Video Tape** → `overwritten-tape`
+- 181. **Ten Minutes Before the Ending** → `sleepy-ending`
+- 182. **The Sudden Disconnect** → `disconnect`
+- 183. **The Frozen Water Pipes** → `frozen-pipes`
+- 184. **The Expired Certificate** → `expired-certificate`
+- 185. **The Tape Edge Hunt** → `tape-edge`
+- 186. **The Keyring Lottery** → `keyring`
+- 187. **The Shoelace That Won’t Stay Tied** → `untied-laces`
+- 188. **The Expanding Fingerprint** → `glasses-smear`
+- 189. **The Door Handle Hook** → `bag-handle`
+- 190. **The Resealable Bag That Won’t Seal** → `bag-seal`
+- 191. **Caps Lock at Login** → `caps-lock`
+- 192. **The Inside-Out Umbrella** → `umbrella`
+- 193. **The Freshly Washed Car** → `washed-car`
+- 194. **The Biscuit in the Tea** → `cookie` (existing scene refined; no duplicate)
+- 195. **The Remote Just Out of Reach** → `remote-reach`
+- 196. **The Blanket That’s Slightly Too Short** → `short-blanket`
+- 197. **The Final Screw** → `final-screw`
+- 198. **The Sock Outside the Wash** → `forgotten-sock`
+- 199. **The Shopping Cart’s Bad Wheel** → `bad-cart-wheel`
+- 200. **The Pen That Only Works on Scrap Paper** → `scrap-pen`

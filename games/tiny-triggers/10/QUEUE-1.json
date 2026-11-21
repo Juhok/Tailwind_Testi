@@ -1,0 +1,182 @@
+[
+  {
+    "number": 135,
+    "id": "car-door",
+    "title": "The Almost-Closed Car Door",
+    "spec": "Close the car door and start getting comfortable. The dashboard announces “Door open.” Open it again and close it harder.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 138,
+    "id": "quest-reward",
+    "title": "The Wrong Quest Reward",
+    "spec": "Finish a long quest and choose your reward. Just after confirming, realize you selected the wrong sword. The reward window closes permanently.",
+    "chapter": "games",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 141,
+    "id": "finish-line",
+    "title": "Second Place at the Finish Line",
+    "spec": "Lead the entire race. With the finish line directly ahead, another car slips past and wins by a few centimeters.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 144,
+    "id": "bedtime-mosquito",
+    "title": "The Bedtime Mosquito",
+    "spec": "Get comfortable, turn off the light, and close your eyes. A mosquito starts whining beside your ear. Turn the light on, and it vanishes.",
+    "chapter": "uninvited",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 147,
+    "id": "mall-fundraisers",
+    "title": "The Shopping Mall Interception",
+    "spec": "Walk through a shopping mall. A fundraiser steps into your path with a friendly greeting. Sidestep them and immediately encounter another fundraiser.",
+    "chapter": "uninvited",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 150,
+    "id": "mismatched-light",
+    "title": "One Light That Doesn’t Match",
+    "spec": "Switch on a row of identical lamps. All shine bright white except one noticeably dim, yellow bulb. Once you notice it, your eyes keep returning to it.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 153,
+    "id": "safety-cap",
+    "title": "The Safety Cap That Just Spins",
+    "spec": "Twist a bottle cap, but it only clicks and spins. Notice the tiny “Push down and turn” instruction. Your first attempt still fails to catch.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 156,
+    "id": "low-sun",
+    "title": "Straight Into the Sun",
+    "spec": "Turn a corner and face the low sun directly. Search your pockets for sunglasses and find only their empty case.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 159,
+    "id": "cold-water",
+    "title": "Waiting for Cold Water",
+    "spec": "Turn the tap to its coldest setting and fill a glass. The water is lukewarm. Empty it, wait, and try again. Still lukewarm.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 162,
+    "id": "crooked-apartment",
+    "title": "The Slightly Crooked Apartment",
+    "spec": "Get the keys to your new apartment. Put a marble on the floor and watch it roll steadily into a corner. Check another room. Same result.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 165,
+    "id": "fish-finger",
+    "title": "The Last Fish Finger",
+    "spec": "Queue at the cafeteria for fish fingers. The person ahead takes the last ones. You reach the serving tray just as it is removed.",
+    "chapter": "snacks",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 168,
+    "id": "early-gate",
+    "title": "Three Hours at the Gate",
+    "spec": "Rush through the airport and finally reach your gate. Nobody is there. Check your boarding pass and discover that boarding starts in three hours.",
+    "chapter": "waiting",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 171,
+    "id": "metro-seatmate",
+    "title": "The Disruptive Seatmate",
+    "spec": "Find a seat on the metro and settle in. The intoxicated passenger beside you starts talking loudly, leaning into your space, and repeatedly bumping your arm.",
+    "chapter": "commute",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 174,
+    "id": "bus-stops",
+    "title": "The Bus That Stops Everywhere",
+    "spec": "Board a bus when you are already in a hurry. Someone requests every stop. Every traffic light turns red. A delivery vehicle then blocks the next street.",
+    "chapter": "commute",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 177,
+    "id": "repeat-episode",
+    "title": "You’ve Already Seen This Episode",
+    "spec": "Finally find a promising program. A familiar scene appears. You predict the next line perfectly and realize it is the same repeat you watched recently.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 180,
+    "id": "overwritten-tape",
+    "title": "The Overwritten Video Tape",
+    "spec": "Insert a tape labeled with your favorite film. Press Play and discover that somebody recorded an entirely different program over it.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 183,
+    "id": "frozen-pipes",
+    "title": "The Frozen Water Pipes",
+    "spec": "Come home thirsty and place a glass beneath the tap. Turn it on. One drop falls, followed by nothing. The pipes are frozen.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 186,
+    "id": "keyring",
+    "title": "The Keyring Lottery",
+    "spec": "Try several almost identical keys in a lock. None turns. The correct key is the final one, hiding behind the keys you already tried.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 189,
+    "id": "bag-handle",
+    "title": "The Door Handle Hook",
+    "spec": "Walk through a doorway carrying a shoulder bag. Its strap catches on the handle, abruptly pulling you backward just as you think you are through.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 192,
+    "id": "umbrella",
+    "title": "The Inside-Out Umbrella",
+    "spec": "Open your umbrella as the rain gets heavier. A gust flips it inside out. Restore its shape, and the next gust immediately folds it backward again.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 0
+  }
+]

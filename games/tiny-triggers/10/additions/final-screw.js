@@ -1,0 +1,27 @@
+(function(){
+"use strict";
+TinyV9.register({"id":"final-screw","title":"The Final Screw","chapter":"objects","description":"Fit the last shelf and tighten the final screw.","hint":"Drag the shelf into the frame. Move the screwdriver tip onto the bright screw, then drag its handle right to turn. Try tightening it again.","verdict":"Some assembly required. Some disassembly inevitable.",create(api){
+const {ctx}=api;
+const C={ink:'#13232d',paper:'#e5dcc0',mint:'#8fcbb5',gold:'#e5b96e',red:'#d97f77',blue:'#7cacc5'};
+const clamp=api.clamp,hit=api.hit; const ease=x=>{x=clamp(x,0,1);return x*x*(3-2*x)};
+function panel(x,y,w,h,c='#263f4b'){api.round(x,y,w,h,7,c,'#617c82');api.line(x+6,y+2,x+w-7,y+2,'#a0bab333',1)}
+function label(s,x,y,size=10,c=C.paper){api.text(s,x,y,size,c)}
+function button(s,x,y,w=96,c='#477d7a'){api.round(x-w/2,y-15,w,30,5,'#162932');api.round(x-w/2,y-18,w,28,5,c,'#9fb9a0');label(s,x,y,10)}
+function person(x,y,scale=1,color='#83aeb4',pose=0){ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);api.ellipse(1,5,12,4,'#101c2580');api.line(-4,-13,-6+Math.sin(pose)*5,2,'#293b51',6);api.line(4,-13,6-Math.sin(pose)*5,2,'#293b51',6);api.round(-9,-35,18,24,5,color);api.line(-9,-29,-13-Math.sin(pose)*4,-15,'#c39b7d',5);api.line(9,-29,13+Math.sin(pose)*4,-15,'#c39b7d',5);api.ellipse(0,-44,8,10,'#d4ae8d');api.ellipse(0,-49,8,6,'#4c3d39');api.line(2,-43,5,-43,'#513e36',1);ctx.restore()}
+function room(kind='desk'){api.bg(kind);api.line(0,154,480,154,'#77918b',2);for(let x=15;x<480;x+=74)api.line(x,171,x+28,269,'#78908713',1)}
+function sparkle(x,y,r=6,c=C.gold){api.line(x-r,y,x+r,y,c,1.5);api.line(x,y-r,x,y+r,c,1.5)}
+
+let phase='shelf',board={x:365,y:225},tool={x:402,y:66},drag=null,start=null,angle=0,attempts=0,damaged=false,t=0,slip=0;
+function screw(x,y,r,bad=false){api.ellipse(x+1,y+2,r,r,'#354b4b');api.ellipse(x,y,r,r,'#a4b5aa');api.ellipse(x-1,y-1,r*.76,r*.76,'#d0cfad');if(bad){api.ellipse(x,y,r*.57,r*.34,'#6a7c75');api.line(x-r*.45,y+1,x+r*.45,y-1,'#899a89',r*.2)}else{api.line(x-r*.54,y,x+r*.54,y,'#536d6b',Math.max(1,r*.25));api.line(x,y-r*.54,x,y+r*.54,'#536d6b',Math.max(1,r*.25))}}
+return{draw(){room();api.rect(0,136,480,134,'#76644f');for(let y=144;y<270;y+=25)api.line(0,y,480,y,'#a08a6644',1);api.ellipse(209,230,144,18,'#21363277');
+api.poly([[78,55],[313,55],[337,77],[100,77]],'#bf9f6c');api.poly([[78,55],[100,77],[100,219],[78,196]],'#8b714e');api.poly([[313,55],[337,77],[337,219],[313,196]],'#94774f');api.rect(100,77,237,142,'#615d49');api.rect(110,83,214,126,'#7c7355');for(let i=0;i<13;i++)api.line(114+i*16,88,117+i*16,207,'#9c896333',1);api.rect(95,204,244,15,'#b79562');api.line(96,207,336,207,'#d1b581',2);api.rect(91,76,16,143,'#c6a573');api.rect(322,76,16,143,'#b39260');
+const bx=phase==='shelf'?board.x:217,by=phase==='shelf'?board.y:146;api.poly([[bx-109,by-11],[bx+103,by-11],[bx+117,by+3],[bx-96,by+3]],'#c7aa76');api.rect(bx-96,by+3,213,10,'#a18459');api.line(bx-91,by+5,bx+112,by+5,'#dfc48a',1);
+for(const [sx,sy]of [[99,84],[330,84],[99,211]])screw(sx,sy,3.5);if(phase!=='shelf'){screw(330,154,5,damaged);if(!damaged&&phase==='tool')sparkle(330,154,9,C.gold)}
+api.poly([[17,197],[70,188],[85,246],[29,255]],'#b9b89b');for(let i=0;i<5;i++)api.line(29,209+i*7,65,203+i*7,'#7f8e78',1);api.line(38,233,58,228,'#647b6e',2);
+let tx=tool.x,ty=tool.y;if(phase==='turn'||phase==='slipping'||phase==='done'){tx=330+Math.sin(slip*Math.PI)*27;ty=96-Math.sin(slip*Math.PI)*13}
+ctx.save();ctx.translate(tx,ty);ctx.rotate(angle*.25+(phase==='slipping'?Math.sin(slip*Math.PI)*.28:0));api.line(0,14,0,55,'#aabdb7',6);api.line(-2,15,-2,55,'#d3dac0',1);api.poly([[-3,52],[3,52],[2,59],[-2,59]],'#728c8b');api.round(-12,-28,24,47,9,'#a77555');api.round(-7,-25,14,39,5,'#cf9d6a');for(let i=0;i<3;i++)api.line(-6+i*6,-20,-6+i*6,11,'#8f684b',1);api.ellipse(0,-27,8,3,'#dbb580');ctx.restore();
+if(damaged){api.line(335,155,379,165,'#d9cda7',1);api.ellipse(414,165,34,34,'#253c43');screw(414,165,29,true);label('STRIPPED',414,211,9,C.gold);if(phase==='slipping')label('SLIP!',382,95,13,C.gold)}
+label(phase==='shelf'?'FIT THE LAST SHELF':phase==='tool'?'ONE SCREW LEFT':phase==='done'?'THE SAME SHALLOW GROOVE.':'TURN THE HANDLE',242,254,10,C.paper);
+},down(p){if(phase==='shelf'&&hit(p,board.x,board.y,222,45)){drag='shelf';start={...p}}else if(phase==='tool'&&hit(p,tool.x,tool.y,54,86)){drag='tool';start={...p}}else if(phase==='turn'&&hit(p,330,96,65,77)){drag='turn';start={...p};angle=0}},move(p){if(drag==='shelf'){board={x:clamp(p.x,120,365),y:clamp(p.y,100,240)}}if(drag==='tool')tool={x:clamp(p.x,70,430),y:clamp(p.y,55,190)};if(drag==='turn')angle=clamp((p.x-start.x)/67,0,1.1)},up(){if(drag==='shelf'){if(hit(board,217,146,90,70)){phase='tool';api.say('Just the final screw.')}else board={x:365,y:225}}if(drag==='tool'){if(Math.hypot(tool.x-330,tool.y+59-154)<23){phase='turn';tool={x:330,y:96}}else tool={x:402,y:66}}if(drag==='turn'){if(angle>.65){attempts++;damaged=true;phase='slipping';slip=0;api.tone(270,.08,.02);api.say(attempts===1?'The tip slipped. The screw head is damaged.':'It slips out of the same groove.')}angle=0}drag=null},cancel(){if(drag==='shelf')board={x:365,y:225};if(drag==='tool')tool={x:402,y:66};drag=null;angle=0},update(dt){t+=dt;if(phase==='slipping'){slip+=dt*1.7;if(slip>=1){slip=0;if(attempts>=3){phase='done';api.done()}else phase='turn'}}},debug(){return{phase,attempts,damaged,shelfInstalled:phase!=='shelf',drag}}};
+
+}});})();

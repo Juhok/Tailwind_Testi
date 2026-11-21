@@ -1,0 +1,137 @@
+{
+  "upgrades/banana": {
+    "sourceSha256": "59b73e24d658f39d24dafc097fec0b5b18f5adbcaa9d4ac611219eae9820fa69",
+    "testSha256": "702131bf24469ddddbd66c93a67a7aa2e1da45779d8482cd6b0597fc83bb6b06",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/roll": {
+    "sourceSha256": "2d2808a8f4e43241ebaef3b9c247a6a3005fc991926d84ccb0a3e6f44d036bbf",
+    "testSha256": "1103b496945c95f19092022c137a59b4e714d6b4d781a9a7f2fcfee61555b576",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/chocolate": {
+    "sourceSha256": "83ad62cadc6b87af8b0332f5f85789ab706d4c7918311e0829ea46a8c7c7c5a5",
+    "testSha256": "1a8073ff6ebbdb63e6bf515064881b09c632fbd281911a9df8b0d34ec80cb7c8",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/legacy-4": {
+    "sourceSha256": "14cd264c2c564c2797478a6c90b29ebdf18678a944960236fc00a32cac4678e2",
+    "testSha256": "b2ca954465d95e7501f53f338f3c3426ee6fa2dfa6ff0b6e5a397ffc91a6c3bc",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/toast": {
+    "sourceSha256": "270b06804cb4135ed31088bf45119a1d3d0eff4d3e6d8d4d714f54f00679a9ba",
+    "testSha256": "4e6f94e0af4341eb92ec03613d4d67fb04c2903941b02d1a665f92f1c0258eb6",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/carton": {
+    "sourceSha256": "824f9fecf447550cc7dac1323b1960c1bcf36e39ab776aa8177ed7651b167668",
+    "testSha256": "fe59c5ffd6b2dfd98082c69ab3e774ef95bf17ac8be71a525c5b41a519696f1e",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/legacy-7": {
+    "sourceSha256": "9642e7bedd0fd996f51bc030a0921806c03462d96ffeb7d0996b2d936b9d5221",
+    "testSha256": "742a3911f53bbbe5afc30d8d7e8542f1407b1547460d48d402bcca576dfe6c62",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/mandarin": {
+    "sourceSha256": "e877b97aa5f393be057c222e5e7c5e030f2bf102594c2a6723b5c95835dcbcf0",
+    "testSha256": "72e1287f06e01ee4a21edc50b0a5611b93aaff7fb9498798b12bc9eab0ffe677",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/cucumber": {
+    "sourceSha256": "365da9dcb973bc51120c774787e7affd6804b1dbff374927b8b667d78a4abf62",
+    "testSha256": "9f130d284bb4d72eec07a8244cb590f9825ddc79576e0232794688d72b4a6e67",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/usb": {
+    "sourceSha256": "d274e7b91be27985433f0cc45155dedc861303262f82996cbe9afeaca37f5719",
+    "testSha256": "04d0a9c31a6bf123b95b51ea2996e399ce6b6a0b4036d614ebeebf762a71c1a7",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "additions/shoe-stone": {
+    "sourceSha256": "474560ac89d9389e77fd83d9d135d0c51f9b3365ce4c7432fd0a62608b74ba77",
+    "testSha256": "3a03267d6160523bac7fc39ba136cfbd44de3500fe7bdda27ad2f6a259f0b823",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "additions/tight-parking": {
+    "sourceSha256": "75d9db68c1314ef1aee0c3fa2a9f47d2c3f3a350e428e1802e677a2fa854ea7f",
+    "testSha256": "718e17540fb578aa82cac56b6bac2e34b1acf56e4612a3db44249280c00490b5",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "additions/roadworks": {
+    "sourceSha256": "620f738c805ad9f0add372420f1a1778c78d2f1a202622957a0b9ec6d4829a6f",
+    "testSha256": "809d130b0e97ee721f0d3fdea4ba6040b608c71fa62e866069fa3edec470c839",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "scenes/chase-card": {
+    "sourceSha256": "999b831804f9eb23d832a4adc1bed26c31a8753822461a501354c8897e4f5593",
+    "testSha256": "a0fad28aac87d9ed73f4389c52c7ea3b9b0e298f911c7f163a2ed817bcb8adcd",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  },
+  "upgrades/cushion": {
+    "sourceSha256": "683fb1f2b53aba144568efc901f663633ccce632c30a63b0c9adca90e521a65d",
+    "testSha256": "d81dcf9e3bab44c9395c8a418313163fbe56dbc2720d33718aca72b77f367d9e",
+    "inputs": [
+      "mouse",
+      "touch-emulation"
+    ],
+    "kind": "requested-scene-fix"
+  }
+}

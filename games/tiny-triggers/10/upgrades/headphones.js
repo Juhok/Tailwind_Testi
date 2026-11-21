@@ -1,0 +1,18 @@
+(()=>{
+"use strict";
+TinyV6.register(45,{"id": "headphones", "title": "Tethered listening", "description": "Headphones: thread the cable around a chair leg before lifting the headphones.", "hint": "Loop the cable around the chair leg \u2192 Lift the headphones", "verdict": "The chair is coming with you.",create(api){
+const {ctx,rect,round,ellipse,line,poly,text,clamp,near,hit}=api;
+const path=(points,fill,stroke,width=2)=>{ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill();}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke();}};
+const curve=(points,color,width=2)=>{ctx.beginPath();ctx.moveTo(...points[0]);for(let i=1;i<points.length;i+=3)ctx.bezierCurveTo(...points[i],...points[i+1],...points[i+2]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.stroke();};
+const grad=(x,y,w,h,a,b)=>{const g=ctx.createLinearGradient(x,y,x+w,y+h);g.addColorStop(0,a);g.addColorStop(1,b);return g;};
+const desk=(color='#293b46')=>{rect(0,0,480,270,color);for(let i=0;i<6;i++){line(0,30+i*48,480,30+i*48,'#ffffff08',2);for(let j=0;j<3;j++)curve([[0,i*48+10+j*8],[130,i*48+14+j*8],[360,i*48+5+j*8],[480,i*48+11+j*8]],'#ffffff05',1);}};
+const shadow=(x,y,rx,ry)=>ellipse(x,y,rx,ry,'#09172265');
+let phase=0,time=0,drag=null,done=false;
+const finish=()=>{if(!done){done=true;api.done();}};
+let hx=123,hy=132,ex=192,ey=201,route=0,lift=0,lt=0,chair=0,settle=0;
+function headphones(){ctx.save();ctx.translate(hx,hy);ctx.beginPath();ctx.arc(0,-2,41,Math.PI,Math.PI*2);ctx.strokeStyle='#182b37';ctx.lineWidth=14;ctx.stroke();ctx.beginPath();ctx.arc(0,-2,41,Math.PI,Math.PI*2);ctx.strokeStyle='#7796a0';ctx.lineWidth=6;ctx.stroke();round(-49,-8,23,51,9,'#223c4c','#9db4b6');round(27,-8,23,51,9,'#223c4c','#9db4b6');round(-43,-3,10,40,4,'#78969c');round(34,-3,10,40,4,'#78969c');ctx.restore();}
+function cable(){const points=phase>=1?[[hx+39,hy+42],[183,197],[215+chair,231],[282+chair,229],[319+chair,220],[309+chair,167],[282+chair,174],[257+chair,180],[268+chair,219],[288+chair,210]]:[[hx+39,hy+42],[178,196],[168,230],[ex,ey]];curve(points,'#102733',6);curve(points,'#a4b8b7',2);if(phase===0){round(ex-6,ey-5,12,10,3,'#c9cbbb');line(ex,ey,ex+10,ey-9,'#d7b47b',3);}}
+return{draw(){desk('#39434a');line(0,208,480,208,'#52646b',2);shadow(309+chair,236,76,13);path([[257+chair,101],[273+chair,101],[287+chair,229],[273+chair,229]],'#926c4e','#c2a581');path([[344+chair,101],[359+chair,101],[347+chair,223],[333+chair,223]],'#6d503f');path([[247+chair,91],[359+chair,86],[379+chair,109],[252+chair,115]],'#9c7957','#c5a77e');round(266+chair,24,88,67,8,'#765a47','#a58668');for(let i=0;i<3;i++)line(284+chair+i*23,32,284+chair+i*23,80,'#b99a77',3);cable();headphones();if(lift>.4)for(let i=0;i<3;i++)line(257+chair-i*5,222+i*4,251+chair-i*5,225+i*4,'#c7b58d',1);},down(p){if(done)return;if(phase===0&&near(p,ex,ey,25))drag='cord';else if(phase===1&&near(p,hx,hy,61))drag='phones';},move(p){if(drag==='cord'){ex=p.x;ey=p.y;if(route===0&&p.x>230&&p.y>216)route=1;else if(route===1&&p.x>302&&p.y>204)route=2;else if(route===2&&p.x>281&&p.y<184)route=3;}else if(drag==='phones')lt=clamp((132-p.y)/77,0,1);},up(){if(drag==='cord'){if(route===3){phase=1;api.tone(390,.09);}else{route=0;ex=192;ey=201;}}else if(drag==='phones'){if(lt>.8){lt=1;phase=2;api.tone(240,.1);}else lt=0;}drag=null;},cancel(){if(drag===null)return;if(drag==='cord'){route=0;ex=192;ey=201;}else lt=0;drag=null;},update(dt){time+=dt;lift+=(lt-lift)*Math.min(1,dt*12);hy=132-lift*60;chair=-lift*18;if(phase===2&&lift>.985){settle+=dt;if(settle>.35)finish();}},debug(){return{guide:{cord:[ex,ey],phones:[hx,hy]},phase,route,lift,chair,done};}};
+
+}});
+})();

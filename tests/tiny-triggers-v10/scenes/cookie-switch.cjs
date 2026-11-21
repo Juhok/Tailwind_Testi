@@ -1,0 +1,64 @@
+module.exports = async function (page, io, assert) {
+  const initialURL = page.url(), initialCookies = await page.context().cookies();
+  let state = await io.state();
+  assert.equal(state.phase, 0);
+  assert.equal(state.rejectX, 164);
+  assert.equal(state.acceptX, 318);
+  await io.click(427, 49);
+  await io.click(318, 208);
+  state = await io.state();
+  assert.equal(state.phase, 0, 'Wrong areas and direct Accept cannot bypass the intended rejection attempt');
+  assert.equal(state.accepted, false);
+  assert.equal(state.finished, false);
+  await io.move(164, 208);
+  state = await io.state();
+  assert.equal(state.hover, 'reject');
+  assert.equal(state.swap, 0, 'Hover aims at Reject but does not prematurely swap the buttons');
+
+  await io.down(164, 208);
+  await io.until(s => s.swap > .3 && s.swap < .95);
+  state = await io.state();
+  assert.equal(state.phase, 1);
+  assert.equal(state.accepted, false);
+  await io.shot('cookie-switch-buttons-crossing');
+  await io.until(s => s.phase === 2);
+  state = await io.state();
+  assert.equal(state.acceptX, 164);
+  assert.equal(state.rejectX, 318);
+  assert.equal(state.held, true);
+  await io.wait(350);
+  assert.equal((await io.state()).accepted, false, 'A held press cannot save before release');
+  await io.shot('cookie-switch-accept-under-pointer');
+  await io.move(427, 80);
+  await io.up();
+  await io.until(s => s.phase === 0);
+  state = await io.state();
+  assert.equal(state.cancels, 1);
+  assert.equal(state.accepted, false, 'Dragging away cancels the press instead of accepting automatically');
+  assert.equal(state.pendingRelease, false);
+  assert.equal(state.swap, 0);
+  assert.equal(state.bannerVisible, true);
+
+  // A normal quick click uses the same touch-down path; the scene preserves
+  // the readable swap and pressed state even if release precedes animation.
+  await io.click(164, 208);
+  state = await io.state();
+  assert.equal(state.pendingRelease, true);
+  assert.equal(state.accepted, false);
+  await io.until(s => s.phase === 3);
+  state = await io.state();
+  assert.equal(state.acceptX, 164);
+  assert.equal(state.accepted, false, 'The unintended Accept press remains visible before dismissal');
+  await io.shot('cookie-switch-unintended-accept');
+  await io.until(s => s.finished);
+  state = await io.state();
+  assert.equal(state.phase, 6);
+  assert.equal(state.bannerVisible, false);
+  assert.equal(state.accepted, true);
+  assert.equal(state.toast, 'Preferences saved');
+  assert.equal(state.savedChoice, 'Accept All');
+  assert.equal(await page.evaluate(() => finished), true);
+  assert.equal(page.url(), initialURL, 'The joke never navigates the real page');
+  assert.deepEqual(await page.context().cookies(), initialCookies, 'All consent behavior stays fictional and canvas-only');
+  await io.shot('cookie-switch-preferences-saved');
+};
