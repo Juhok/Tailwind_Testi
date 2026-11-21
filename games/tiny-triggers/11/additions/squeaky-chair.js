@@ -1,0 +1,24 @@
+(function(){
+"use strict";
+TinyV9.register({"id":"squeaky-chair","title":"The Squeaky Chair","chapter":"home","description":"Sit down. Find a quiet, comfortable position.","hint":"Drag yourself onto the chair. Shift your weight left, right, then back toward the middle by dragging your shoulders.","verdict":"The chair has notes on every movement.","exclusiveAudio":true,create(api){
+const {ctx}=api;
+const C={ink:'#13232d',paper:'#e5dcc0',mint:'#8fcbb5',gold:'#e5b96e',red:'#d97f77',blue:'#7cacc5'};
+const clamp=api.clamp,hit=api.hit; const ease=x=>{x=clamp(x,0,1);return x*x*(3-2*x)};
+function panel(x,y,w,h,c='#263f4b'){api.round(x,y,w,h,7,c,'#617c82');api.line(x+6,y+2,x+w-7,y+2,'#a0bab333',1)}
+function label(s,x,y,size=10,c=C.paper){api.text(s,x,y,size,c)}
+function button(s,x,y,w=96,c='#477d7a'){api.round(x-w/2,y-15,w,30,5,'#162932');api.round(x-w/2,y-18,w,28,5,c,'#9fb9a0');label(s,x,y,10)}
+function person(x,y,scale=1,color='#83aeb4',pose=0){ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);api.ellipse(1,5,12,4,'#101c2580');api.line(-4,-13,-6+Math.sin(pose)*5,2,'#293b51',6);api.line(4,-13,6-Math.sin(pose)*5,2,'#293b51',6);api.round(-9,-35,18,24,5,color);api.line(-9,-29,-13-Math.sin(pose)*4,-15,'#c39b7d',5);api.line(9,-29,13+Math.sin(pose)*4,-15,'#c39b7d',5);api.ellipse(0,-44,8,10,'#d4ae8d');api.ellipse(0,-49,8,6,'#4c3d39');api.line(2,-43,5,-43,'#513e36',1);ctx.restore()}
+function room(kind='desk'){api.bg(kind);api.line(0,154,480,154,'#77918b',2);for(let x=15;x<480;x+=74)api.line(x,171,x+28,269,'#78908713',1)}
+function sparkle(x,y,r=6,c=C.gold){api.line(x-r,y,x+r,y,c,1.5);api.line(x,y-r,x,y+r,c,1.5)}
+
+let phase='standing',px=111,py=217,drag=null,start=null,t=0,lean=0,target=0,squeaks=0,lastSide=0,ring=0,settle=0;
+function chirp(){squeaks++;ring=1;api.tone(640+squeaks*130,.17,.02);api.tone(410,.08,.012);api.say('Squeeeak. Try another position.')}
+return{draw(){room();api.rect(0,0,480,159,'#364d50');api.rect(18,26,126,123,'#5b5e4e');for(let r=0;r<3;r++){api.rect(23,60+r*37,116,4,'#a39169');for(let i=0;i<10;i++)api.rect(26+i*11,34+r*37+(i%3)*3,8,23-(i%3)*3,['#648c86','#be946f','#92936e'][i%3])}
+api.round(361,43,89,57,3,'#c7c5a5');label('QUIET ROOM',406,66,9,'#3f5e58');label('Please whisper',406,83,7,'#64736b');api.rect(353,165,101,8,'#86775e');api.line(364,172,360,242,'#5e6256',5);api.line(446,172,450,242,'#5e6256',5);api.round(378,156,54,6,1,'#b1ba9b');api.line(384,157,424,157,'#738578',1);
+api.ellipse(265,235,63,13,'#172b31');const shift=lean*11;ctx.save();ctx.translate(264,210);ctx.rotate(lean*.07);api.line(-30,-28,-37,31,'#9f8660',9);api.line(30,-28,37,31,'#9f8660',9);api.line(-31,-28,-34,-122,'#ae9063',8);api.line(31,-28,34,-122,'#ae9063',8);api.round(-35,-124,70,45,5,'#647f76','#b5a17b');for(let i=0;i<4;i++)api.line(-22+i*15,-117,-22+i*15,-84,'#99af94',3);api.round(-40,-39,80,15,5,'#9c9772');api.line(-30,6,30,6,'#8d7958',5);api.ellipse(-30,-28,3,3,'#d4c59a');api.ellipse(30,-28,3,3,'#d4c59a');ctx.restore();
+if(phase==='standing'){person(px,py,1.6,C.blue,drag?t*7:0);label('SIT',264,189,10,C.paper)}else{const sx=264+shift;api.line(sx-13,170,236,207,'#2c4258',12);api.line(236,207,232,232,'#334a60',10);api.line(sx+13,170,285,207,'#2c4258',12);api.line(285,207,288,232,'#334a60',10);api.round(sx-20,117,40,58,12,'#7d9eab');api.line(sx-19,129,sx-28,167,'#d3ad8d',9);api.line(sx+19,129,sx+29,167,'#d3ad8d',9);api.ellipse(sx,101,16,20,'#d3ad8d');api.ellipse(sx-1,89,16,12,'#56443c');api.line(sx-7,101,sx-3,101,'#624b40',2);api.line(sx+4,101,sx+8,101,'#624b40',2)}
+if(ring>0||phase==='done'){ctx.globalAlpha=phase==='done'?.85:ring;label('SQUEEEAK',294,69,13,C.gold);for(let i=0;i<3;i++){ctx.strokeStyle=C.gold;ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(294,181,27+i*10,-.4,.55);ctx.stroke()}ctx.globalAlpha=1}
+label(phase==='standing'?'A MOMENT OF PEACE':'TRY GETTING COMFORTABLE',249,259,9,C.paper);
+},down(p){if(phase==='standing'&&hit(p,px,py-48,73,120)){drag='sit';start={...p}}else if(phase==='seated'&&hit(p,264+lean*11,143,110,112)){drag='shift';start={...p};target=lean}},move(p){if(drag==='sit'){px=clamp(p.x,80,290);py=clamp(p.y+48,160,230)}else if(drag==='shift'){target=clamp((p.x-start.x)/50,-1,1);const side=target>.55?1:target<-.55?-1:0;if(side&&side!==lastSide){lastSide=side;chirp()}}},up(){if(drag==='sit'){if(Math.abs(px-264)<52){phase='seated';px=264;chirp();api.say('Shift your weight to find a quiet spot.')}else{px=111;py=217}}if(drag==='shift'&&squeaks>=4){phase='settling';settle=0}drag=null;target=0},cancel(){if(drag==='sit'){px=111;py=217}drag=null;target=0},update(dt){t+=dt;lean+=(target-lean)*Math.min(1,dt*9);ring=Math.max(0,ring-dt*.8);if(phase==='settling'){settle+=dt;if(settle>.45&&squeaks===4){chirp();api.say('Even sitting perfectly still requires getting there.')}if(settle>1.5){phase='done';api.done()}}},debug(){return{phase,squeaks,lean,lastSide,drag}}};
+
+}});})();

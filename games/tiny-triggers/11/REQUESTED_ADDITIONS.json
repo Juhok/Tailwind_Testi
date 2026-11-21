@@ -1,0 +1,596 @@
+[
+  {
+    "number": 135,
+    "id": "car-door",
+    "title": "The Almost-Closed Car Door",
+    "spec": "Close the car door and start getting comfortable. The dashboard announces “Door open.” Open it again and close it harder.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 136,
+    "id": "rising-flush",
+    "title": "The Flush That Goes Up",
+    "spec": "Flush the toilet. Instead of draining, the water slowly rises toward the rim. You watch it climb, waiting for it to finally go down.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 137,
+    "id": "one-hp",
+    "title": "One HP Too Many",
+    "spec": "Get an enemy down to exactly one health point. Your next attack is almost ready—but the enemy lands its final hit first.",
+    "chapter": "games",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 138,
+    "id": "quest-reward",
+    "title": "The Wrong Quest Reward",
+    "spec": "Finish a long quest and choose your reward. Just after confirming, realize you selected the wrong sword. The reward window closes permanently.",
+    "chapter": "games",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 139,
+    "id": "crowded-spawns",
+    "title": "Ten Monsters, One Hundred Players",
+    "spec": "Accept a quest to defeat ten monsters. Arrive at the quest area and find a crowd surrounding every spawn point. Your counter remains at 0/10.",
+    "chapter": "games",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 140,
+    "id": "stolen-firewood",
+    "title": "Someone Got There First",
+    "spec": "Run toward the last piece of quest firewood. Just before your collection bar finishes, another player picks it up and it disappears.",
+    "chapter": "games",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 141,
+    "id": "finish-line",
+    "title": "Second Place at the Finish Line",
+    "spec": "Lead the entire race. With the finish line directly ahead, another car slips past and wins by a few centimeters.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 142,
+    "id": "smoke-alarm",
+    "title": "The Mystery Smoke Alarm",
+    "spec": "Replace the battery in a chirping smoke alarm. Enjoy a moment of silence—then hear another chirp coming from the locked room next door.",
+    "chapter": "uninvited",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 143,
+    "id": "merge-conflicts",
+    "title": "The Merge Conflict Surprise",
+    "spec": "Finish a major coding task and try to push it. The push is rejected. Pull the latest changes and discover merge conflicts throughout your carefully finished work.",
+    "chapter": "digital",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 144,
+    "id": "bedtime-mosquito",
+    "title": "The Bedtime Mosquito",
+    "spec": "Get comfortable, turn off the light, and close your eyes. A mosquito starts whining beside your ear. Turn the light on, and it vanishes.",
+    "chapter": "uninvited",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 145,
+    "id": "untouchable-fly",
+    "title": "The Untouchable Fly",
+    "spec": "Follow a fly across the ceiling and prepare the perfect swat. It escapes at the last moment and lands directly on your nose.",
+    "chapter": "uninvited",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 146,
+    "id": "wasp-door",
+    "title": "The Wasp Beside the Open Door",
+    "spec": "Open the door wide to let a wasp out. It repeatedly bumps into the closed glass panel immediately beside the enormous opening.",
+    "chapter": "uninvited",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 147,
+    "id": "mall-fundraisers",
+    "title": "The Shopping Mall Interception",
+    "spec": "Walk through a shopping mall. A fundraiser steps into your path with a friendly greeting. Sidestep them and immediately encounter another fundraiser.",
+    "chapter": "uninvited",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 148,
+    "id": "sales-call",
+    "title": "The Sales Call Timing",
+    "spec": "Finally sit down to relax. Your phone rings with a sales call. End the conversation, put the phone down, and another unknown number starts calling.",
+    "chapter": "uninvited",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 149,
+    "id": "roadworks",
+    "title": "Roadworks on Every Route",
+    "spec": "Follow a diversion around roadworks. Turn onto the alternative route and find another road closure. The next detour leads to temporary traffic lights.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 150,
+    "id": "mismatched-light",
+    "title": "One Light That Doesn’t Match",
+    "spec": "Switch on a row of identical lamps. All shine bright white except one noticeably dim, yellow bulb. Once you notice it, your eyes keep returning to it.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 151,
+    "id": "shoe-stone",
+    "title": "The Stone in Your Shoe",
+    "spec": "Feel a tiny stone under your foot. Remove the shoe and shake it thoroughly. Put it back on, take three steps, and feel the stone again.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 152,
+    "id": "radio-song",
+    "title": "The Song on Every Station",
+    "spec": "Change the radio station to escape an irritating song. The next station is playing it too. Switch again and land on the chorus.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 153,
+    "id": "safety-cap",
+    "title": "The Safety Cap That Just Spins",
+    "spec": "Twist a bottle cap, but it only clicks and spins. Notice the tiny “Push down and turn” instruction. Your first attempt still fails to catch.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 154,
+    "id": "wobbly-table",
+    "title": "The Wobbly Table",
+    "spec": "Set a drink on the table and rest your arm beside it. The table rocks. Stabilize one corner, and the opposite corner starts moving instead.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 155,
+    "id": "squeaky-chair",
+    "title": "The Squeaky Chair",
+    "spec": "Sit down in a quiet room. The chair squeaks whenever you shift your weight. Try to find a comfortable position that makes no noise.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 156,
+    "id": "low-sun",
+    "title": "Straight Into the Sun",
+    "spec": "Turn a corner and face the low sun directly. Search your pockets for sunglasses and find only their empty case.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 157,
+    "id": "unreachable-itch",
+    "title": "The Unreachable Itch",
+    "spec": "An itch appears in the exact middle of your back. Reach over your shoulder, then around your waist. Your fingertips stop just short every time.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 158,
+    "id": "renovation",
+    "title": "The Renovation Holiday",
+    "spec": "Begin your holiday and settle in for a peaceful morning. Drilling starts next door at eight. The clock advances through eight hours of renovation noise.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 159,
+    "id": "cold-water",
+    "title": "Waiting for Cold Water",
+    "spec": "Turn the tap to its coldest setting and fill a glass. The water is lukewarm. Empty it, wait, and try again. Still lukewarm.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 160,
+    "id": "stolen-parking",
+    "title": "The Stolen Parking Space",
+    "spec": "Circle a full car park until you finally spot someone leaving. Approach the empty space, and another driver slips into it just before you.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 161,
+    "id": "festival-queue",
+    "title": "The Festival Toilet Queue",
+    "spec": "Join a long toilet queue. After slowly reaching the corner, discover that the line continues around it and stretches much farther than you thought.",
+    "chapter": "waiting",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 162,
+    "id": "crooked-apartment",
+    "title": "The Slightly Crooked Apartment",
+    "spec": "Get the keys to your new apartment. Put a marble on the floor and watch it roll steadily into a corner. Check another room. Same result.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 163,
+    "id": "same-outfit",
+    "title": "Almost the Same Outfit",
+    "spec": "Carefully choose an outfit for an event. Arrive and find another guest wearing almost exactly the same thing. You end up standing together in the photo.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 164,
+    "id": "black-sweets",
+    "title": "Only the Black Sweets Left",
+    "spec": "Share a bag of sweets with a friend. Reach for your favorite color, but they take the last one. Only the black sweets remain.",
+    "chapter": "snacks",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 165,
+    "id": "fish-finger",
+    "title": "The Last Fish Finger",
+    "spec": "Queue at the cafeteria for fish fingers. The person ahead takes the last ones. You reach the serving tray just as it is removed.",
+    "chapter": "snacks",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 166,
+    "id": "stained-outfit",
+    "title": "The Best Clothes, Immediately Stained",
+    "spec": "Put on your finest outfit and admire it in the mirror. Pick up a drink before leaving and spill a small, very visible splash down the front.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 167,
+    "id": "waiting-room",
+    "title": "Rush to Wait",
+    "spec": "Hurry to a medical appointment and arrive just in time. Sit down in the waiting room. The clock advances forty minutes while your name remains uncalled.",
+    "chapter": "waiting",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 168,
+    "id": "early-gate",
+    "title": "Three Hours at the Gate",
+    "spec": "Rush through the airport and finally reach your gate. Nobody is there. Check your boarding pass and discover that boarding starts in three hours.",
+    "chapter": "waiting",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 169,
+    "id": "military-clinic",
+    "title": "The One-Treatment Military Clinic",
+    "spec": "Choose a complaint at the military clinic. Whatever option you select, the medic hands over the same basic painkillers and points you back toward duty.",
+    "chapter": "clinic",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 170,
+    "id": "keyboard-doctor",
+    "title": "The Keyboard Consultation",
+    "spec": "Start explaining your symptoms. The doctor keeps typing without looking up. You pause, wondering whether they are listening. The typing continues.",
+    "chapter": "clinic",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 171,
+    "id": "metro-seatmate",
+    "title": "The Disruptive Seatmate",
+    "spec": "Find a seat on the metro and settle in. The intoxicated passenger beside you starts talking loudly, leaning into your space, and repeatedly bumping your arm.",
+    "chapter": "commute",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 172,
+    "id": "ticket-app",
+    "title": "The Ticket App at the Bus Door",
+    "spec": "Reach the front of the boarding queue and realize you still need a ticket. Open the app. A loading spinner turns while the driver and everyone behind you wait.",
+    "chapter": "commute",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 173,
+    "id": "early-bus",
+    "title": "One Minute Early",
+    "spec": "Reach the bus stop a minute before the scheduled departure. Watch your bus disappear down the road. The display changes to “Next bus: 20 min.”",
+    "chapter": "commute",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 174,
+    "id": "bus-stops",
+    "title": "The Bus That Stops Everywhere",
+    "spec": "Board a bus when you are already in a hurry. Someone requests every stop. Every traffic light turns red. A delivery vehicle then blocks the next street.",
+    "chapter": "commute",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 175,
+    "id": "same-actor",
+    "title": "The Actor on Every Channel",
+    "spec": "Change channels to watch something different. The same actor appears in a drama, a detective series, and then the next advertisement.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 176,
+    "id": "ads-everywhere",
+    "title": "Advertisements Everywhere",
+    "spec": "Your program cuts to advertisements. Change channels and find more advertisements. Keep switching until you return to the original channel—still on advertisements.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 177,
+    "id": "repeat-episode",
+    "title": "You’ve Already Seen This Episode",
+    "spec": "Finally find a promising program. A familiar scene appears. You predict the next line perfectly and realize it is the same repeat you watched recently.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 178,
+    "id": "catchphrase",
+    "title": "That Catchphrase Again",
+    "spec": "Hear an advertising slogan you are tired of. Switch to another program. During its next break, the same slogan returns in a slightly different advertisement.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 179,
+    "id": "sports-recording",
+    "title": "The Recorded Sports Overrun",
+    "spec": "Open the film you scheduled your recorder to save. It contains a sports broadcast that ran late. Skip forward until the recording ends before the film begins.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 180,
+    "id": "overwritten-tape",
+    "title": "The Overwritten Video Tape",
+    "spec": "Insert a tape labeled with your favorite film. Press Play and discover that somebody recorded an entirely different program over it.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 181,
+    "id": "sleepy-ending",
+    "title": "Ten Minutes Before the Ending",
+    "spec": "Reach the final ten minutes of a film. Your eyelids keep closing. Fight to stay awake, then open your eyes to the end credits.",
+    "chapter": "tv",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 182,
+    "id": "disconnect",
+    "title": "The Sudden Disconnect",
+    "spec": "Play normally with no warning signs. Everything freezes mid-action. A moment later, “Connection lost” appears and you are returned to the menu.",
+    "chapter": "games",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 183,
+    "id": "frozen-pipes",
+    "title": "The Frozen Water Pipes",
+    "spec": "Come home thirsty and place a glass beneath the tap. Turn it on. One drop falls, followed by nothing. The pipes are frozen.",
+    "chapter": "home",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 184,
+    "id": "expired-certificate",
+    "title": "The Expired Certificate",
+    "spec": "Open the website you maintain, expecting its normal homepage. A security warning fills the screen instead. The certificate expired today.",
+    "chapter": "digital",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 185,
+    "id": "tape-edge",
+    "title": "The Tape Edge Hunt",
+    "spec": "Rotate a roll of transparent tape until you find the edge. Lift it carefully, and only a narrow strip peels away. The rest stays stuck to the roll.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 186,
+    "id": "keyring",
+    "title": "The Keyring Lottery",
+    "spec": "Try several almost identical keys in a lock. None turns. The correct key is the final one, hiding behind the keys you already tried.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 187,
+    "id": "untied-laces",
+    "title": "The Shoelace That Won’t Stay Tied",
+    "spec": "Tie your shoelaces neatly and start walking. After a few steps, one bow comes undone and the loose lace drags along the ground.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 188,
+    "id": "glasses-smear",
+    "title": "The Expanding Fingerprint",
+    "spec": "Notice a fingerprint on your glasses and wipe it with a cloth. The small mark spreads into a greasy haze across the entire lens.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 189,
+    "id": "bag-handle",
+    "title": "The Door Handle Hook",
+    "spec": "Walk through a doorway carrying a shoulder bag. Its strap catches on the handle, abruptly pulling you backward just as you think you are through.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 190,
+    "id": "bag-seal",
+    "title": "The Resealable Bag That Won’t Seal",
+    "spec": "Press along a bag’s resealable strip from one end to the other. Reach the end and discover that the first half has already popped open.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 191,
+    "id": "caps-lock",
+    "title": "Caps Lock at Login",
+    "spec": "Carefully type a long password into a hidden field. “Incorrect password.” Reveal the characters and discover that Caps Lock has reversed every letter’s case.",
+    "chapter": "digital",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 192,
+    "id": "umbrella",
+    "title": "The Inside-Out Umbrella",
+    "spec": "Open your umbrella as the rain gets heavier. A gust flips it inside out. Restore its shape, and the next gust immediately folds it backward again.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 0
+  },
+  {
+    "number": 193,
+    "id": "washed-car",
+    "title": "The Freshly Washed Car",
+    "spec": "Finish washing your car and polish away the final water spot. Step back to admire it. A bird leaves a fresh splat in the middle of the windshield.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 194,
+    "id": "biscuit-tea",
+    "title": "The Biscuit in the Tea",
+    "spec": "Dip a biscuit into your tea. As you lift it toward your mouth, the softened half breaks off and sinks beneath the surface.",
+    "chapter": "tea",
+    "existing": true,
+    "worker": 2
+  },
+  {
+    "number": 195,
+    "id": "remote-reach",
+    "title": "The Remote Just Out of Reach",
+    "spec": "Find the missing remote behind the sofa. Reach down and touch it with your fingertips. Your attempt to grab it pushes it farther underneath.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 196,
+    "id": "short-blanket",
+    "title": "The Blanket That’s Slightly Too Short",
+    "spec": "Pull a blanket over your shoulders, exposing your feet. Cover your feet, and your shoulders become cold. Keep adjusting without finding a position that covers both.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 197,
+    "id": "final-screw",
+    "title": "The Final Screw",
+    "spec": "Assemble some furniture and tighten the final screw. The screwdriver slips, damaging the screw head. Every further attempt slips out of the same shallow groove.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 198,
+    "id": "forgotten-sock",
+    "title": "The Sock Outside the Wash",
+    "spec": "Load the washing machine, close the door, and start the cycle. The door locks. Look down and spot one forgotten sock beside your foot.",
+    "chapter": "wardrobe",
+    "existing": false,
+    "worker": 2
+  },
+  {
+    "number": 199,
+    "id": "bad-cart-wheel",
+    "title": "The Shopping Cart’s Bad Wheel",
+    "spec": "Take a shopping cart and push it straight ahead. One wheel rattles and pulls sideways. Correct its direction, and it immediately drifts toward the shelf again.",
+    "chapter": "road",
+    "existing": false,
+    "worker": 1
+  },
+  {
+    "number": 200,
+    "id": "scrap-pen",
+    "title": "The Pen That Only Works on Scrap Paper",
+    "spec": "Try to write on a card, but the pen produces nothing. Scribble on scrap paper and it works perfectly. Return to the card, and the ink stops again.",
+    "chapter": "objects",
+    "existing": false,
+    "worker": 2
+  }
+]

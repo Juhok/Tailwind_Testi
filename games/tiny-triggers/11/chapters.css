@@ -1,0 +1,118 @@
+/* Collection and interstitial styles only; no scene-specific presentation. */
+#scene-list.chapter-collection {
+  display: block;
+  max-height: 62vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2px 8px 8px 2px;
+  scrollbar-color: #687d90 #18222f;
+}
+.chapter-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin: 8px 0 24px;
+}
+.chapter-nav a {
+  color: var(--chapter-accent, #bad3c8);
+  background: #121c29;
+  border: 1px solid #354659;
+  border-left: 3px solid var(--chapter-accent, #bad3c8);
+  padding: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.chapter-nav a:hover,
+.chapter-nav a:focus-visible {
+  background: #233448;
+  outline: 2px solid var(--chapter-accent, #bad3c8);
+  outline-offset: 1px;
+}
+.collection-chapter {
+  margin: 0 0 22px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid #344458;
+  scroll-margin-top: 6px;
+}
+.collection-chapter h3 {
+  margin: 0 0 7px;
+  color: var(--chapter-accent, #bad3c8);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.collection-chapter h3:focus { outline-offset: 3px; }
+.collection-chapter p {
+  font-size: 11px;
+  margin: 0 0 12px;
+  color: #b1bfd0;
+}
+.chapter-scenes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+#scene-list .chapter-scenes button {
+  min-width: 0;
+  padding: 11px;
+  font-size: 11px;
+  line-height: 1.55;
+  text-align: left;
+}
+#scene-list .chapter-scenes button[aria-current="true"] {
+  border-color: var(--chapter-accent, #bad3c8);
+  background: #263a44;
+}
+#category { line-height: 1.4; }
+#loading {
+  background: transparent;
+  gap: 6px;
+  padding: 14px 22px;
+  overflow: hidden;
+  pointer-events: none;
+}
+#loading > span,
+#load-number,
+#load-progress {
+  position: relative;
+  flex-shrink: 0;
+}
+#loading #loading-tip {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 680px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  letter-spacing: normal;
+  min-height: 0;
+  margin: 5px 0 0;
+  padding: 8px 12px;
+  background: #111b2840;
+  text-align: left;
+  font-size: clamp(9px, 1.08vw, 12px);
+  line-height: 1.5;
+  color: #bdcbd9;
+  /* No typing, text animation, reveal mask, or time-dependent clipping. */
+}
+@media (max-width: 600px) {
+  #scene-list.chapter-collection { max-height: 58vh; }
+  .chapter-nav { grid-template-columns: 1fr; }
+  .chapter-nav a { padding: 9px; }
+  .chapter-scenes { grid-template-columns: 1fr; }
+  #category { font-size: 9px; max-width: 46%; }
+  #loading { padding: 7px 11px; gap: 3px; }
+  #loading > span { font-size: 7px; letter-spacing: 1px; }
+  #load-number { font-size: 21px; }
+  #load-progress { height: 5px; }
+  #loading #loading-tip { font-size: 8px; line-height: 1.35; padding: 5px 7px; margin: 2px 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chapter-collection { scroll-behavior: auto; }
+}
+
+#collection-grouping { margin-bottom: 12px; }
+#scene-list .collection-basic-list { grid-template-columns: minmax(0, 1fr); list-style: none; margin: 0; padding: 0; }
+.collection-basic-list button { width: 100%; }

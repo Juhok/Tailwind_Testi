@@ -1,0 +1,23 @@
+#world-dialog { width: min(94vw, 1000px); max-width: 1000px; padding: 16px; max-height: 94dvh; }
+.journey-dialog-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; font-size: 10px; letter-spacing: 1px; color: #bfd0cf; }
+.journey-dialog-bar button { min-height: 44px; }
+#journey-status { margin: 8px 0 0; color: #b8cfc4; }
+#tutorial-dismiss { font-size: 11px; flex: 0 0 auto; }
+#tutorial-dismiss[hidden] { display: none; }
+.holiday-art { margin: 20px auto; max-width: 480px; border: 2px solid #dbc29d; }
+.holiday-art svg { display: block; width: 100%; image-rendering: pixelated; }
+.holiday-hammock { transform-origin: 330px 130px; animation: hammock-sway 5s ease-in-out infinite alternate; }
+@keyframes hammock-sway { from { transform: rotate(-1.5deg); } to { transform: rotate(1.5deg); } }
+@media(prefers-reduced-motion: reduce) { .holiday-hammock { animation: none; } }
+@media(max-width:600px) {
+  .scene-top { flex-wrap: wrap; gap: 8px; }
+  .scene-top button { min-height: 44px; }
+  .status { flex-wrap: wrap; }
+  #feedback { flex: 1 1 100%; margin: 4px 0; }
+  #world-dialog { padding: 10px; }
+  .journey-dialog-bar { letter-spacing: 0; }
+  #next { white-space: normal; }
+}
+@media(max-width:370px) {
+  .wm-chapter span { max-width: calc(50% - 24px); }
+}

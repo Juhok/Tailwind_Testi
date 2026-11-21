@@ -1,0 +1,121 @@
+/* An original little atlas for the journey to absolutely nothing happening. */
+#world-dialog {
+  width: min(1100px, calc(100% - 20px));
+  max-width: 1100px;
+  max-height: 94dvh;
+  padding: 16px;
+  overflow: auto;
+  background: #111b26;
+  border: 1px solid #536879;
+  border-radius: 12px;
+  box-shadow: 0 24px 100px #000b;
+}
+#world-close { float: right; position: relative; z-index: 2; font-size: 11px; min-height: 40px; }
+.wm { --map-accent: #a9c7a6; color: #eef0e6; clear: both; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+.wm * { box-sizing: border-box; }
+.wm button { font: inherit; }
+.wm button:focus-visible { outline: 3px solid #fff2b6; outline-offset: 3px; }
+.wm-header { display: block; padding: 12px 2px 14px; }
+.wm-kicker { margin: 0 0 7px; color: #a4b8c1; letter-spacing: 2px; font-size: 10px; text-transform: uppercase; }
+.wm-heading { margin: 0; font: 30px Georgia, serif; color: #f5edd6; letter-spacing: -.6px; }
+.wm-subtitle { margin: 8px 0 0; color: #b2c4c9; max-width: 680px; font-size: 11px; line-height: 1.6; }
+.wm-worlds { display: flex; align-items: stretch; gap: 7px; padding: 0 0 12px; overflow-x: auto; scrollbar-width: thin; }
+.wm-world-tab { flex: 1 0 94px; padding: 10px 7px; min-height: 58px; border-color: #354957; background: #182733; display: grid; gap: 5px; justify-items: start; text-align: left; border-radius: 6px; }
+.wm-world-tab span { display: block; font-size: 9px; color: #a8bdc5; line-height: 1.3; }
+.wm-world-tab strong { font-size: 11px; color: #f1ead5; }
+.wm-world-tab[aria-current="true"] { background: #2b4141; border-color: var(--map-accent); box-shadow: inset 0 -3px var(--map-accent); }
+.wm-world-tab:disabled { opacity: .48; }
+.wm-body { display: grid; grid-template-columns: minmax(0, 1fr) 245px; gap: 14px; align-items: start; }
+.wm-map-shell { position: relative; min-width: 0; border: 1px solid #425b60; border-radius: 8px; overflow: hidden; background: #152c2c; }
+.wm-map-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 11px; background: #0d1b25f5; border-bottom: 1px solid #39505c; }
+.wm-map-toolbar span { font-size: 10px; color: #b8cbd0; line-height: 1.5; }
+.wm-locate { padding: 6px 9px; font-size: 10px !important; min-height: 36px; white-space: nowrap; background: #20343b; border-color: #4f6870; }
+.wm-scroller { max-height: min(66dvh, 650px); overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #617e76 #173333; position: relative; }
+.wm-land { position: relative; width: 100%; min-height: 300px; isolation: isolate; }
+.wm-art { display: block; width: 100%; height: auto; pointer-events: none; }
+.wm-art .wm-water { animation: wmWater 7s ease-in-out infinite alternate; }
+.wm-art .wm-pennant { animation: wmPennant 3s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: left center; }
+.wm-chapter { position: absolute; z-index: 1; left: 12px; right: 12px; display: flex; align-items: center; gap: 9px; pointer-events: none; }
+.wm-chapter span { background: #11242de8; border: 1px solid #718d7866; padding: 7px 9px; border-radius: 4px; color: #f0e5c5; font-size: 11px; line-height: 1.4; box-shadow: 0 3px 0 #10242266; max-width: 100%; }
+.wm-chapter em { color: #b1c3b3; font-size: 9px; font-style: normal; white-space: nowrap; }
+.wm-node { position: absolute; z-index: 3; width: 44px; height: 44px; padding: 0; margin: 0; transform: translate(-50%, -50%); display: grid; place-items: center; background: transparent !important; border: 0; border-radius: 50%; box-shadow: none !important; }
+.wm-node-dot { width: 29px; height: 29px; border: 2px solid #82918b; border-radius: 7px; background: #223a38; color: #afc0b6; display: grid; place-items: center; font-weight: bold; font-size: 10px; box-shadow: 0 3px 0 #102923, 0 0 0 3px #12272166; transition: transform .15s, background-color .15s; }
+.wm-node[data-kind="junction"] .wm-node-dot { border-radius: 50%; width: 21px; height: 21px; font-size: 12px; }
+.wm-node[data-kind="waypoint"] .wm-node-dot { transform: rotate(45deg); width: 24px; height: 24px; border-radius: 4px; }
+.wm-node[data-kind="waypoint"] .wm-node-dot span { transform: rotate(-45deg); }
+.wm-node[data-kind="passage"] .wm-node-dot { width: 33px; height: 33px; border-radius: 4px 4px 12px 12px; font-size: 18px; }
+.wm-node[data-kind="retreat"] .wm-node-dot { width: 40px; height: 35px; border-radius: 8px 8px 4px 4px; font-size: 21px; }
+.wm-node.is-available .wm-node-dot { background: #ebc97c; border-color: #fff2bc; color: #26382d; box-shadow: 0 3px 0 #8c7044, 0 0 0 4px #efd19325; }
+.wm-node.is-cleared .wm-node-dot { background: #81b997; border-color: #d4ecd2; color: #153b2a; box-shadow: 0 3px 0 #3b7654, 0 0 0 3px #172c2466; }
+.wm-node.is-selected { z-index: 5; outline: 2px dashed #fff2b6; outline-offset: 1px; background: #fff1ba12 !important; }
+.wm-node.is-current .wm-node-dot { box-shadow: 0 3px 0 #527460, 0 0 0 4px #f4f1d988; }
+.wm-node:hover:not(:disabled) .wm-node-dot { transform: translateY(-2px); }
+.wm-node[data-kind="waypoint"]:hover:not(:disabled) .wm-node-dot { transform: rotate(45deg) translate(-1px,-1px); }
+.wm-node:disabled { opacity: .48; }
+.wm-node:disabled .wm-node-dot { background: #2b4445; color: #a5b6b3; border-color: #607776; box-shadow: 0 2px 0 #11292c; }
+.wm-traveler { position: absolute; z-index: 6; width: 37px; height: 44px; transform: translate(-50%, -95%); pointer-events: none; filter: drop-shadow(0 3px 0 #13232c66); }
+.wm-traveler svg { width: 100%; height: 100%; overflow: visible; }
+.wm-traveler.is-walking svg { animation: wmWalk .24s steps(2, end) infinite; }
+.wm-traveler.is-walking .wm-suitcase { animation: wmCase .24s steps(2, end) infinite alternate; }
+.wm-fog { pointer-events: none; }
+.wm-sidebar { min-width: 0; padding: 15px; background: #192a33; border: 1px solid #40535b; border-radius: 8px; }
+.wm-destination { color: #b6c9bd; letter-spacing: 1.4px; font-size: 9px; margin: 0 0 7px; text-transform: uppercase; }
+.wm-location { margin: 0 0 10px; font: 24px/1.15 Georgia,serif; color: #f5ebd1; overflow-wrap: anywhere; }
+.wm-node-note { color: #b7c8cb; font-size: 11px; line-height: 1.65; margin: 0 0 12px; min-height: 3.4em; }
+.wm-play { width: 100%; background: #e4c681; color: #172c2e; border-color: #f1deab; padding: 12px 10px; min-height: 46px; font-weight: bold !important; font-size: 11px !important; }
+.wm-play:hover:not(:disabled) { background: #f4d99a; }
+.wm-route-note { border-top: 1px solid #3a5058; margin-top: 16px; padding-top: 12px; font-size: 10px; line-height: 1.7; color: #a7bfc3; }
+.wm-route-note strong { color: #d3ddc9; font-weight: normal; }
+.wm-legend { margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 9px 14px; color: #b9c9ca; font-size: 9px; }
+.wm-legend span { display: flex; align-items: center; gap: 6px; }
+.wm-key { display: inline-block; width: 9px; height: 9px; border: 1px solid #a7bab5; border-radius: 2px; background: #3b5050; }
+.wm-key.available { background: #eaca80; border-color: #fff0b4; }
+.wm-key.cleared { background: #81b997; border-color: #d4ecd2; }
+.wm-key.passage { transform: rotate(45deg); background: #9aaec2; }
+.wm-holiday { display: block; width: 100%; aspect-ratio: 260/126; margin: 16px 0 8px; border: 1px solid #5e7b7c; border-radius: 5px; overflow: hidden; }
+.wm-holiday svg { display: block; width: 100%; height: 100%; }
+.wm-postcard-caption { margin: 0; color: #a6c4be; font-size: 9px; line-height: 1.7; }
+.wm-status { color: #c8d9c4; margin: 10px 0 0; font-size: 10px; min-height: 1.5em; }
+.wm.is-traveling .wm-node { pointer-events: none; }
+@keyframes wmWalk { from { transform: translateY(0); } to { transform: translateY(-2px); } }
+@keyframes wmCase { from { transform: translateY(0); } to { transform: translateY(2px); } }
+@keyframes wmWater { from { opacity:.55; } to { opacity:.9; } }
+@keyframes wmPennant { from { transform:scaleX(.85); } to { transform:scaleX(1); } }
+@media (max-width: 700px) {
+  #world-dialog { padding: 10px; }
+  .wm-header { padding: 1px 0 10px; }
+  .wm-kicker,.wm-subtitle { display: none; }
+  .wm-heading { font-size: 25px; }
+  .wm-body { grid-template-columns: minmax(0, 1fr); gap: 9px; }
+  .wm-sidebar { grid-row: 1; padding: 10px; display: grid; grid-template-columns: minmax(0,1fr) minmax(105px, .6fr); column-gap: 12px; }
+  .wm-destination,.wm-location,.wm-node-note { grid-column: 1; }
+  .wm-destination { margin-bottom: 4px; font-size: 8px; }
+  .wm-location { font-size: 21px; margin-bottom: 0; }
+  .wm-node-note { display: none; }
+  .wm-play { grid-column: 2; grid-row: 1/4; align-self: center; }
+  .wm-route-note { display: none; }
+  .wm-holiday,.wm-postcard-caption { display: none; }
+  .wm-scroller { max-height: max(190px, calc(90dvh - 400px)); min-height: 190px; }
+  .wm-map-toolbar { padding: 5px 8px; }
+  .wm-map-toolbar span { font-size: 9px; }
+  .wm-world-tab { flex-basis: 102px; min-height: 52px; padding: 7px; gap: 4px; }
+  .wm-world-tab strong { font-size: 9px; }
+  .wm-world-tab:disabled span { display: none; }
+  .wm-world-tab:disabled { align-content: center; }
+  .wm-legend { margin-top: 9px; gap: 7px 10px; font-size: 8px; }
+  .wm-status:empty { display: none; }
+  .wm-chapter { left: 8px; right: 8px; }
+  .wm-chapter span { font-size: 10px; padding: 5px 7px; }
+  .wm-chapter em { display: none; }
+}
+@media (max-width: 370px) {
+  .wm-sidebar { grid-template-columns: minmax(0,1fr) 104px; gap: 0 8px; }
+  .wm-play { font-size: 10px !important; padding: 10px 5px; }
+  .wm-location { font-size: 19px; }
+  .wm-subtitle { font-size: 10px; }
+  .wm-node-dot { width: 26px; height: 26px; font-size: 9px; }
+  .wm-traveler { width: 30px; height: 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wm *, .wm-art * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

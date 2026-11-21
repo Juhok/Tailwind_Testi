@@ -1,0 +1,11 @@
+{
+  "name": "tiny-triggers-v11-checks",
+  "private": true,
+  "scripts": {
+    "test": "node journey-model.cjs && node tutorial.cjs --browser && node journey-ui.cjs && node migration.cjs",
+    "test:guides": "node guide-drive.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}

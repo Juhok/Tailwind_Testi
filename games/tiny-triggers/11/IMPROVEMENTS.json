@@ -1,0 +1,24 @@
+{
+  "release": 10,
+  "baseline": 9,
+  "sceneCount": 199,
+  "chapterCount": 35,
+  "shared": ["Four DVD corner approaches across loading visits", "Contained loading tip text at narrow widths", "Fourth hint click adds current-step pointer and gesture guidance throughout the collection"],
+  "scenes": {
+    "upgrades/banana": "Peel folds over the banana",
+    "upgrades/roll": "Cylindrical paper roll with elliptical ends",
+    "upgrades/chocolate": "Remove the extra colored break-border line",
+    "upgrades/legacy-4": "Straight milk stream from carton lip into bowl",
+    "upgrades/toast": "Knife-contact jam and butter stay on the bread",
+    "upgrades/carton": "Narrower torn flap and higher OPEN label/arrow",
+    "upgrades/legacy-7": "Straight milk stream and fridge-fitting carton",
+    "upgrades/mandarin": "Recognizable whole satsuma in upper left",
+    "upgrades/cucumber": "Natural knife pickup and slicing; continuous cucumber skin",
+    "upgrades/usb": "USB aperture on the leading end, not the side",
+    "additions/shoe-stone": "Edge-safe removal, inversion, shake, upright return, and There it is. Again.",
+    "additions/tight-parking": "Continuous top-down parking, zoom, door opening, squeeze and stain",
+    "additions/roadworks": "Clear junction, correctly oriented car and vertical road center lines",
+    "scenes/chase-card": "Larger package, full-width seal access, wider Astral Drake print",
+    "upgrades/cushion": "Lower zipper and sofa-seat contact"
+  }
+}
